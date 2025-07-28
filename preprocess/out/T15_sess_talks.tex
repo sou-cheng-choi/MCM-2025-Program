@@ -1,0 +1,101 @@
+\section{Track D: Technical Session 15 - Simulation}\newpage
+
+\begin{talk}
+  {Combining quasi-Monte Carlo with Stochastic Optimal Control for Trajectory Optimization of Autonomous Vehicles in Mine Counter Measure Simulations}% [1] talk title
+  {Philippe Blondeel}% [2] speaker name
+  {Belgian Royal Military Academy}% [3] affiliations
+  {Philippe.blondeel@mil.be}% [4] email
+  {Filip Van Utterbeeck, Ben Lauwens}% [5] coauthors
+  
+    
+   
+Modelling and simulating mine countermeasures (MCM) search missions performed by autonomous vehicles is a challenging endeavour. The goal of these simulations typically consists of calculating trajectories for autonomous vehicles in a designated zone such that the coverage (residual risk) of the zone is below a certain user-defined threshold. We have chosen to model and implement the MCM problem as a stochastic optimal control problem, see [1]. Mathematically, the MCM problem is defined as minimizing the total mission time needed to survey a designated zone $\Omega$ for a given residual risk of not detecting sea mines in the  user-chosen square  domain, i.e., 
+\begin{equation}
+\text{min}\, T_f,
+\label{eq:min}
+\end{equation}
+subjected to
+\begin{equation}
+ \mathbb{E}[q\left(T_F\right)] :=  \int_\Omega \text{e}^{-\int_0^{T_F} \gamma\left(\bm{x}\left(\tau\right),\bm{\omega}\right)\, d\,\tau}\phi\left(\bm{\omega}\right) d\,\bm{\omega} \leq \text{Residual Risk}.
+\label{eq:exp}
+\end{equation}
+The output of our stochastic optimal control implementation consists of an optimal trajectory in the square domain for the autonomous vehicle.  As shown in Eq.\,\eqref{eq:exp}, the residual risk is mathematically represented as an expected value integral. In [2], we presented a novel relaxation strategy for the computation of the residual MCM risk, used in our stochastic optimal control formulation. This novel relaxation strategy ensures that the  residual risk obtained at the end of the optimisation run is below the maximally allowed user-requested residual risk. This was however not the case  with our initial `naive' implementation of the MCM problem. Our proposed relaxation strategy ensures that the user requested risk is satisfied by sequentially solving the stochastic optimal control problem with an ever increasing size of the domain. We combine this strategy with  a quasi-Monte Carlo  sampling scheme based on a Rank-1 Lattice rule for the computation of the expected value integral. We observe a speedup up to a factor two in terms of total computational cost in favour of quasi-Monte Carlo when compared to standard Monte Carlo.
+
+
+%In order to compute a solution for this expected value integral, we use on the one hand   , and on the other hand we use  the traditional Monte Carlo (MC) sampling scheme. However,  In order to remedy to this issue, we developed a multi-domain relaxation strategy. The main idea of our multi-domain relaxation strategy consists of sequentially solving the stochastic optimal control problem with an ever increasing size of the domain until the requested risk is satisfied. The qMC or MC points we use are generated once at the start of the simulation on the unit cube domain, after which they are mapped to the desired domains.   
+\medskip
+\begin{enumerate}
+ \item[{[1]}] Blondeel, P., Van Utterbeeck, F., Lauwens, B. (2024). Modeling sand ripples in mine countermeasure simulations by means of stochastic optimal control. In: The 19th European Congress on Computational Methods in Applied Sciences and Engineering, ECCOMAS, Lisbon, Portugal (2024).
+ \item[{[2]}] Blondeel, P., Van Utterbeeck, F., Lauwens, B. (2025).  Application of quasi-Monte Carlo in Mine Countermeasure Simulations with a Stochastic Optimal Control Framework, \textit{arXiv preprint}
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {A Monte Carlo Approach to Designing a Novel Sample Holder for Enhanced UV-Vis Spectroscopy}% [1] talk title
+  {R. Persiani}% [2] speaker name
+  {INFN Section of Catania, Via S. Sofia 64, Catania, 95123, Italy}% [3] affiliations
+  {rino.persiani@ct.infn.it}% [4] email
+  {A. Agugliaro, S. Albergo, R. De Angelis, I. Di Bari, A. Sciuto, A. Tricomi}% [5] coauthors
+  
+    
+   
+UV-Vis spectroscopy is one of the most widely used techniques for identifying and quantifying substances in water and other solvents due to its speed and reliability. Its applications span diverse scientific fields, including chemistry, biochemistry, and medicine, as well as industrial sectors such as the pharmaceutical and food industries. Moreover, it plays a crucial role in environmental monitoring, particularly in assessing water quality. While alternative methods such as Raman and Ring Down spectroscopy have emerged, the core design of UV-Vis spectrometers has remained largely unchanged since their inception. Typically, these instruments employ a light source, a monochromator, a standard 1 cm cuvette as the sample holder, and one or more photosensors.
+
+In this work, we present a novel approach that leverages Monte Carlo simulation to optimize the design of the sample holder for enhanced UV-Vis spectroscopy. In particular, our setup adopts a pulsed light source and a Silicon Photomultiplier (SiPM) with single-photon counting capability. Using the optical transport package available in the Geant4 toolkit, we characterized and optimized the new design. The innovative holder, crafted in PTFE for its high UV reflectivity, resembles an integrating sphere, which increases the photon path length in the solution and thereby enhances absorbance in the presence of absorbing substances. We also present a comparison between experimental data and Monte Carlo predictions for validation. With this new sample holder, the spectrophotometer exhibits enhanced detection sensitivity, especially at low concentrations.
+
+\medskip
+
+\end{talk}
+
+\begin{talk}
+  {ARCANE Reweighting: A technique to tackle the sign problem in the simulation of collider events in high-energy physics}% [1] talk title
+  {Prasanth Shyamsundar}% [2] speaker name
+  {Fermi National Accelerator Laboratory}% [3] affiliations
+  {prasanth@fnal.gov}% [4] email
+  % {Names of coauthors go here, no affiliations of coauthors please, all affiliations will be included in an appendix of 
+  % the program book}% [5] coauthors
+  {}%[5] coauthors
+  
+    
+   
+% Your abstract goes here. Please do not use your own commands or macros.
+
+Negatively weighted events, which appear in the Monte Carlo (MC) simulation of particle collisions, significantly increase the computational resource requirements of current and future collider experiments in high-energy physics. This work introduces an MC technique called ARCANE reweighting for reducing or eliminating negatively weighted events. The technique works by redistributing (via an additive reweighting) the contributions of different pathways within the simulator that lead to the same final event. The technique is exact and does not introduce any biases in the distributions of physical observables. ARCANE reweighting can be thought of as a variant of the parametrized control variates technique, with the added nuance that redistribution is performed using a deferred additive reweighting. The technique is demonstrated for the simulation of a specific collision process, namely $e^+ e^- \longrightarrow q \bar{q} + 1\,jet$. The technique can be extended to several other collision processes of interest as well. This talk is based on the Refs~[1] and [2].
+
+\medskip
+
+% If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+% Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+% APA reference style is recommended.
+\begin{enumerate}
+ % \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+ % \item[{[2]}] L’Ecuyer, Pierre, \& Christiane Lemieux. (2002). Recent advances in randomized quasi-Monte Carlo methods. Modeling uncertainty: An examination of stochastic theory, methods, and applications, 419-474.
+    \item[{[1]}] Shyamsundar, Prasanth (2025). {\it ARCANE Reweighting: A Monte Carlo Technique to Tackle the Negative Weights Problem in Collider Event Generation}. arXiv:2502.08052 [hep-ph].
+    \item[{[2]}] Shyamsundar, Prasanth (2025). {\it A Demonstration of ARCANE Reweighting: Reducing the Sign Problem in the MC@NLO Generation of $e^+ e^- \longrightarrow q\bar{q} + 1\,jet$ Events}. arXiv:2502.08052 [hep-ph].
+\end{enumerate}
+
+% Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}
+
+\begin{talk}
+  {Multifidelity and Surrogate Modeling Approaches for Uncertainty Quantification in Ice Sheet Simulations}% [1] talk title
+  {Nicole Aretz}% [2] speaker name
+  {Oden Institute for Computational Engineering and Sciences, University of Texas at Austin}% [3] affiliations
+  {nicole.aretz@austin.utexas.edu}% [4] email
+  {Max Gunzburger, Mathieu Morlighem, Karen Willcox}% [5] coauthors
+  
+    
+   
+Our work [1] uses multifidelity and surrogate modeling to achieve computationally tractable uncertainty quantification (UQ) for large-scale ice sheet simulations. UQ is of utmost importance to enable judicious policy decisions combating climate change. However, high-fidelity ice sheet models are typically too expensive computationally to permit Monte Carlo sampling. To reduce the computational cost while achieving the same target accuracy, we use multifidelity estimators to shift the computational burden onto less expensive surrogate models derived from coarser discretizations and approximated physics. In this talk, we compare three estimators — Multifidelity [2] and Multilevel [3] Monte Carlo, and the Best Linear Unbiased Estimator [4] — and present results for the expected ice mass loss of the Greenland ice sheet.
+
+\medskip
+
+\begin{enumerate}
+ \item[{[1]}] Aretz, N., Gunzburger, M., Morlighem, M., \& Willcox, K. (2025). Multifidelity uncertainty quantification for ice sheet simulations. Computational Geosciences, 29(1), 1-22.
+ \item[{[2]}] Peherstorfer, B., Willcox, K., \& Gunzburger, M. (2016). Optimal model management for multifidelity Monte Carlo estimation. SIAM Journal on Scientific Computing, 38(5), A3163-A3194.
+    \item[{[3]}] Giles, M. B. (2015). Multilevel Monte Carlo methods. Acta Numerica, 24, 259-328.
+    \item[{[4]}] Schaden, D., \& Ullmann, E. (2020). On multilevel best linear unbiased estimators. SIAM/ASA Journal on Uncertainty Quantification, 8(2), 601-635.
+\end{enumerate}
+
+\end{talk}

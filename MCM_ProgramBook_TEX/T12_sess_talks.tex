@@ -1,0 +1,66 @@
+\section{Track J: Technical Session 12 - PDEs and SDEs}\newpage
+
+\begin{talk}
+  {Forward Propagation of Low Discrepancy Through McKean--Vlasov Dynamics: From QMC to MLQMC}% [1] talk title
+  {Leon Wilkosz}% [2] speaker name
+  {King Abdullah University of Science and Technology (KAUST)}% [3] affiliations
+  {leon.wilkosz@kaust.edu.sa}% [4] email
+  {Nadhir Ben Rached, Abdul-Lateef Haji-Ali, Raul Tempone}% [5] coauthors
+  
+    
+   
+This work develops a particle system addressing the approximation of \linebreak McKean--Vlasov stochastic differential equations (SDEs). The novelty of the approach lies in involving low-discrepancy sequences nontrivially in the construction of a particle system with coupled noise and initial conditions. Weak convergence for SDEs with additive noise is proven. A numerical study demonstrates that the novel approach presented here doubles the respective convergence rates for weak and strong approximation of the mean-field limit, compared with the standard particle system. These rates are proven in the simplified setting of a mean-field ordinary differential equation in terms of appropriate bounds involving the star discrepancy for low-discrepancy sequences with a group structure, such as Rank-1 lattice points. This construction nontrivially provides an antithetic multilevel quasi-Monte Carlo estimator. An asymptotic error analysis reveals that the proposed approach outperforms methods based on the classic particle system with independent initial conditions and noise.
+\end{talk}
+
+\begin{talk}
+  {A New Approach for Unbiased Estimation of Parameters of Partially Observed Diffusions}% [1] talk title
+  {Miguel Alvarez}% [2] speaker name
+  {King Abdullah University of Science and Technology (KAUST)}% [3] affiliations
+  {miguelangel.alvarezballesteros@kaust.edu.sa}% [4] email
+  {Ajay Jasra}% [5] coauthors
+  
+    
+   
+In this talk, we consider the estimation of static parameters for a partially observed diffusion process with discrete-time observations over a fixed time interval. We develop particle filtering methods using time-discretization schemes, and we employ particle Markov chain Monte Carlo methods to estimate the smoothing distribution. In particular, we use backward sampling to address the issue of sample degeneracy. We use the score function and stochastic gradient ascent methods to maximize the likelihood of the observations. Parameter estimation in the diffusion term is possible by introducing bridge processes and the corresponding bridge-guiding proposals. To achieve unbiasedness, we adopt the Rhee and Glynn approach [1], in which the sources of bias are the number of stochastic gradient ascent steps and the time-discretization. Finally, we display numerically the method applying it to two systems. 
+
+\medskip
+
+\begin{enumerate}
+ \item[{[1]}] Rhee, C. H, \& Glynn, H. (2015).  Unbiased estimation with square root convergence for SDE models, \emph{Op. Res.},~{\bf 63}, 1026--1043. 
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {High-order adaptive methods for exit times of diffusion processes and reflected diffusions}% [1] talk title
+  {H{\aa}kon Hoel}% [2] speaker name
+  {University of Oslo}% [3] affiliations
+  {haakonah@math.uio.no}% [4] email
+  {}% [5] coauthors
+  
+    
+   
+\medskip
+The Feynman--Kac formula connects domain-exit and boundary-reflection properties of stochastic differential equations (SDEs) and parabolic partial differential equations. The SDE viewpoint is particularly interesting for numerical methods, as it can be used with Monte Carlo methods to overcome the curse of dimensionality when solving high-dimensional PDE. This however hinges on having an efficient numerical method for simulating the exit times of SDEs. Since exit times of diffusion processes are very sensitive to perturbations in initial conditions, it is challenging to construct such numerical methods.
+
+This talk presents a high-order method with adaptive time-stepping for strong approximations of exit times. The method employs a high-order It\^o--Taylor scheme for simulating SDE paths and carefully decreases the step size in the numerical integration as the diffusion process approaches the domain's boundary. These techniques complement each other well: adaptive time-stepping improves the accuracy of the exit time by reducing the overshoot out of the domain, and high-order schemes improve the state approximation of the diffusion process, which is useful feedback to control the step size. We will also consider an ongoing extension of the numerical method to reflected diffusions.
+
+\end{talk}
+
+\begin{talk}
+  {Generative Modelling of L\'evy Area for High-Order SDE Simulation}% [1] talk title
+  {Thomas Cass}% [2] speaker name
+  {Imperial College London}% [3] affiliations
+  {thomas.cass@imperial.ac.uk}% [4] email
+  {Andra\v{z} Jelin\v{c}i\v{c},  Jiajie Tao, William F. Turner, James Foster, Hao Ni}% [5] coauthors
+  
+    
+Achieving high-order strong convergence in stochastic differential equation (SDE) simulations hinges on accurately sampling L\'evy areas—iterated integrals of Brownian motion that are notoriously difficult to simulate, especially in higher dimensions. In this talk, we introduce L\'evyGAN, a novel generative model that leverages deep learning to produce high-fidelity samples of L\'evy area conditioned on Brownian increments. Our architecture combines a GNN-inspired generator with a characteristic-function-based discriminator. A key innovation, the Bridge-flipping operation, guarantees exact matching of all odd moments, while our Chen-training method eliminates the need for costly training data. We demonstrate state-of-the-art performance in 4D Brownian motion and show practical gains in simulating the log-Heston model using multilevel Monte Carlo. This work opens new direction for efficient, high-order SDE simulation via generative modeling.
+
+
+\medskip
+
+\begin{enumerate}
+ \item[{[1]}] Jelin\v{c}i\v{c}, A., Tao, J., Turner, W. F., Cass, T., Foster, J., \& Ni, H. (2023). Generative Modelling of L\'evy Area for High Order SDE Simulation. \textit{accepted, to appear in SIAM Journal on Mathematics of Data Science}.
+\end{enumerate}
+\end{talk}

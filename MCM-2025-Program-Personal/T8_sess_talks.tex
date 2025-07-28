@@ -1,0 +1,49 @@
+\section{Track D: Technical Session 8 - Finance}\newpage
+
+\begin{talk}
+  {Characterizing Efficacy of Geometric Brownian Motion Expectation-based Simulations on Low-Volatility American Common Stocks}% [1] talk title
+  {Vincent X Zhang}% [2] speaker name
+  {University of Southern California}% [3] affiliations
+  {vxzhang@usc.edu}% [4] email
+  {Heather Choi}% [5] coauthors
+  
+    
+   
+In this manuscript, daily, monthly, and annual geometric Brownian motion forecasts are obtained and tested for reliability upon 21 stock symbols within NASDAQ of varying volatilities and drifts. Biweekly, monthly, biannual, and annual rolling windows were used as a preliminary filtering scheme to remove unreliable stock symbols, and then accuracy was further evaluated on stocks with higher accuracies in the first screening. Annual and 10-year windows were used to estimate the drift and diffusion component and then applied to obtain one-period-ahead geometric Brownian motion stock values and associated probabilities. Further building off of these one-period-ahead values, expected values for 1-252 periods were estimated. Expected values of each stock were estimated by totaling up the product of the stock value and its associated probabilities, and tested over multiple rolling-windows for reliability. The results indicate that geometric Brownian-simulated expected index values estimated using one thousand simulations can be slightly reliable if catered and re-optimized to specific stock characterizations, but only for a daily window, and even then only slightly preferable to flipping a coin. Expected values estimated with less than 100 simulations were thrown out, seen as unreliable.
+
+
+\medskip
+
+\begin{enumerate}
+    \item[{[1]}] Sinha, A. (2024). Daily and Weekly Geometric Brownian Motion Stock Index Forecasts. Journal of Risk and Financial Management, 17(10), 434. \\ \href{https://doi.org/10.3390/jrfm17100434}{https://doi.org/10.3390/jrfm17100434}
+    \item[{[2]}] Abbas, Anas, and Mohammed Alhagyan. 2023. Forecasting exchange rate of SAR/CNY by incorporating memory and stochastic volatility into GBM model. Advances and Applications in Statistics 86: 65---78
+    \item[{[3]}] Demirel, Ugur, Handan Cam, and Ramazan Unlu. 2021. Predicting Stock Prices Using Machine Learning Methods and Deep Learning Algorithms: The Sample of the Istanbul Stock Exchange. Gazi University Journal of Science 34: 63--82
+    \item[{[4]}]] Tie, Jingzhi, Hanqin Zhang, and Qing Zhang. 2018. An Optimal Strategy for Pairs Trading Under Geometric Brownian Motions. Journal of Optimization Theory and Applications 179: 654--75
+    \item[{[5]}] Ramos, Andr\'e Lubene, Douglas Batista Mazzinghy, Viviane da Silva Borges Barbosa, Michel Melo Oliveira, and Gilberto Rodrigues da Silva. 2019. Evaluation of an Iron Ore Price Forecast Using a Geometric Brownian Motion Model. Revista Escola de Minas 72: 9--15
+    \item[{[6]}] Nordin, Norazman, Norizarina Ishak, Nurfadhlina Abdul Halim, Siti Raihana Hamzah, and Ahmad Fadly Nurullah Rasadee. 2024. A Geometric Brownian Motion of ASEAN-5 Stock Indexes. In AI and Business, and Innovation Research: Understanding the Potential and Risks of AI for Modern Enterprises. Edited by Bahaaeddin Alareeni and Islam Elgedawy. New York: Springer, pp. 779--86
+    \item[{[7]}] W Farida Agustini et al. 2018 J. Phys.: Conf. Ser. 974 012047
+    \item[{[8]}] Liang, W., Li, Z., Chen, W. (2025). Enhancing Financial Market Predictions: Causality-Driven Feature Selection. In: Sheng, Q.Z., et al. Advanced Data Mining and Applications. ADMA 2024. Lecture Notes in Computer Science(), vol 15387. Springer, Singapore. https://doi.org/10.1007/978-981-96-0811-9\textunderscore11
+    \item[{[9]}] Prasad, Krishna, Bhuvana Prabhu, Lionel Pereira, Nandan Prabhu, and Pavithra S. 2022. Effectiveness of geometric Brownian motion method in predicting stock prices: Evidence from India. Asian Journal of Accounting and Governance 18: 121--34
+    \item[{[10]}] Shafii, Nor Hayati, Nur Ezzati, Dayana Mohd, Rohana Alias, Nur Fatihah Fauzi, and Mathematical Sciences. 2019. Fuzzy Time Series and Geometric Brownian Motion in Forecasting Stock Prices in Bursa Malaysia. Jurnal Intelek 14: 240--50
+    \item[{[11]}] Zhu, Song-Ping, and Xin-Jiang He. 2018. A New Closed-Form Formula for Pricing European Options under a Skew Brownian Motion. The European Journal of Finance 24: 1063--74
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {Efficient Pricing for Variable Annuity via Simulation}% [1] talk title
+  {Hao Quan}% [2] speaker name
+  {University of Waterloo}% [3] affiliations
+  {h5quan@uwaterloo.ca}% [4] email
+  {Ben (Mingbin) Feng}% [5] coauthors
+  
+    
+
+Variable Annuities (VAs) are insurance products that offer policyholders exposure to financial market upside potential while safeguarding against downside risk through optional riders, such as Guaranteed Minimum Death Benefits (GMDBs), Guaranteed Minimum Accumulation Benefits (GMABs), and Guaranteed Minimum Withdrawal Benefits (GMWBs). These riders, tailored to policyholders’ needs, introduce a complex risk profile combining mortality and financial uncertainties, rendering VA pricing and fee determination computationally challenging. Due to this complexity, Monte Carlo simulation is often the only practical approach for valuing these contracts.
+
+In this study, we address the problem of setting fair management fees for VA rider combinations using the equivalence principle, which balances the expected present value of premiums and benefits. We formulate fee determination as a stochastic root-finding problem, expressed as
+\[
+E[V(\varphi)] - P = 0,
+\]
+where \( E[V(\varphi)] \) denotes the expected present value of VA benefits under fee structure \( \varphi \), and \( P \) represents the premium. The VA benefit \( V(\varphi) \) reflects the evolution of the contract’s shadow account value and various benefit guarantees over the contract’s lifetime. As a result, estimating its expected value is computationally challenging. Moreover, solving the root-finding problem requires estimating the gradient of this expectation. To solve this, we employ stochastic gradient estimation techniques, such as finite differences and infinitesimal perturbation analysis (IPA). We analyze the theoretical properties and computational performance of the proposed root-finding algorithms, offering insights into their efficacy for VA pricing. Our results show that gradient estimation techniques have a significant impact on the efficiency and accuracy of estimating fair fees for various rider combinations.
+\end{talk}

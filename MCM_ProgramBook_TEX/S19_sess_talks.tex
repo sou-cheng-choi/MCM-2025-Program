@@ -1,0 +1,58 @@
+\section{Track F: Stochastic Optimization}\newpage
+
+\begin{talk}
+  {Monte Carlo Based Adaptive Sampling Approaches for Stochastic Optimization}% [1] talk title
+  {Raghu Bollapragada}% [2] speaker name
+  {The University of Texas at Austin}% [3] affiliations
+  {raghu.bollapragada@utexas.edu}% [4] email
+  {Shagun Gupta}% [5] coauthors
+  {Stochastic Optimization}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+Stochastic optimization problems arise in a wide range of applications, from acoustic/geophysical inversion to deep learning. The scale, computational cost, and difficulty of these models make classical optimization techniques impractical. To address these challenges, in this talk, we propose new stochastic optimization methods using Monte Carlo-based adaptive sampling approaches. These approaches adaptively control the accuracy in the stochastic approximations at each iteration of the optimization algorithm by controlling the sample sizes used in these approximations to achieve efficiency and scalability. Furthermore, these approaches are well-suited for distributed computing implementations. We show that these approaches achieve optimal theoretical global convergence and complexity results for strongly convex, general convex, and non-convex problems and illustrate our algorithm's performance on machine learning models.
+
+\medskip
+
+\end{talk}
+
+\begin{talk}
+  {A New Convergence Analysis of Two Stochastic Frank-Wolfe Algorithms}% [1] talk title
+  {Shane G. Henderson}% [2] speaker name
+  {Cornell University}% [3] affiliations
+  {sgh9@cornell.edu}% [4] email
+  {Natthawut Boonsiriphatthanajaroen}% [5] coauthors
+  {Stochastic Optimization}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+We study the convergence properties of the original and away-step
+Frank-Wolfe algorithms for linearly constrained stochastic
+optimization assuming the availability of unbiased objective function
+gradient estimates. The objective function is not restricted to a
+finite summation form, like in previous analyses tailored to
+machine-learning applications. To enable the use of concentration
+inequalities we assume either a uniform bound on the variance of
+gradient estimates or uniformly sub-Gaussian tails on gradient
+estimates. With one of these regularity assumptions along with
+sufficient sampling, we can ensure sufficiently accurate gradient
+estimates. We then use a Lyapunov argument to obtain the desired
+complexity bounds, relying on existing geometrical results for
+polytopes. 
+\end{talk}
+
+\begin{talk}
+  {Stochastic Gradient with Testing Functionals}% [1] talk title
+  {Akshita Gupta}% [2] speaker name
+  {Purdue University}% [3] affiliations
+  {gupta417@purdue.edu}% [4] email
+  {R. Bollapragada, R. Pasupathy, A. Yip}% [5] coauthors
+  
+    
+   
+A folklore stochastic gradient (SG) algorithm works as follows. Execute SG with a \emph{fixed step} $\eta >0$ until the iterates approach ``stationarity,'' so that no further gains are possible without a reduction in step size. Now re-execute SG starting from the final iterate of the previous execution, but with the smaller fixed step  $\eta \leftarrow \beta_0\eta, \beta_0 <1$ until the iterates again approach ``stationarity,'' and so on. This simple restart scheme, originally conceived by G. Pflug in 1983, has been rediscovered and commented on by several prominent authors over the decades, with some reporting strikingly favorable numerical results, robustness, and a self-correcting nature. And yet, no complete analysis of such algorithms exists to date, probably due to the need to handle stopping times, and the need to rigorously detect stationarity. In this work, we first unify adaptive fixed-step stochastic gradient methods through \emph{testing functionals} --- essentially stopping time policies that use algorithmic history to decide stopping. We characterize general conditions on testing functionals to guarantee algorithm consistency and optimality, and then identify a specific testing functional that is based on a statistic entering a fixed stopping region, whose optimal size is intimately tied to SG's fixed step size. The proposed testing functional framework also provides a path to analyze the many adaptive SG heuristics that have emerged over the years.
+
+\medskip
+
+
+
+
+\end{talk}

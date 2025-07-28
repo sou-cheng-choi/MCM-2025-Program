@@ -1,0 +1,125 @@
+\section{Track F: QMC and Applications Part II}\newpage
+
+\begin{talk}
+  {Approximation of multivariate periodic functions}% [1] talk title
+  {Dirk Nuyens}% [2] speaker name
+  {KU Leuven, Belgium}% [3] affiliations
+  {dirk.nuyens@kuleuven.be}% [4] email
+  {Laurence Wilkes}% [5] coauthors
+  {QMC and Applications}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+  We study approximation of multivariate periodic functions using $n$
+  function values. We use generated sets as the sample points, first
+  introduced in~[1]. We prove existence and convergence of the almost
+  optimal $L_2$ error and obtain similar bounds as for the least squares
+  algorithm from~[2] which uses unstructured points.
+
+\medskip
+
+\begin{enumerate}
+  \item[{[1]}]
+    K{\"a}mmerer.
+    Reconstructing multivariate trigonometric polynomials by sampling along generated sets.
+    In Monte Carlo and Quasi-Monte Carlo Methods 2012 (Dick, Kuo, Peters, Sloan), pages 439--454, 2013.
+  \item[{[2]}]
+    Krieg, Ullrich.
+    Function values are enough for $L_2$ approximation.
+    \emph{Foundations of Computational Mathematics}, 21(4):1141--1151, 2021.
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {Randomized QMC with one categorical variable}% [1] talk title
+  {Art B. Owen}% [2] speaker name
+  {Stanford University}% [3] affiliations
+  {owen@stanford.edu}% [4] email
+  {Valerie Ho, Zexin Pan}% [5] coauthors
+  
+    
+   
+  Randomized quasi-Monte Carlo (RQMC) methods benefit from smoothness
+  in the integrand.  In some applications, one of the input variables takes
+  only a modest finite number $L\geqslant2$
+of values and can be considered a categorical
+  variable. Such a variable introduces a discontinuity in the integrand.  It is
+  an RQMC-friendly discontinuity because the discontinuity is axis parallel
+  when each level of the categorical variable corresponds to a single
+  sub-interval of $[0,1]$.  A naturally occurring use case has
+  the categorical variable correspond to a component in a distribution
+  that is a mixture of $L$ other distributions.  Within the mixture
+  setting, mixture importance sampling is a prominent example.
+
+ If category $\ell$  has probability $\alpha_\ell$ in the motivating
+  model then it would naturally get an interval of width $\alpha_\ell$.
+If the RQMC method uses scrambled Sobol' points
+then we can make the problem even more RQMC-friendly by instead giving
+  level $\ell$ an interval of width $\beta_\ell = 2^{-\kappa_\ell}$
+  for some integers $\kappa_\ell \geqslant1$ and then
+  incorporating sampling ratios $\alpha_\ell/\beta_\ell$.
+  These $\beta_\ell$ are negative powers of $2$ that sum to $1$.
+  The number of ways to choose $\beta_1,\dots,\beta_L$
+  as a function of $L$ is given by sequence A002572 in the
+  online encyclopedia of integer sequences.
+
+  Under usual assumptions on the convergence rates for RQMC
+  estimates, we find that the asymptotically optimal $\beta_\ell$
+  are more nearly equal than the original $\alpha_\ell$ are.
+  We find some rules for making that  allocation under uncertainty
+  about the appropriate RQMC rate.
+
+  The mixing problem was studied by [1] where they use instead
+  $L$ different QMC samples instead of one sample in which
+  one of the variables yields $\ell$. The first QMC variable
+  was used by [2] to allocate points to different processors
+  in parallel computing.
+
+\medskip
+\begin{enumerate}
+ \item[{[1]}] Cui, T., J. Dick, and F. Pillichshammer (2023). Quasi-Monte Carlo methods
+for mixture distributions and approximated distributions via piecewise linear
+interpolation. Technical report, arXiv:2304.14786 
+\item[{[2]}]
+Keller, A. and L. Gr¨unschlo{\ss} (2012). Parallel quasi-Monte Carlo integration by
+partitioning low-discrepancy sequences. In Monte Carlo and Quasi-Monte
+Carlo Methods 2010, pp. 487--498. Springer.
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {QMC confidence intervals using quantiles of randomized nets}% [1] talk title
+  {Zexin Pan}% [2] speaker name
+  {Johann Radon Institute for Computational and Applied Mathematics}% [3] affiliations
+  {zexin.pan@oeaw.ac.at}% [4] email
+  {}% [5] coauthors
+  
+    
+
+
+The median of linearly scrambled digital net estimates has been shown to converge to the target integral value at nearly the optimal rate across various function spaces [1]. In this talk, we explore how quantiles of these estimates can be used to construct confidence intervals for the target integral. In particular, we demonstrate that as the sample size increases, the error distribution becomes increasingly symmetric, and we quantify the rate of this symmetrization for a class of smooth integrands.
+            
+\medskip
+
+
+\begin{enumerate}
+ \item[{[1]}] Pan, Zexin. (2025). Automatic optimal-rate convergence of randomized nets using median-of-means. {\it  Mathematics of Computation}, to appear.
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {Quasi-uniform quasi-Monte Carlo lattice point sets}% [1] talk title
+  {Kosuke Suzuki}% [2] speaker name
+  {Yamagata University}% [3] affiliations
+  {kosuke-suzuki@sci.kj.yamagata-u.ac.jp}% [4] email
+  {Josef Dick, Takashi Goda, Gerhard Larcher, Friedrich Pillichshammer}% [5] coauthors
+  {QMC and Applications}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+
+The discrepancy of a point set quantifies how well the points are distributed, with low-discrepancy point sets demonstrating exceptional uniform distribution properties. Such sets are integral to quasi-Monte Carlo methods, which approximate integrals over the unit cube for integrands of bounded variation. In contrast, quasi-uniform point sets are characterized by optimal separation and covering radii, making them well-suited for applications such as radial basis function approximation. This paper explores the quasi-uniformity properties of quasi-Monte Carlo point sets constructed from lattices. Specifically, we analyze rank-1 lattice point sets, Fibonacci lattice point sets, Frolov point sets, and $(n \boldsymbol{\alpha})$-sequences, providing insights into their potential for use in applications that require both low-discrepancy and quasi-uniform distribution. As an example, we show that the $(n \boldsymbol{\alpha})$-sequence with $\alpha_j = 2^{j/(d+1)}$ for $j \in \{1, 2, \ldots, d\}$ is quasi-uniform and has low-discrepancy.
+
+
+\end{talk}

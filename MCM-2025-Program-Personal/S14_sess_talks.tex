@@ -1,0 +1,104 @@
+\section{Track H: Advances in Rare Events Simulation}\newpage
+
+\begin{talk}
+  {Revisiting self-normalized importance sampling: new methods and diagnostics}% [1] talk title
+  {Nicola Branchini}% [2] speaker name
+  {University of Edinburgh}% [3] affiliations
+  {n.branchini@sms.ed.ac.uk}% [4] email
+  {V\'ictor Elvira}% [5] coauthors
+  
+    
+   
+Importance sampling (IS) can often be implemented only with normalized weights, yielding the popular self-normalized IS (SNIS) estimator. However, proposal distributions are often learned and evaluated using criteria designed for the unnormalized IS (UIS) estimator.
+
+In this talk, we aim to present a unified perspective on recent methodological advances in understanding and improving SNIS.
+We propose and compare two new frameworks for adaptive importance sampling (AIS) methods tailored to SNIS. Our first framework exploits the view of SNIS as a ratio of two UIS estimators, coupling two separate AIS samplers in a joint distribution selected to minimize asymptotic variance. Our second framework instead proposes the first MCMC-driven AIS sampler directly targeting the (often overlooked) optimal SNIS proposal.
+
+We also establish a close connection between the optimal SNIS proposal and so-called subtractive mixture models (SMMs), where negative coefficients are possible - motivating the study of the properties of the first IS estimators using SMMs.
+
+Finally, we propose new Monte Carlo diagnostics specifically for SNIS. They extend existing diagnostics for numerator and denominator by incorporating their statistical dependence, drawing on different notions of tail dependence from multivariate extreme value theory.
+
+\medskip
+
+\begin{enumerate}
+ \item[{[1]}] Branchini, N., \& Elvira, V. (2024). Generalizing self-normalized importance sampling with couplings. arXiv preprint arXiv:2406.19974.
+ \item[{[2]}] Branchini, N., \& Elvira, V. (2025). Towards adaptive self-normalized importance samplers. In submission at Statistical Signal Processing Workshop (SSP), 2025.
+    \item[{[3]}] \textbf{Zellinger, L. \& Branchini, N. (equal contribution)}, Elvira, V., \& Vergari, A. Scalable expectation estimation with subtractive mixture models. In submission at Frontiers in Probabilistic Inference: Learning meets Sampling (workshop at ICLR 2025).
+    \item[{[4]}] Branchini, N., \& Elvira, V. The role of tail dependence in estimating posterior expectations. In NeurIPS 2024 Workshop on Bayesian Decision-making and Uncertainty.
+
+
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {Asymptotic robustness of  smooth functions of  rare-event estimators}% [1] talk title
+  {Bruno Tuffin}% [2] speaker name
+  {Inria}% [3] affiliations
+  {bruno.tuffin@inria.fr}% [4] email
+  {Marvin K. Nakayama}% [5] coauthors
+  {Advances in Rare Events Simulation}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+In many rare-event simulation problems, an estimand is expressed  as a smooth function of several quantities,  each
+estimated by simulation  but not necessarily all of their estimators are critically influenced by
+the rarity of the event of interest.  
+An example arises in the estimation of the mean time to failure of a regenerative system, usually expressed as the ratio of two quantities to be estimated, the denominator being the only one  entailing a rare event in a highly reliable context.
+
+In general, there has been to our knowledge no work investigating  the efficiency  of estimating $\alpha = g({\boldsymbol{\theta}})$
+for some known  smooth function $g : \mathbb{R}^d \to \mathbb{R}$ and where ${\boldsymbol{\theta}} = (\theta_1, \theta_2, \ldots, \theta_d) \in \mathbb{R}^d$ is a vector of unknown parameters, for some $d \geq 1$, each  estimated by simulation.
+
+We will provide during the talk conditions under which having efficient estimators of each individual mean leads to an efficient estimator of the function of the means. Our conditions are described for several asymptotic robustness properties: logarithmic efficiency, bounded relative error and vanishing relative error.
+We illustrate this setting through several examples, and numerical results complement the theory.
+
+
+   
+
+\medskip
+
+
+\begin{enumerate}
+ \item[{[1]}]  Nakayama, Marvin K. and Bruno Tuffin.  Efficiency of Estimating Functions of Means in Rare-Event Contexts. In the {\it Proceedings of the 2023 Winter Simulation Conference}, San Antonio, TX, USA, December 2023.
+ % Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+ %\item[{[2]}] L’Ecuyer, Pierre, \& Christiane Lemieux. (2002). Recent advances in randomized quasi-Monte Carlo methods. Modeling uncertainty: An examination of stochastic theory, methods, and applications, 419-474.
+\end{enumerate}
+
+%Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}
+
+\begin{talk}
+  {Importance Sampling Methods with Stochastic Differential Equations for the Estimation of the Right Tail of the CCDF of the Fade Duration}% [1] talk title
+  {Eya Ben Amar}% [2] speaker name
+  {King Abdullah University of Science and Technology}% [3] affiliations
+  {eya.benamar@kaust.edu.sa}% [4] email
+  {Nadhir Ben Rached, Ra\'ul Tempone, and Mohamed-Slim Alouini}% [5] coauthors
+  
+    
+In this work, we explore using stochastic differential equations (SDEs) to study the performance of wireless communication systems. Particularly, we investigate the fade duration metric, representing the time during which the signal remains below a specified threshold within a fixed time interval. We estimate the complementary cumulative distribution function (CCDF) of the fade duration using Monte Carlo simulations. We propose an optimal importance sampling (IS) estimator that provides accurate estimates of the CCDF tail, corresponding to rare event probabilities, at a significantly reduced computational cost. Additionally, we introduce a novel multilevel Monte Carlo method combined with IS and discuss its efficiency in further reducing the computational cost of the IS estimator.
+\medskip
+
+\end{talk}
+
+\begin{talk}
+  {Estimating rare event probabilities associated with McKean--Vlasov SDEs}% [1] talk title
+  {Shyam Mohan Subbiah Pillai}% [2] speaker name
+  {RWTH Aachen University, Germany}% [3] affiliations
+  {subbiah@uq.rwth-aachen.de}% [4] email
+  {Nadhir Ben Rached, Abdul-Lateef Haji-Ali, Ra\`ul Tempone}% [5] coauthors
+  {Advances in Rare Events Simulation}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+McKean--Vlasov stochastic differential equations (MV-SDEs) arise as the mean-field limits of stochastic interacting particle systems, with applications in pedestrian dynamics, collective animal behavior, and financial market modelling. This work develops an efficient method for estimating rare event probabilities associated with MV-SDEs by combining multilevel Monte Carlo (MC) with importance sampling (IS). To apply a measure change for IS, we first reformulate the MV-SDE as a standard SDE by conditioning on its law, leading to the decoupled MV-SDE. We then formulate the problem of finding the optimal IS measure change as a stochastic optimal control problem that minimizes the variance of the MC estimator. The resulting partial differential equation is solved numerically to obtain the optimal IS measure change. Building on this IS scheme and the decoupling approach, we introduce a double loop Monte Carlo (DLMC) estimator. To further improve computational efficiency, we extend DLMC to a multilevel setting, reducing its computational complexity. To enhance variance convergence in the level differences for the discontinuous indicator function, we propose two key techniques: (1) numerical smoothing via one-dimensional integration over a carefully chosen variable and (2) an antithetic sampler to increase correlation between fine and coarse SDE paths. By integrating IS with efficient multilevel sampling, we develop the multilevel double loop Monte Carlo (MLDLMC) estimator. We demonstrate its effectiveness on the Kuramoto model from statistical physics, showing a reduction in computational complexity from $\mathcal{O}(\mathrm{TOL}_\mathrm{r}^{-4})$ using DLMC to $\mathcal{O}(\mathrm{TOL}_\mathrm{r}^{-3})$ using MLDLMC with IS, for estimating rare event probabilities up to a prescribed relative error tolerance $\mathrm{TOL}_\mathrm{r}$. This talk is primarily based on [1,2].
+
+\medskip
+
+%If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+%Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+%APA reference style is recommended.
+\begin{enumerate}
+ \item[{[1]}] Ben Rached, N., Haji-Ali, A. L., Subbiah Pillai, S. M., \& Tempone, R. (2024). Double-loop importance sampling for McKean--Vlasov stochastic differential equation. Statistics and Computing, 34(6), 197.
+ \item[{[2]}] Ben Rached, N., Haji-Ali, A. L., Subbiah Pillai, S. M., \& Tempone, R. (2025). Multilevel importance sampling for rare events associated with the McKean--Vlasov equation. Statistics and Computing, 35(1), 1.
+\end{enumerate}
+
+%Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}

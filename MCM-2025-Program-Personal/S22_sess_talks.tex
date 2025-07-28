@@ -1,0 +1,78 @@
+\section{Track A: QMC and Applications Part I}\newpage
+
+\begin{talk}
+  {Exact discretization, tight frames and recovery via $D$-optimal designs}% [1] talk title
+  {Felix Bartel}% [2] speaker name
+  {University of New South Wales}% [3] affiliations
+  {f.bartel@unsw.edu.au}% [4] email
+  {Lutz K\"ammerer, Kateryna Pozharska, Martin Sch\"afer, and Tino Ullrich}% [5] coauthors
+  {QMC and Applications Part I or II}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+    $D$-optimal designs originate in statistics literature as an approach for optimal experimental designs. In numerical analysis points and weights resulting from maximal determinants turned out to be useful for quadrature and interpolation. Also recently, two of the present authors and coauthors investigated a connection to the discretization problem for the uniform norm. Here we use this approach of maximizing the determinant of a certain Gramian matrix with respect to points and weights for the construction of tight frames and exact Marcinkiewicz-Zygmund inequalities in $L_2$. We present a direct and constructive approach resulting in a discrete measure with at most $N\le n^2+1$ atoms, which discretely and accurately subsamples the $L_2$-norm of complex-valued functions contained in a given n-dimensional subspace. This approach can as well be used for the reconstruction of functions from general RKHS in $L_2$ where one only has access to the most important eigenfunctions. We verifiably and deterministically construct points and weights for a weighted least squares recovery procedure and pay in the rate of convergence compared to earlier optimal, however probabilistic approaches. The general results apply to the d-sphere or multivariate trigonometric polynomials on Td spectrally supported on arbitrary finite index sets $I\subset\mathbb Z^d$. They can be discretized using at most $|I|^2-|I|+1$ points and weights. Numerical experiments indicate the sharpness of this result. As a negative result we prove that, in general, it is not possible to control the number of points in a reconstructing lattice rule only in the cardinality $|I|$ without additional condition on the structure of $I$. We support our findings with numerical experiments.
+
+\medskip
+
+\end{talk}
+
+\begin{talk}
+  {$L_2$-approximation: using randomized lattice algorithms and QMC hyperinterpolation}% [1] talk title
+  {Mou Cai}% [2] speaker name
+  {Graduate School of Engineering, The University of Tokyo}% [3] affiliations
+  {caimoumou@g.ecc.u-tokyo.ac.jp}% [4] email
+  {Congpei An, Takashi Goda, Yoshihito Kazashi}% [5] coauthors
+  
+    
+Abstract
+
+   
+We propose a randomized lattice algorithm for approximating multivariate periodic functions over the $d$-dimensional unit cube from the weighted Korobov space with mixed smoothness $\alpha > 1/2$ and product weights $\gamma_1,\gamma_2,\ldots\in [0,1]$. This randomization involves drawing the number of points for function evaluations randomly, and selecting a good generating vector for rank-1 lattice points using the randomized component-by-component algorithm. We prove that our randomized algorithm achieves a worst-case root mean squared $L_2$-approximation error of order $M^{-\alpha/2 - 1/8 + \varepsilon}$ for an arbitrarily small $\varepsilon > 0$, where $M$ denotes the maximum number of function evaluations, and that the error bound is independent of the dimension $d$ if the weights satisfy $\sum_{j=1}^\infty \gamma_j^{1/\alpha} < \infty$. Our upper bound converges faster than a lower bound on the worst-case $L_2$-approximation error for deterministic rank-1 lattice-based approximation proved by Byrenheid, K\"{a}mmerer, Ullrich, and Volkmer (2017). We also show a lower error bound of order $M^{-\alpha/2-1/2}$ for our randomized algorithm. Finally, we present a generalization of hyperinterpolation over the unit cube named Quasi-Monte Carlo (QMC) hyperinterpolation. This new approximation scheme can be integrated with the Lasso technique to enhance sparsity and denoising capabilities.
+
+\medskip
+
+
+\end{talk}
+
+\begin{talk}
+  {High-dimensional density estimation on  unbounded domain}% [1] talk title
+  {Zhijian He}% [2] speaker name
+  {South China University of Technology}% [3] affiliations
+  {hezhijian@scut.edu.cn}% [4] email
+  {Ziyang Ye, Haoyuan Tan, Xiaoqun Wang}% [5] coauthors
+  {QMC and Applications Parts I and II}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+This talk will present a kernel-based method to approximate probability density functions of unbounded random variables taking values in high-dimensional spaces. Building upon the framework of Kazashi and Nobile [1], our estimator is a linear combination of kernel functions whose coefficients are determined a linear equation. We first transform the unbounded sample domain into a hypercube and then use rank-1 lattice points as the interpolation nodes.
+We establish a rigorous error analysis for the mean integrated squared error (MISE) under an exponential decay condition.  Under a suitable smoothness assumption, our method attains an MISE rate  approaching $O(N^{-1})$ for $N$ independent identically distributed observations. Numerical experiments validate our theoretical findings and demonstrate the superior performance of the proposed estimator compared to state-of-the-art alternatives.
+\medskip
+
+
+\begin{enumerate}
+ \item[{[1]}] Kazashi, Yoshihito, \& Nobile, Fabio. (2023). Density estimation in {RKHS} with application to Korobov spaces in high dimensions, SIAM Journal on Numerical Analysis, \textbf{61}(2), 1080-1102.
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {Application of QMC to Oncology}% [1] talk title
+  {Frances Y. Kuo}% [2] speaker name
+  {UNSW Sydney, Australia}% [3] affiliations
+  {f.kuo@unsw.edu.au}% [4] email
+  {Alexander D. Gilbert, Dirk Nuyens, Graham Pash, Ian H. Sloan, Karen E. Willkox}% [5] coauthors
+  {QMC and Applications Part I}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+Tumor models largely focus on two key characteristics: infiltration of the tumor into the surrounding healthy tissue modelled by diffusion, and proliferation of the existing tumor modelled by logistic growth in tumor cellularity. Together with terms to model chemotherapy and radiotherapy treatments, these give rise to a nonlinear parabolic reaction-diffusion PDE with random diffusion and proliferation coefficients. We show that QMC methods can be successful in computing quantities of interest arising from this tough application in oncology.
+
+%\medskip
+%
+%If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+%Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+%APA reference style is recommended.
+%\begin{enumerate}
+% \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+% \item[{[2]}] Roberts, Gareth O, \& Rosenthal, Jeffrey S. (2002).  Optimal scaling for various Metropolis-Hastings algorithms, \textbf{16}(4), 351--367.
+%\end{enumerate}
+%
+%Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}

@@ -1,0 +1,93 @@
+\section{Track E: Technical Session 2 - Bayesian Methods}\newpage
+
+\begin{talk}
+  {Optimizing Generalized Hamiltonian Monte Carlo for Bayesian Inference applications}% [1] talk title
+  {Lorenzo Nagar}% [2] speaker name
+  {BCAM - Basque Center for Applied Mathematics, Bilbao, Spain}% [3] affiliations
+  {lnagar@bcamath.org}% [4] email
+  {Leonardo Gavira Balmacz, Hristo Inouzhe Valdes, Mart\'in Parga Pazos, Mar\'ia Xos\'e Rodr\'iguez-\'Alvarez, Jes\'us Mar\'ia Sanz-Serna, and Elena Akhmatskaya}% [5] coauthors
+  
+    
+   
+In contrast to the widely adopted Hamiltonian/Hybrid Monte Carlo (HMC) [1], the Generalized Hamiltonian Monte Carlo (GHMC) algorithm [2, 3] leverages the irreversibility of its generated Markov chains, resulting in faster convergence to equilibrium and reduced asymptotic variance [4, 5]. 
+
+Despite its theoretically predicted advantages, GHMC can be highly sensitive to the choice of a numerical integrator for the Hamiltonian equations and requires careful tuning of simulation parameters, such as the integration step size, the trajectory length, and the amount of random noise in momentum refreshment.
+
+In this talk, we present a novel approach for finding optimal (in terms of sampling performance and accuracy) settings for a GHMC simulation. For an arbitrary simulated system, our methodology identifies a system-specific integration scheme that maximizes a conservation of energy for harmonic forces, along with appropriate randomization intervals for the simulation parameters, without incurring additional computational cost.
+
+Numerical experiments on well-established statistical models exhibit, with the help of the state-of-the-art performance metrics, significant gains in GHMC sampling efficiency when optimally tuned hyperparameters are chosen instead of heuristic or recommended ones. Comparative performance of GHMC and HMC with optimal settings is also discussed. 
+
+Additionally, we apply our methodology to three real-world case studies:
+\begin{itemize}
+\item Patient resistance to endocrine therapy in breast cancer;
+\item Influenza A (H1N1) epidemics outbreak;
+\item Modeling of cell-cell adhesion dynamics.
+\end{itemize}
+
+\medskip
+
+\begin{enumerate}
+ \item[{[1]}] Neal, Radford M. (2011). {\it MCMC Using Hamiltonian Dynamics}. Handbook of Markov Chain Monte Carlo (Eds: Brooks, S., Gelman, A., Jones, G., Meng, X.), Vol. 2 pp. 113--162. Chapman and Hall/CRC, New York.
+ \item[{[2]}] Horowitz, Alan M. (1991). {\it A generalized guided Monte Carlo algorithm}. Physics Letters B 268.2: 247--252. 
+ \item[{[3]}] Kennedy, Anthony D. \& Pendleton, Brian J. (2001). {\it Cost of the generalised hybrid Monte Carlo algorithm for free field theory}. Nuclear Physics B 607.3: 456--510.
+ \item[{[4]}] Ottobre, Michela (2016). {\it Markov Chain Monte Carlo and Irreversibility}. Reports on Mathematical Physics 77: 267--292.
+ \item[{[5]}] Duncan, Andrew B., Leli\`evre, Tony \& Pavliotis, Grigorios A. (2016). {\it Variance Reduction Using Nonreversible Langevin Samplers}. Journal of Statistical Physics 163: 457--491. 
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {Bayesian Anomaly Detection in Variable-Order and Variable-Diffusivity Fractional Mediums}% [1] talk title
+  {Hamza Ruzayqat}% [2] speaker name
+  {King Abdullah University of Science and Technology}% [3] affiliations
+  {Hamza.Ruzayqat@kaust.edu.sa}% [4] email
+  {Omar Knio and George Turkiyyah }% [5] coauthors
+  
+    
+   
+Fractional diffusion equations (FDEs) are powerful tools for modeling anomalous diffusion in complex systems, such as fractured media and biological processes, where nonlocal dynamics and spatial heterogeneity are prominent. These equations provide a more accurate representation of such systems compared to classical models but pose significant computational challenges, particularly for spatially varying diffusivity and fractional orders. In this talk, I will present a Bayesian inverse problem for FDEs in a 2-dimensional bounded domain with an anomaly of unknown geometric and physical properties, where the latter are the diffusivity and fractional order fields. To tackle the computational burden of solving dense and ill-conditioned systems, we employ an advanced finite-element scheme incorporating low-rank matrix representations and hierarchical matrices. For parameter estimation, we implement two surrogate-based approaches using polynomial chaos expansions: one constructs a 7-dimensional surrogate for simultaneous inference of geometrical and physical parameters, while the other leverages solution singularities to separately infer geometric features, then constructing a 2-dimensional surrogate to learn the physical parameters and hence reducing the computational cost immensely. These surrogates are used inside a Markov chain Monte Carlo algorithm to infer the unknown parameters.
+
+\medskip
+
+\end{talk}
+
+\begin{talk}
+  {Theoretical Guarantees of Mean Field Variational Inference for Bayesian Principal Component Analysis}% [1] talk title
+  {Arghya Datta}% [2] speaker name
+  {Universit\'e de Montr\'eal}% [3] affiliations
+  {arghyadatta8@gmail.com}% [4] email
+  {Philippe Gagnon, Florian Maire}% [5] coauthors
+  
+    
+   
+In this talk, we will investigate mean field variational inference for Bayesian principal component analysis (BPCA). Despite the wide usage of mean field variational inference for the BPCA model, there exists remarkably little theoretical justification. I will talk about new results on the convergence guarantees of the iterative coordinate ascent variational inference (CAVI) algorithm for the BPCA model. In particular, we will show that under reasonable technical assumptions on the initialization, CAVI converges exponentially fast to a local optimum. An interesting connection between the CAVI algorithm for the BPCA model and power iteration, which is a popular iterative numerical algorithm for finding singular vectors of a given matrix, will also be discussed.
+
+
+\end{talk}
+
+\begin{talk}
+  {Bayesian Analysis of Latent Underdispersion Using Discrete Order Statistics}% [1] talk title
+  {Jimmy Lederman}% [2] speaker name
+  {Department of Statistics, University of Chicago}% [3] affiliations
+  {jlederman@uchicago.edu}% [4] email
+  {Aaron Schein}% [5] coauthors
+  
+    
+
+
+Researchers routinely analyze count data using models based on a Poisson likelihood, for which there exist many analytically convenient and computationally efficient strategies for posterior inference. A limitation of such models however is the equidispersion constraint of the Poisson distribution. This restriction prevents the model's likelihood, and by extension its posterior predictive distribution, from concentrating around its mode. As a result, these models are parametrically bound to produce probabilistic predictions with high uncertainty, even in cases where low uncertainty is supported by the data. While count data often exhibits overdispersion \textit{marginally}, such data may nevertheless be consistent with a likelihood that is underdispersed \textit{conditionally}, given parameters and latent variables. Detecting conditional underdispersion, however, requires one to fit the ``right" model and thus the ability to build, fit, and critique a variety of different models with underdispersed likelihoods. Towards this end, we introduce a novel family of models for conditionally underdispersed count data whose likelihoods are based on order statistics of Poisson random variables. More specifically, we assume that each observed count coincides with the $j^{\textrm{th}}$ order-statistic of $D$ latent i.i.d.~Poisson random variables, where $j$ and $D$ are user-defined hyperparameters. To perform efficient MCMC-based posterior inference in this family of models, we derive a data-augmentation strategy which samples the other $D{-}1$ latent variables from their exact conditional, given the observed $(j,D)$-order statistic. By relying on the explicit construction of a Poisson order statistic, this data augmentation strategy can be modularly combined with the many existing inference strategies for Poisson-based models. We generalize this approach beyond the Poisson to any non-negative discrete parent distribution and, in particular, show that models based on negative binomial order statistics can flexibly capture both conditional under and overdispersion.  To illustrate our approach empirically, we build and fit models to three real count data sets of flight times, COVID-19 cases counts, and RNA-sequence data, and we demonstrate how models with underdispersed likelihoods can leverage latent structure to make more precise probabilistic predictions. Although the possibility of conditional underdispersion is often overlooked in practice, we argue that this is at least in part due to the lack of tools for modeling underdispersion in settings where complex latent structure is present.
+
+ 
+
+% \medskip
+
+% If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+% Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+% APA reference style is recommended.
+% \begin{enumerate}
+%  \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+%  \item[{[2]}] L’Ecuyer, Pierre, \& Christiane Lemieux. (2002). Recent advances in randomized quasi-Monte Carlo methods. Modeling uncertainty: An examination of stochastic theory, methods, and applications, 419-474.
+% \end{enumerate}
+
+% Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}

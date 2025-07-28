@@ -1,0 +1,72 @@
+\section{Track B: Statistical Design of Experiments}\newpage
+
+\begin{talk}
+  {Respecting the boundaries: Space-filling designs for surrogate modeling with boundary information}% [1] talk title
+  {Simon Mak}% [2] speaker name
+  {Duke University}% [3] affiliations
+  {sm769@duke.edu}% [4] email
+  {Yen-Chun Liu}% [5] coauthors
+  
+    
+   
+Gaussian process (GP) surrogate models are widely used for emulating expensive computer simulators, and have led to important advances in science and engineering. One challenge with fitting such surrogates is the costly generation of training data, which can require thousands of CPU hours per run. Recent promising work has investigated the integration of known boundary information for surrogate modeling, which can greatly reduce its required training sample size and thus computational cost. There is, however, little work exploring the important question of how such experiments should be designed given boundary information. We propose here a new class of space-filling designs, called boundary maximin designs, for effective GP surrogates with boundary information. Our designs rely on a new space-filling criterion derived from the asymptotic D-optimal designs of the boundary GPs of Vernon et al. (2019) and Ding et al. (2019), which can incorporate a broad class of known boundaries, including axis-parallel and/or perpendicular boundaries. To account for effect sparsity given many input parameters, we further propose a new boundary maximum projection design that jointly factors in boundary information and ensures good projective properties. Numerical experiments and an application in particle physics demonstrate improved surrogate performance with the proposed boundary maximin designs over the state-of-the-art.
+\medskip
+
+% If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+% Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+% APA reference style is recommended.
+% \begin{enumerate}
+%  \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+%  \item[{[2]}] Roberts, Gareth O, \& Rosenthal, Jeffrey S. (2002).  Optimal scaling for various Metropolis-Hastings algorithms, \textbf{16}(4), 351--367.
+% \end{enumerate}
+
+% Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}
+
+\begin{talk}
+  {Active Learning for Nonlinear Calibration}% [1] talk title
+  {Andrews Boahen}% [2] speaker name
+  {Department of Statistics and Probability, Michigan State University (USA)}% [3] affiliations
+  {boahenan@msu.edu}% [4] email
+  {Junoh Heo, Chih-Li Sung}% [5] coauthors
+  
+    
+   
+Combining computer models with real observations is a valuable way to analyze complex systems. One of the key challenges in model calibration for complex physical systems is accounting for uncertainty around the model's form. The Kennedy O'Hagan's (KOH) framework provides a way to account for model form uncertainty when the computer model outputs are linearly related to the real observations. In this paper, we extend the KOH model by proposing a nonlinear wrapping function of the design inputs and the computer model outputs. We develop the statistical inference related to our model and propose active learning approaches to simultaneously collect both physical and computer model data by taking advantage of the closed-forms of the posterior mean and variance of our model under some specified kernel matrices. We show that under some regularity conditions, when $n\rightarrow\infty,$ the estimate of the calibration parameter $\hat{\theta}_n$ converges  to  the true calibration parameter $\theta^*$ and derive uncertainty quantification results for $\hat{\theta}_n.$
+\medskip
+
+% If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+% Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+% APA reference style is recommended.
+% \begin{enumerate}
+%  \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+%  \item[{[2]}] Roberts, Gareth O, \& Rosenthal, Jeffrey S. (2002).  Optimal scaling for various Metropolis-Hastings algorithms, \textbf{16}(4), 351--367.
+% \end{enumerate}
+
+% Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}
+
+\begin{talk}
+  {Optimal design of experiments with quantitative-sequence factors}% [1] talk title
+  {Qian Xiao}% [2] speaker name
+  {Shanghai Jiao Tong University}% [3] affiliations
+  {qian.xiao@sjtu.edu.cn}% [4] email
+  {Yaping Wang, Sixu Liu}% [5] coauthors
+  
+    
+   
+A new type of experiments with joint considerations of quantitative and sequence factors are recently drawing much attention in medical science, bio-engineering and many other disciplines. The input spaces of such experiments are semi-discrete and often very large. Thus, efficient and economic experimental designs are required. Based on the transformations and aggregations of good lattice point sets, we construct a new class of optimal quantitative-sequence (QS) designs which are marginally coupled, pair-balanced, space-filling and asymptotically orthogonal. The proposed QS designs have certain flexibility in run and factor sizes, and are especially appealing for high-dimensional cases.
+
+\end{talk}
+
+\begin{talk}
+  {Factor Importance Ranking and Selection using Total Indices}% [1] talk title
+  {Chaofan Huang}% [2] speaker name
+  {Work done during C. Huang's Ph.D. studies at Georgia Institute of Technology}% [3] affiliations
+  {10billhuang01@gmail.com}% [4] email
+  {V. Roshan Joseph}% [5] coauthors
+  
+    
+   
+Factor importance measures the impact of each feature on output prediction accuracy. In this paper, we focus on the \emph{intrinsic importance} proposed by Williamson et al. (2023), which defines the importance of a factor as the reduction in predictive potential when that factor is removed. To bypass the modeling step required by the existing estimator, we present the equivalence between predictiveness potential and total Sobol' indices from global sensitivity analysis, and introduce a novel model-free consistent estimator that can be directly computed from noisy data. Integrating with forward selection and backward elimination gives rise to \texttt{FIRST}, Factor Importance Ranking and Selection using Total (Sobol') indices. Extensive simulations are provided to demonstrate the effectiveness of \texttt{FIRST} on regression and binary classification problems, and a clear advantage over the state-of-the-art methods.
+\end{talk}

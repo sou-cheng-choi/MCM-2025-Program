@@ -1,0 +1,99 @@
+\section{Track J: Technical Session 11 - SDEs}\newpage
+
+\begin{talk}
+  {Dynamical Low-Rank Approximation for SDEs: an interacting particle-system ROM}% [1] talk title
+  {Fabio Zoccolan}% [2] speaker name
+  {\'Ecole Polytechnique F\'ed\'erale de Lausanne}% [3] affiliations
+  {fabio.zoccolan@epfl.ch}% [4] email
+  {Dr. Yoshihito Kazashi, Prof. Fabio Nobile}% [5] coauthors
+  
+The Dynamical Low-Rank Approximation (DLRA) technique is a time-dependent reduced-order model (ROM) known for its significant advantages in terms of computational time and accuracy. Its appeal in uncertainty quantification is due to the fact that its solution is composed of time-dependent deterministic and stochastic bases, allowing the approximation to better track the dynamics of the studied system. In the context of stochastic differential equations (SDEs) a rigorous mathematical setting was presented in [1], using the so-called Dynamically Orthogonal (DO) framework. The well-posedness of this setting is nontrivial due to the coupled nature of the DO system: for instance, the deterministic basis depends on all stochastic basis paths, and the equations involve the inversion of a Gramian matrix. When coming to stochastic discretization through a Monte-Carlo procedure, these features imply to deal with an interacting noisy particle dynamics. We proposed two fully discretized schemes based on the Monte-Carlo method, investigating their errors and analyzing possible issues arisen by the discretization of the Gramian inverse [2]. Theoretical results will be supported by numerical simulations.
+
+\medskip
+\begin{enumerate}
+ \item[{[1]}] Yoshihito Kazashi, Fabio Nobile, and Fabio Zoccolan. {\it Dynamical low-rank approximation for stochastic differential equations}. Mathematics of Computation (2024).
+ \item[{[2]}] Yoshihito Kazashi, Fabio Nobile, and Fabio Zoccolan. {\it Numerical Methods for Dynamical low-rank approximation of stochastic differential equations, Part I \& II}, in preparation (2025).
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {A probabilistic Numerical method for semi-linear elliptic Partial Differential Equations}% [1] talk title
+  {Adrien Richou}% [2] speaker name
+  {Universit\'e de Bordeaux, Institut de Math\'ematiques de Bordeaux, UMR CNRS 5251,
+  351 Cours de la Lib\'eration, 33405 Talence cedex, France.}% [3] affiliations
+  {adrien.richou@math.u-bordeaux.fr}% [4] email
+  {Emmanuel Gobet, Charu Shardul, Lukasz Szpruch}% [5] coauthors
+  
+    
+   
+In this presentation, we study the numerical approximation of a class of Backward Stochastic Differential Equations (BSDEs) in an infinite horizon setting that provide a probabilistic representation for semi-linear elliptic Partial Differential Equations. In particular, we are also able to treat some ergodic BSDEs that are related to elliptic PDEs or ergodic type. In order to build our numerical scheme, we put forward a new representation of the PDE solution by using a classical probabilistic representation of the gradient. Then, based on this representation, we propose a fully implementable numerical scheme using a Picard iteration procedure, a grid space discretization and a Monte-Carlo approximation. We obtain an upper bound for the numerical error and we also provide some numerical experiments that show the
+efficiency of this approach for small dimensions. Some numerical experiments also show that it is possible to efficiently handle larger dimensions by replacing grid-based spatial discretization with neural networks. This presentation is based on [1] for the non-ergodic framework and [2] for results concerning the ergodic case.
+
+\medskip
+
+\begin{enumerate}
+ \item[{[1]}] Gobet, Emmanuel, \& Richou, Adrien, \& Shardul, Charu (2025). Numerical approximation of Markovian BSDEs in infinite
+  horizon and elliptic PDEs. Draft.
+ \item[{[2]}] Gobet, Emmanuel, \& Richou, Adrien, \& Szpruch, Lukasz (2025).  Numerical approximation of ergodic BSDEs using non
+  linear Feynman-Kac formulas, Preprint arXiv:2407.09034 .
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {A Chen-Fliess series for stochastic differential equations driven by L{\'e}vy processes}% [1] talk title
+  {Anke Wiese}% [2] speaker name
+  {Heriot-Watt University, UK}% [3] affiliations
+  {A.Wiese@hw.ac.uk}% [4] email
+  {Kurusch Ebrahimi-Fard, Fr{\'e}d{\'e}ric Patras}% [5] coauthors
+  
+    
+
+Stochastic differential equations driven by L{\'e}vy processes have become established as models to describe the evolution of random variables such as financial and economic variables and more recently of climate variables, when the stochastic system shows jump discontinuities. In this talk, we derive a novel series representation of the flowmap of such stochastic 
+differential equations 
+in terms of commutators of vector fields with stochastic 
+coefficients, in other words a Chen--Strichartz formula. We provide an explicit expression for the components in this series. 
+Our results extend previous results
+for deterministic and continuous stochastic differential equations.  
+\end{talk}
+
+\begin{talk}
+  {Comparing Probabilistic Load Forecasters: Stochastic Differential Equations and Deep Learning}% [1] talk title
+  {Riccardo Saporiti}% [2] speaker name
+  {EPFL, Lausanne, Switzerland}% [3] affiliations
+  {riccardo.saporiti@epfl.ch}% [4] email
+  {Fabio Nobile, Celia Garc\'ia-Pareja}% [5] coauthors
+  
+    
+
+Generating probabilistic predictions for the electricity-load profile is the foundation of efficient use of renewable energy and diminishing carbon footprint.
+
+In this talk, we consider the problem of creating probabilistic forecasts of the day-ahead electricity consumption profile of an agglomerate of buildings in the city of Lausanne (Switzerland) in the absence of an externally provided prediction function. 
+ 
+We propose a nonparametric, data-driven, approach based on It\^o' Stochastic Differential Equations (SDEs) [1]. Our work is novel in that the mean function of the SDE is expanded on a Fourier periodic basis, capturing intra-day and intra-week periodic features. 
+Using a derivative tracking term, we impose the trajectories of the process to revert toward the mean. To model high-volatility levels associated with more uncertain electricity consumption regimes, we employ a square-root type diffusion coefficients. 
+
+Maximum-Likelihood estimation is used to infer the parameters of the model coherently with the available observations of the time history. We show that the maximization problem is well posed and that it admits at least one solution over the feasible domain. 
+
+We compare the probabilistic predictions generated by the SDE with Deep Learning based probabilistic forecaster. 
+On the one hand, we introduce a Deep Learning forecaster based on Long short-term memory (LSTM) recurrent neural networks trained by minimizing the quantile loss function. This approach allows the generation of confidence intervals by sampling from the one-step-ahead univariate cumulative density function (CDF) associated with the electricity consumption of the future time instant. 
+On the other hand, inspired by [2], we consider Multivariate Quantile Function Forecasters that, based on Normalizing Flows, learn the multivariate cumulative density function of the day-ahead electricity consumption.
+
+Metrics such as Continuous ranked probability score and Prediction interval coverage percentage are used to assess the quality of the forecasts. 
+
+We show that SDEs generate reliable and interpretable predictions while presenting the most parsimonious and computationally efficient structure among the three models.
+
+
+\medskip
+
+ 
+
+\begin{enumerate}
+    \item[{[1]}] Riccardo Saporiti, Fabio Nobile, Celia Garc\'ia-Pareja. {\it Probabilistic Forecast of the Day-Ahead electricity consumption profile with Stochastic Differential Equations: a comparison with Deep Learning models}. In preparation.
+
+ \item[{[2]}] Kelvin Kan, Francois-Xavier Aubet, Tim Januschowski, Youngsuk Park, Konstantinos Benidis, Lars Ruthotto, and Jan Gasthaus (2022). {\it Multivariate Quantile Function Forecaster}. Proceedings of The 25th International Conference on Artificial Intelligence and Statistics, PMLR 151:10603-10621, 2022.
+ 
+\end{enumerate}
+ 
+\end{talk}

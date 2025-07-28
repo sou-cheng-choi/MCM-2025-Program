@@ -11,6 +11,8 @@ cleanpdf:
 	rm -f MCM_ProgramBook_TEX/*.pdf
 	rm -f MCM_ProgramBook_TEX/*.fdb_latexmk
 	rm -f MCM_ProgramBook_TEX/*.fls
+	rm -f MCM_ProgramBook_TEX/*.toc
+	rm -f MCM_ProgramBook_TEX/*.syntex.gz
 	rm -f MCM_ProgramBook_TEX/sess*.tex
 
 cleanpy:
@@ -23,7 +25,6 @@ cleanpy:
 	rm -f README_and_Scripts/TableSchedule.html
 	rm -f README_and_Scripts/Participants.tex
 	rm -f README_and_Scripts/out/*
-
 
 clean_pp:
 	@echo "\n*** Cleaning up preprocess directories..."
@@ -86,3 +87,12 @@ pgm-2024: # without timestamp, force TeX Live 2024 because there are some incomp
 
 pgm-ts-2024: # with timestamp, force TeX Live 2024
 	@./build_programbook.sh dated 2024
+
+app:
+	pkill -f "streamlit run mcm_streamlit_app_v2.py" || true && \
+	echo "\n*** Running Streamlit app..." && \
+	mkdir -p MCM--2025-Program-Personal && \
+	rm -f MCM-2025-Program-Personal/MCM2025_AIProgram*.* && \
+	cp MCM_ProgramBook_TEX/mcm_macros.sty MCM-2025-Program-Personal/ && \
+	cp preprocess/out/*_sess_talks.tex MCM-2025-Program-Personal/ && \
+	cd preprocess/app && streamlit run mcm_streamlit_app_v2.py --server.port 8502 && cd ../..	

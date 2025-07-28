@@ -1,0 +1,81 @@
+\section{Track I: Technical Session 7 - Sampling}\newpage
+
+\begin{talk}
+  {Polynomial approximation for efficient transport-based sampling}% [1] talk title
+  {Josephine Westermann}% [2] speaker name
+  {Heidelberg University}% [3] affiliations
+  {josephine.westermann@uni-heidelberg.de}% [4] email
+  {}% [5] coauthors
+  {}
+
+Sampling from non-trivial probability distributions is a fundamental challenge in uncertainty quantification and inverse problems, particularly when dealing with high-dimensional domains, costly-to-evaluate or unnormalized density functions, and non-trivial support structures. Measure transport via polynomial density surrogates [1] provides a systematic and constructive solution to this problem by reformulating it as a convex optimization task with deterministic error bounds. This approach is particularly efficient for smooth problems but can become computationally demanding when dealing with highly concentrated posterior distributions, as constructing the density surrogate requires many evaluations in regions where the density is nearly zero—leading to an inefficient allocation of computational resources. In this talk, we explore how the computational cost in such cases can be further reduced by first approximating the potential function with a polynomial. This additional approximation step shifts the focus of expensive evaluations toward capturing the underlying system more effectively. The surrogate-based posterior can then be evaluated cheaply and approximated with high accuracy, enabling efficient transport-based sampling. We discuss the implications of this strategy and examine its potential to enhance performance in demanding inference problems.
+
+\medskip
+
+\begin{enumerate}
+ \item[{[1]}] Westermann, J., \& Zech, J. (2025). \textit{Measure transport via polynomial density surrogates}. \textit{Foundations of Data Science}. \url{https://doi.org/10.3934/fods.2025001}
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {Fast Approximate Matrix Inversion via MCMC for Linear System Solvers}% [1] talk title
+  {Soumyadip Ghosh}% [2] speaker name
+  {IBM Research}% [3] affiliations
+  {ghoshs@us.ibm.com}% [4] email
+  {Vassil Alexandrov, Lior Horesh, Vasilieos Kalantzis, Anton Lebedev,  WonKyung Lee, Yingdong Lu, Tomasz Nowicki, Shashanka Ubaru, Olha Yaman}% [5] coauthors
+  
+    
+   
+%Your abstract goes here. Please do not use your own commands or macros.
+A key prerequisite of modern iterative solvers of linear algebraic equations $Ax=b$ is the fast computation of a pre-conditioner matrix $P$ that gives a good approximation to the (generalized) inverse of $A$ such that the set of equations obtained by pre-multiplying with $P$, $PAx=Pb$, is solved quickly. 
+We study the classical Ulan-von Neumann MCMC algorithm that was designed based on the Neumann infinite series representation of the inverse of a non-singular matrix. The parameters of the MCMC algorithm determine the overall time to solve $Ax=b$, which is a metric that 
+reflects both the time to compute the MCMC preconditioner $P$ and its quality as a preconditioner to solve the linear equations. Our main focus is on how the MCMC parameters should be tuned to speed up computations in applications that require repeated calls to the solver with varying matrices $A$, a common scenario for instance in numerical approximations of physical phenomena. 
+We present a model that relates key features of matrices $A$ with good choices of MCMC algorithm parameters that lead to a fast overall time to find a solution to $Ax=b$. A computationally efficient approach based on Bayesian experimental design is described to learn and update this model while minimizing the number of runs of the expensive solver in application settings that solve of linear system over well-defined sets of $A$ matrices. We present numerical experiments to illustrate the efficacy of this approach.
+In another contribution, we present a new MCMC algorithm which we term as \emph{regenerative Ulam-von Neumann} algorithm. It exploits a regenerative structure present in the Neumann series that underlies the original algorithm and improves on it by producing an unbiased estimator of the matrix inverse. A rigorous analysis of performance of the algorithm is provided. This includes the variance of the estimator, which allows one to estimate the time taken to obtain solutions of a desired quality. Finally, numerical experiments verify the qualitative effectiveness of the proposed scheme. 
+
+\end{talk}
+
+\begin{talk}
+  {Investigating general $L2$ discrepancies with Message-Passing Monte Carlo}% [1] talk title
+  {Ally Kwan and Lijia Lin}% [2] speaker name
+  {Foothill College and Johns Hopkins University}% [3] affiliations
+  {ally.kwan@yale.edu, llin72@jh.edu}% [4] email
+  {}% [5] speaker name 2
+  {}% [6] affiliation 2
+  {}% [7] email 2
+  {Nathan Kirk}% [8] coauthors
+  {}% [9] special session. Leave this field empty for contributed talks. 
+   
+Finding low-discrepancy (LD) points are essential to facilitate the use of quasi-Monte Carlo methods, which achieve faster convergence rate compared to traditional Monte Carlo methods. The Message-Passing Monte Carlo (MPMC)\textsuperscript {1} method utilizes graph neural networks to generate LD point sets, where, in the original model, the learning objective is set to the classical $L2$ star discrepancy. In this talk, we employ MPMC as an optimization tool to investigate the properties of LD point sets optimized with respect to other $L2$ discrepancy measures known in the literature and show evidence that the star discrepancy should not always be the standard measure to use in optimization pipelines. Further, we demonstrate the new MPMC module in the QMCPy Python package that is available for use with functionality such as choosing the discrepancy learning objective, specifying weights for high-dimensional problems, randomizations, and pretrained points for particular $N$ and $d$ combinations to facilitate use of the MPMC method.
+
+
+\begin{enumerate}
+ \item[{[1]}] Rusch, T. Konstantin and Kirk, Nathan and Bronstein, Michael M. and Lemieux, Christiane and Rus, Daniela (2024). {\it Message-Passing Monte Carlo: Generating low-discrepancy point sets via graph neural networks}. Proceedings of the National Academy of Sciences (PNAS).
+
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {Discrepancy calculation and generating vector searches for Kronecker and extensible lattice sequences}% [1] talk title
+  {Jimmy Nguyen and Anders Pride}% [2] speaker name
+  {University of California, Irvine and Illinois Institute of Technology}% [3] affiliations
+  {jimmyhn7@uci.edu, apride@hawk.illinoistech.edu}% [4] email
+  {}% [5] speaker name 2
+  {}% [6] affiliation 2
+  {}% [7] email 2
+  {}% [8] coauthors
+  {}% [9] special session. Leave this field empty for contributed talks. 
+
+We investigate extensible lattice sequences and Kronecker sequences for arbitrary sample sizes $n$, which are used for Quasi-Monte Carlo sampling. We give methods for efficiently computing the discrepancy and the weighted sum of squared discrepancy of these points, where the discrepancy is defined in terms of a symmetric, positive definite, periodic kernel of product form. We use these measures to perform component-by-component searches for generating vectors and compare these to popular choices. Additionally, we implement various stopping criteria for Quasi-Monte Carlo cubature and are adding our contributions to the Python QMCPy open source library.
+
+%\medskip
+
+% APA reference style is recommended.
+% \begin{enumerate}
+%  \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+%  \item[{[2]}] Roberts, Gareth O, \& Rosenthal, Jeffrey S. (2002).  Optimal scaling for various Metropolis-Hastings algorithms, \textbf{16}(4), 351--367.
+% \end{enumerate}
+
+\end{talk}

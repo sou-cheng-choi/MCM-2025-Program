@@ -1,0 +1,45 @@
+\section{Track E: Technical Session 13 - ML \& Optimization}\newpage
+
+\begin{talk}
+  {Learning cooling strategies in simulated annealing through binary interactions}% [1] talk title
+  {Fr\'ed\'eric Blondeel}% [2] speaker name
+  {KULeuven \& UniFe}% [3] affiliations
+  {frederic.blondeel@kuleuven.be}% [4] email
+  {Lorenzo Pareschi, Giovanni Samaey}% [5] coauthors
+  
+    
+   
+Global optimization is amongst the hardest to solve problems. This is because finding the global minimum can usually only be guaranteed to be found in infinite time. Therefore one usually relies on meta-heuristic algorithms to guide the search and improve chances of successfully identifying the minimum. One particular family of algorithms is simulated annealing (SA). This family of algorithms is inspired by real-world metallurgy and is based on the Metropolis-Hastings algorithm. It works by randomly sampling $N$ particles on the search space, each with a given temperature $T$. The movement of these particles is analogous to a Brownian random walk with step size proportional to temperature. The temperature is gradually cooled down over the course of the simulation according to some predefined schedule. Due to the Metropolis-Hastings-like acceptance-rejection rule, these particles can jump out of local minima and are expected to move towards the lowest energy state, i.e., the global minimum. It is the design of these cooling schedules for SA that we wish to improve. This is because they directly impact the efficiency of the optimization tool. Typically cooling schedules are inverse logarithmic or geometric decays in time. Here, we consider a collective SA dynamic where particles \textit{interact} to learn the optimal temperature cooling strategy. This is inspired by the well-known particle-swapping technique known as parallel tempering (PT). To this aim we introduce a Boltzmann-type description where particles (partially) exchange their temperatures, therefore slowly cooling down the overall mean temperature. In order to simulate the dynamic we use a direct simulation Monte Carlo (DSMC) algorithm known as Nanbu-Babovsky. We show on various test functions (Ackley, Rastrigin, etc.) that this novel approach outperforms the standard SA with logarithmic and geometric annealing schedules.
+
+\end{talk}
+
+\begin{talk}
+  {Accuracy of Discretely Sampled Stochastic Policies in Continuous-Time Reinforcement Learning}% [1] talk title
+  {Du Ouyang}% [2] speaker name
+  {Department of Mathematical Sciences, Tsinghua University}% [3] affiliations
+  {oyd21@mails.tsinghua.edu.cn}% [4] email
+  {Yanwei Jia, Yufei Zhang}% [5] coauthors
+  
+    
+   
+
+
+\medskip
+
+How to execute a stochastic policy in continuous-time environments is crucial for real-time operations and decision making. We show that, by sampling actions from a stochastic policy at a fixed time grid and then executing a piecewise constant control process, the controlled state process converges to the corresponding aggregated dynamics in the weak sense as the grid size shrinks to zero and obtain the convergence rate. Specifically, under sufficiently regular conditions on the coefficients, the optimal convergence rate of $O(|\mathscr{G}|)$ is achieved with respect to the time grid $\mathscr{G}$. For less regular coefficients, a convergence rate is established that varies according to the degree of regularity of the coefficients. Additionally, we also derive large deviation bounds for the weak error. Beyond weak error convergence, strong convergence results are proved with a convergence order of $O(|\mathscr{G}|^{1/2})$ in cases where volatility is uncontrolled. Furthermore, we provide a counterexample to demonstrate that no strong convergence occurs when volatility is controlled. Based on these results, we analyze the bias and variance of the policy evaluation and policy gradient estimators in various algorithms for continuous-time reinforcement learning caused by discrete sampling.
+
+
+\end{talk}
+
+\begin{talk}
+  {Minimizing Functions with Sparse Samples: A Fast Interpolation Approach
+}% [1] talk title
+  {Yiqing Zhou}% [2] speaker name
+  {KU Leuven}% [3] affiliations
+  {yiqing.zhou@kuleuven.be}% [4] email
+  {Karsten Naert, Dirk Nuyens}% [5] coauthors
+  
+    
+   
+Minimizing a function with limited sample points is challenging when function evaluations are costly. We propose a fast interpolation-based approach using the Fast Fourier Transform (FFT) to estimate the minimum more efficiently. By interpolating from a sparse set of samples, our method achieves high accuracy with significantly fewer function evaluations. Preliminary results demonstrate its effectiveness for smooth periodic functions.
+\end{talk}

@@ -4,7 +4,7 @@ from config import gsheets, interimdir, indir
 import util as ut
 
 
-def download_abstracts_from_csv(key: str, always_download: bool = True) -> None:
+def download_abstracts_from_csv(key: str, always_download: bool = False) -> None:
     """Download abstracts for a given key from its TalkID or SessionID CSV."""
     suffix = "sessionid" if key == "special_session_submissions" else "talkid"
     csv_path = os.path.join(interimdir, f"{key}_{suffix}.csv")

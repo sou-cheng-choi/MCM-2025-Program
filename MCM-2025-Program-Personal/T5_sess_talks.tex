@@ -1,0 +1,105 @@
+\section{Track J: Technical Session 5 - Quasi-Monte Carlo, Part II}\newpage
+
+\begin{talk}
+  {Approximation using median lattice algorithms}% [1] talk title
+  {Peter Kritzer}% [2] speaker name
+  {Austrian Academy of Sciences}% [3] affiliations
+  {peter.kritzer@oeaw.ac.at}% [4] email
+  {Takashi Goda, Zexin Pan}% [5] coauthors
+  
+    
+   
+We consider $L_2$-approximation of functions in a weighted Korobov space. We present a median algorithm, which is related to median integration rules, that have recently gained a lot of interest in the theory of quasi-Monte Carlo methods. Indeed, we use lattice rules as the underlying integration rules to approximate Fourier coefficients. As we will show, we can obtain a convergence rate that is arbitrarily close to optimal in terms of the number of evaluations needed of the function to be approximated.
+\end{talk}
+
+\begin{talk}
+  {Convergence Rates of Randomized Quasi-Monte Carlo Methods under Various Regularity Conditions}% [1] talk title
+  {Yang Liu}% [2] speaker name
+  {King Abdullah University of Science and Technology}% [3] affiliations
+  {yang.liu.3@kaust.edu.sa}% [4] email
+  % {Names of coauthors go here, no affiliations of coauthors please, all affiliations will be included in an appendix of 
+  % the program book}% [5] coauthors
+  
+    
+        
+        In this work, we analyze the convergence rate of randomized quasi-Monte Carlo (RQMC) methods under Owen's boundary growth condition (Owen, 2006) via spectral analysis. We examine the RQMC estimator variance for two commonly studied sequences—the lattice rule and the Sobol' sequence—using the Fourier transform and Walsh--Fourier transform, respectively. Under certain regularity conditions, our results reveal that the asymptotic convergence rate of the RQMC estimator's variance closely aligns with the exponent specified in Owen's boundary growth condition for both sequence types. We also provide an analysis for certain discontinuous integrands.
+
+        In addition, we investigate the \(L^p\) integrability of weak mixed first-order derivatives of the integrand and study the convergence rates of scrambled digital nets. We demonstrate that the generalized Vitali variation with parameter \(\alpha \in \left[\frac{1}{2}, 1\right]\) from Dick and Pillichshammer (2010) is bounded above by the \(L^p\) norm of the weak mixed first-order derivative, where \(p = \frac{2}{3-2\alpha}\). Consequently, when the weak mixed first-order derivative belongs to \(L^p\) for \(1 \leq p \leq 2\), the variance of the scrambled digital nets estimator converges at a rate of
+        \(
+        \mathcal{O}\Bigl(N^{-4+\frac{2}{p}} \log^{s-1} N\Bigr).
+        \)
+        Together, these results provide a comprehensive theoretical framework for understanding the convergence behavior of RQMC methods and scrambled digital nets under various regularity assumptions.
+        
+
+\medskip
+
+% If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+% Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+% APA reference style is recommended.
+\begin{enumerate}
+ \item[{[1]}] Liu, Y. (2024). Randomized quasi-Monte Carlo and Owen's boundary growth condition: A spectral analysis. arXiv preprint arXiv:2405.05181.
+ \item[{[2]}] Liu, Y. (2025). Integrability of weak mixed first-order derivatives and convergence rates of scrambled digital nets. arXiv preprint arXiv:2502.02266.
+\end{enumerate}
+
+% Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}
+
+\begin{talk}
+  {Use of rank-1 lattices in the Fourier neural operator}% [1] talk title
+  {Jakob Dilen}% [2] speaker name
+  {Department of Computer Science, KU Leuven}% [3] affiliations
+  {jakob.dilen@student.kuleuven.be}% [4] email
+  {Frances Y. Kuo, Dirk Nuyens}% [5] coauthors
+  
+    
+
+The ``Fourier neural operator'' [2] is a variant of the ``neural operator''.
+Its defining characteristic, compared to the regular neural operator, is that it transforms the input to the Fourier domain at the start of each layer. This transformation uses the $d$-dimensional FFT on a regular grid in $d$ dimensions. We describe how to do this more efficiently using rank-$1$ lattice points, which allow for a one-dimensional FFT algorithm, see, e.g., [1]. 
+
+\medskip
+\begin{enumerate}
+        \item[{[1]}] F. Y. Kuo, G. Migliorati, F. Nobile, and D. Nuyens. \textit{Function integration,
+reconstruction and approximation using rank-1 lattices}. Math. Comp., 90, April
+2021.   
+        \item[{[2]}] Z. Li, N. B. Kovachki, K. Azizzadenesheli, B. liu, K. Bhattacharya, A. Stuart,
+and A. Anandkumar. \textit{Fourier neural operator for parametric partial differential
+equations}. International Conference on Learning Representations, 2021.
+\end{enumerate}
+\end{talk}
+
+\begin{talk}
+  {Investigating the Optimum RQMC Batch Size for Betting and Empirical Bernstein Confidence Intervals}% [1] talk title
+  {Aadit Jain}% [2] speaker name
+  {Rancho Bernardo High School}% [3] affiliations
+  {aaditdjain@gmail.com}% [4] email
+  {Fred J.\ Hickernell, Art B.\ Owen, Aleksei G.\ Sorokin}% [5] coauthors
+  
+    
+   
+
+The Betting [1] and Empirical Bernstein (EB) [1,2] confidence intervals (CIs) are finite sample (non-asymptotic) and require IID samples. Since both are non-asymptotic, they are much wider than confidence intervals based on the Central Limit Theorem (CLT) due to the stronger coverage property they provide. To apply these finite sample CIs to randomized quasi-Monte Carlo (RQMC), we take $R$ independent replications of $n$ RQMC points, averaging the $n$ function evaluations within each replication. Given a fixed budget $N = nR$, we investigate the optimal $n$ that minimizes the CI widths for both methods.  
+%\medskip  
+
+Using the code from [1], we ran simulations on various integrands (smooth, rough, one-dimensional, multi-dimensional) and ridge functions. Interestingly, the optimal $n$ was quite small compared to $N$, often just 1 (plain IID), 2, or 4 when $N = 2^{10}$. Moreover, the optimal $n$ appeared to grow quite slowly as $N$ increased. Notably, both CI methods applied to RQMC outperformed plain IID when the optimal $n$ is greater than $1$.  
+%\medskip  
+
+This experimental trend aligns with our analysis of Bennett’s inequality for EB [2], which suggests that the optimum $n$ is $O(N^{1/(2\theta + 1)})$ for $\theta > 1/2$. 
+Specifically, for $\theta = 3/2$, which occurs for smoother integrands, we obtain $n = O(N^{1/4})$. For $\theta = 1$, which corresponds to a typical Koksma-Hlawka rate, we get $n = O(N^{1/3})$. The ratio of RQMC EB CI widths to plain IID EB CI widths is $\Theta( N^{(1-2\theta)/(4\theta+2)})$. For $\theta=1$,
+we get a ratio of $\Theta(N^{-1/6})$,
+while for $\theta=3/2$,
+we get a more favorable width ratio of $\Theta(N^{-1/4})$. 
+%\medskip  
+
+
+On the other hand, CLT based CIs using RQMC  are only asymptotically valid. The value of $R$ could be any reasonable number that isn't too small, and remains constant as the total sample size, $N$, increases.  This means that $n = \Theta(N)$, which takes full advantage of the power of QMC.  It is also important to note that both Betting and EB require the random variables to be bounded between $0$ and $1$, unlike CLT based CIs. 
+
+
+\begin{enumerate}
+ \item[{[1]}] I. Waubdy-Smith and A. Ramdas. Estimating means of bounded random
+variables by betting. J.\ Roy.\ Statist.\ Soc.\ B, 86:1--27, 2024.
+ \item[{[2]}] A. Maurer and M. Pontil. Empirical Bernstein bounds and sample variance penalization. In Proceedings of the 22nd Annual Conference
+on Learning Theory (COLT), pages 1--9, 2009.
+\end{enumerate}
+
+
+\end{talk}

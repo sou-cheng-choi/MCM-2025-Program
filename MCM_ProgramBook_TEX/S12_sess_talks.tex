@@ -1,0 +1,112 @@
+\section{Track F: Stochastic Computation and Complexity, Part IV}\newpage
+
+\begin{talk}
+  {Optimal strong approximation of SDEs with H\"older continuous drift coefficient}% [1] talk title
+  {Larisa Yaroslavtseva}% [2] speaker name
+  {University of Graz}% [3] affiliations
+  {larisa.yaroslavtseva@uni-graz.at}% [4] email
+  {Simon Ellinger and Thomas M\"uller-Gronbach}% [5] coauthors
+  
+    
+   
+We study strong approximation of the solution of a scalar stochastic differential equation (SDE)
+\begin{equation}\label{sde0}
+ \begin{aligned}
+  dX_t & = \mu(X_t) \, dt +  dW_t, \quad t\in [0,1],\\
+  X_0 & = x_0
+ \end{aligned}
+\end{equation}
+at the final time point $1$
+in the case that  the drift coefficient  $\mu$ is $\alpha$-H\"older continuous with $\alpha\in(0, 1]$.
+Recently, it was  shown in [1] that for such SDEs the equidistant Euler approximation achieves an $L^p$-error rate of at least $(1+\alpha)/2$, up to an arbitrary small $\varepsilon$,
+in terms of the number of evaluations of the driving Brownian motion $W$.
+In this talk  we  
+present a matching  lower error bound.   More precisely, we show that
+the $L^p$-error rate $(1+\alpha)/2$ can
+not be improved in general by  no numerical 
+method based on finitely many evaluations of $W$ at fixed time points. For the proof of this result we choose  $\mu$ to be the Weierstrass function and we employ  the coupling of noise technique  recently introduced in [2].
+
+
+
+
+\begin{enumerate}
+ \item[{[1]}] Butkovsky, O., Dareiotis, K., \& Gerencs\'er, M. (2021). Approximation of SDEs: a stochastic sewing approach. Probab. Theory Related Fields, \textbf{181}(4), 975--1034
+ \item[{[2]}] M\"uller-Gronbach, T.  \& Yaroslavtseva, L. (2023). Sharp lower error bounds for strong approximation of
+ SDEs with a discontinuous drift coefficient by coupling of noise. Ann. Appl. Probab. \textbf{33}, 902---935.
+\end{enumerate}
+
+
+\end{talk}
+
+\begin{talk}
+  {Tractability of $L_2$-approximation and integration in weighted Hermite spaces of finite smoothness}% [1] talk title
+  {Gunther Leobacher}% [2] speaker name
+  {University of Graz}% [3] affiliations
+  {gunther.leobacher@uni-graz.at}% [4] email
+  {Adrian Ebert, Friedrich Pillichshammer}% [5] coauthors
+  {Stochastic Computation and Complexity}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+
+We consider integration and $L_2$-approximation for functions over $\mathbb R^s$ from weighted Hermite spaces as introduced in [1]. We study tractability of the integration and $L_2$-approximation problem for the different Hermite spaces, which describes the growth rate of the information complexity when the error threshold $\varepsilon$ tends to 0 and the problem dimension $s$ grows to infinity. Our main results are characterizations of tractability in terms of the involved weights, which  model the importance of the successive coordinate directions for functions from the weighted Hermite spaces.
+
+\medskip
+
+\begin{enumerate}
+ \item[{[1]}] Ch.~Irrgeher and G.~Leobacher. High-dimensional integration on the $\mathbb R^d$, weighted Hermite spaces, and orthogonal transforms. \textit{J. Complexity} 31: 174--205, 2015. 
+\end{enumerate}
+
+
+\end{talk}
+
+\begin{talk}
+  {Malliavin differentiation of Lipschitz SDEs and BSDEs and an Application to Quadratic Forward-Backward SDEs}% [1] talk title
+  {Alexander Steinicke}% [2] speaker name
+  {University of Leoben}% [3] affiliations
+  {alexander.steinicke@unileoben.ac.at}% [4] email
+  {Hannah Geiss, C\'eline Labart, Adrien Richou}% [5] coauthors
+  {Stochastic Computation and Complexity}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+Geiss and Zhou [1] showed that SDEs and BSDEs with Lipschitz generators admit Malliavin differentiability in the Brownian setting. We extend and apply this result in the L\'evy case and present a differentiation formula for coefficients that are Lipschitz in the solution variable with respect to the Skorohod metric. The obtained formula then allows us to show the existence and uniqueness of solutions to a class of quadratic and superquadratic forward-backward SDE systems.
+
+\medskip
+
+\begin{enumerate}
+ \item[{[1]}] Geiss, S.~and Zhou, X.~(2024). {\it Coupling of Stochastic Differential Equations on the Wiener Space}. https://arxiv.org/pdf/2412.10836.
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {A Unified Treatment of Tractability for Approximation Problems Defined on Hilbert Spaces}% [1] talk title
+  {Fred J. Hickernell}% [2] speaker name
+  {Illinois Institute of Technology}% [3] affiliations
+  {hickernell@iit.edu}% [4] email
+  {Onyekachi Emenike and Peter Kritzer}% [5] coauthors
+  
+    
+   
+The presenter and co-authors showed in [2] how to unify many of the equivalent conditions for various notions of tractability for approximation problems defined on Hilbert spaces.  This talk describes those results.
+
+Let $\{\mathcal{F}_d\}_{d \in \mathbb{N}}$ and $\{\mathcal{G}_d\}_{d \in \mathbb{N}}$ be sequences of Hilbert spaces, and let $\{\textup{SOL}_d : \mathcal{F}_d \to \mathcal{G}_d\}_{d \in \mathbb{N}}$ be a sequence of linear solution operators  with positive singular values $\lambda_{1,d} \ge \lambda_{2,d} \ge \cdots$.  For input functions lying in $\mathcal{B}_d$, the \emph{unit ball} in $\mathcal{F}_d$, and when arbitrary linear functionals are available, the information complexity of this problem is known to be s$\textup{comp}(\varepsilon, d) = \min \{n \in \mathbb{N}_0 : \lambda_{n+1, d} \le \varepsilon\}$ (see [3]).  Different notions of tractability are defined in terms of how quickly $\textup{comp}(\varepsilon, d)$  increases as $\varepsilon^{-1}$ and/or $d$ tend to infinity.
+
+Equivalence results on tractability replace a condition on ordered singular values by a more accessible condition in terms of weighted sums of powers of singular values.  The theorems in [2] unify these arguments by providing proofs that cover a variety of special cases.
+
+The work in [1] presents a setting where the input functions lie not in the unit ball, but in a cone, $\mathcal{C}_d$, of tame functions.  We speculate on what the conditions on the  singular values might be equivalent to various notions of tractability for such classes of input functions.
+
+\begin{enumerate}
+\renewcommand{\labelenumi}{[\arabic{enumi}]}
+    \item
+Y.~Ding, F.~J. Hickernell, P.~Kritzer, and S.~Mak, \emph{Adaptive approximation for multivariate linear problems with inputs lying in a cone}, Multivariate Algorithms and Information-Based Complexity (F.~J. Hickernell and P.~Kritzer, eds.), DeGruyter, Berlin/Boston, 2020, pp.~109--145.
+
+ \item
+O.~Emenike, F.~J. Hickernell, and P.~Kritzer, \emph{A unified treatment of tractability for approximation problems defined on {H}ilbert spaces}, J. Complexity \textbf{84} (2024), 101856.
+
+\item 
+E.~Novak and H.~Wo{\'{z}}niakowski, \emph{Tractability of multivariate problems {V}olume {I}: {L}inear information}, EMS Tracts in Mathematics, no.~6, European Mathematical Society, Z\"urich, 2008.
+
+\end{enumerate}
+
+
+\end{talk}

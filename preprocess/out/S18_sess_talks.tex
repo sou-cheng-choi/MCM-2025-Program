@@ -1,0 +1,95 @@
+\section{Track C: Advances in Adaptive Hamiltonian Monte Carlo}\newpage
+
+\begin{talk}
+  {GIST: Gibbs self-tuning for locally adapting Hamiltonian Monte Carlo}% [1] talk title
+  {Bob Carpenter}% [2] speaker name
+  {Flatiron Institute}% [3] affiliations
+  {bcarpenter@flatironinstitute.org}% [4] email
+  {}% [5] coauthors
+  
+    
+   
+I will introduce the Gibbs self-tuning (GIST) framework for automatically tuning Metropolis algorithms and apply it to locally adapting the number of steps, step size, and mass matrix in Hamiltonian Monte Carlo (HMC).  After resampling momentum, each iteration of GIST Gibbs samples tuning parameters based on the current position and momentum.  Like with HMC, the Metropolis step for the Hamiltonian proposal is adjusted for the Gibbs sampling.
+
+I will demonstrate how randomized Hamiltonian Monte Carlo (HMC), multinomial HMC, the No-U-Turn Sampler (NUTS), and the Apogee-to-Apogee Sampler can be cast as GIST samplers that adapt the number of steps.  I will then introduce an approach to tuning step size that can be naturally combined with NUTS and demonstrate its effectiveness empirically on both multivariate normal and multiscale distributions with varying curvature.  
+
+I will sketch an approach to local mass matrix adaptation, demonstrate how it works for log concave distributions, then outline the problems remaining for efficiency and generalizability to other distributions.
+
+\end{talk}
+
+\begin{talk}
+  {Acceleration of the No-U-Turn Sampler}% [1] talk title
+  {Nawaf Bou-Rabee}% [2] speaker name
+  {Rutgers University}% [3] affiliations
+  {nawaf.bourabee@rutgers.edu}% [4] email
+  {}% [5] coauthors
+  
+    
+   
+
+\medskip
+
+The No-U-Turn Sampler (NUTS) is a state-of-the-art Markov chain Monte Carlo method widely used in Bayesian computation [7,8], yet its theoretical properties remain poorly understood. In this talk, I will present the first rigorous mixing time bounds for NUTS on a class of high-dimensional Gaussian targets with both high- and low-variance directions. Our analysis uncovers a striking phase transition: when initialized from the region of concentration, NUTS exhibits ballistic mixing in regimes dominated by high-variance directions, and diffusive mixing otherwise [1]. These results provide the first theoretical evidence that the U-turn mechanism can recover the acceleration of critically damped randomized Hamiltonian Monte Carlo [4,5,6].  Our analysis combines a sharp concentration result for the U-turn condition [1,2] with a recent coupling framework for localized mixing [3]. 
+
+\begin{enumerate}
+ \item[{[1]}] Bou-Rabee, Nawaf, \& Oberd\"{o}rster, Stefan (2025). {\it Acceleration of the No-U-turn Sampler}. Forthcoming.
+ \item[{[2]}] Bou-Rabee, Nawaf, \& Oberd\"{o}rster, Stefan (2024). {\it Mixing of the No-U-Turn Sampler and the Geometry of Gaussian Concentration}. arXiv:2410.06978 [math.PR]
+ \item[{[3]}] Bou-Rabee, Nawaf, \& Oberd\"{o}rster, Stefan (2024). {\it Mixing of Metropolis-Adjusted Markov Chains via Couplings: The High Acceptance Regime}. Electronic Journal of Probability. Vol.~29,  No.~89, pages 1-27.  
+ \item[{[4]}]  Lu, Jianfeng \& Wang, Lihan (2022). {\it On explicit L$^2$-convergence rate estimate for piecewise deterministic Markov processes in MCMC algorithms.} Annals of Applied Probability, Vol.~32, No.~2, pages 1333-1361.
+ \item[{[5]}] Eberle, Andreas \& L\"{o}rler, Francis (2024). {\it Non-reversible lifts of reversible diffusion processes and relaxation times.} Probability Theory and Related Fields.
+ \item[{[6]}] Durmus, Alain;  Gruffaz, Samuel;  Kailas, Miika;  Saksman, Eero, \&  Vihola, Matti (2023). {\it On the convergence of
+dynamic implementations of Hamiltonian Monte Carlo and no U-turn samplers.} arXiv:2307.03460  [stat.CO] 
+\item[{[7]}]  Hoffman, Matthew  \& Gelman, Andrew  (2014). {\it The no-U-turn sampler: Adaptively setting path lengths in
+Hamiltonian Monte Carlo.} Journal of Machine Learning Research. Vol.~15, No.~1, pages~1593-1623.
+\item[{[8]}]   Carpenter, Bob; Gelman, Andrew;  Hoffman, Matthew; Lee, Daniel;  Goodrich, Ben; Betancourt, Michael; Brubaker, Marcus;
+Guo, Jiqiang; Li, Peter, and  Riddell, Allen  (2016). {\em Stan: A Probabilistic Programming Language.} Journal of
+Statistical Software, Vol.~76, No.~1, pages 1-32.
+\end{enumerate}
+\end{talk}
+
+\begin{talk}
+  {ATLAS: Adapting Trajectory Lengths and Step-Size for Hamiltonian Monte Carlo}% [1] talk title
+  {Chirag Modi}% [2] speaker name
+  {New York University}% [3] affiliations
+  {modichirag@nyu.edu}% [4] email
+  {}% [5] coauthors
+  
+    
+
+Hamiltonian Monte-Carlo (HMC) and its auto-tuned variant, the No U-Turn Sampler (NUTS)
+
+can struggle to accurately sample distributions with complex geometries, e.g., varying cur-
+vature, due to their constant step size for leapfrog integration and fixed mass matrix. In this
+
+talk, I will present a strategy to locally adapt the step size parameter of HMC at every iter-
+ation by evaluating a low-rank approximation of the local Hessian and estimating its largest
+
+eigenvalue. I will then combine it with a strategy to similarly adapt the trajectory length
+by monitoring the no U-turn condition, resulting in an adaptive sampler, ATLAS: adapting
+trajectory length and step-size. I will further use a delayed rejection framework for making
+multiple proposals that improve the computational efficiency of ATLAS, and develop an
+
+approach for automatically tuning its hyperparameters during warmup. Finally, I will com-
+pare ATLAS with NUTS on a suite of synthetic and real world examples, and show that
+
+i) unlike NUTS, ATLAS is able to accurately sample difficult distributions with complex
+geometries, ii) it is computationally competitive to NUTS for simpler distributions, and iii)
+it is more robust to the tuning of hyperparameters.
+\medskip
+
+\end{talk}
+
+\begin{talk}
+  {AutoStep: Locally adaptive involutive MCMC}% [1] talk title
+  {Trevor Campbell}% [2] speaker name
+  {University of British Columbia}% [3] affiliations
+  {trevor@stat.ubc.ca}% [4] email
+  {Tiange Liu, Nikola Surjanovic, Miguel Biron-Lattes, Alexandre Bouchard-C\^ot\'e}% [5] coauthors
+  {Advances in Adaptive Hamiltonian Monte Carlo}% [6] special session. Leave this field empty for contributed talks. 
+    
+
+\medskip
+
+Many common Markov chain Monte Carlo (MCMC) kernels can be formulated using a deterministic involutive proposal with a step size parameter.  Selecting an appropriate step size is often a challenging task in practice; and for complex multiscale targets, there may not be one choice of step size that works well globally.  In this talk, I'll address this problem with a novel class of involutive MCMC methods---AutoStep MCMC---that selects an appropriate step size at each iteration adapted to the local geometry of the target distribution.  I'll present theoretical results guaranteeing that under mild conditions AutoStep MCMC is $\pi$-invariant, irreducible, and aperiodic, and provides bounds on expected energy jump distance and cost per iteration. The talk will conclude with empirical results examining the robustness and efficacy of the proposed step size selection procedure.
+
+\end{talk}

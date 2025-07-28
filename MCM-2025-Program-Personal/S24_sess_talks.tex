@@ -1,0 +1,80 @@
+\section{Track C: Nested expectations: models and estimators, Part II}\newpage
+
+\begin{talk}
+  {Stochastic gradient with least-squares control variates}% [1] talk title
+  {Matteo Raviola}% [2] speaker name
+  {\'Ecole polytechnique f\'ed\'erale de Lausanne}% [3] affiliations
+  {matteo.raviola@epfl.ch}% [4] email
+  {Fabio Nobile, Nathan Schaeffer}% [5] coauthors
+  
+  
+  
+  The stochastic gradient (SG) method is a widely used approach for solving stochastic optimization problems, but its convergence is typically slow.
+  Existing variance reduction techniques, such as SAGA [1], improve convergence by leveraging stored gradient information; however, they are restricted to settings where the objective functional is a finite sum, and their performance degrades when the number of terms in the sum is large.
+  In this work, we propose a novel approach which also works when the objective is given by an expectation over random variables with a continuous probability distribution.
+  Our method constructs a control variate by fitting a linear model to past gradient evaluations using weighted discrete least-squares, effectively reducing variance while preserving computational efficiency.
+  We establish theoretical sublinear convergence guarantees and demonstrate the method's effectiveness through numerical experiments on random PDE-constrained optimization.
+  
+  \medskip
+  
+  \begin{enumerate}
+    \item[{[1]}] Defazio, A., Bach, F., \& Lacoste-Julien, S. (2014). {\it SAGA: A fast incremental gradient method with support for non-strongly convex composite objectives.} Advances in neural information processing systems, 27.
+  \end{enumerate}
+  
+\end{talk}
+
+\begin{talk}
+  {A one-shot method for Bayesian optimal experimental design}% [1] talk title
+  {Philipp A. Guth}% [2] speaker name
+  {RICAM, Austrian Academy of Sciences}% [3] affiliations
+  {philipp.guth@ricam.oeaw.ac.at}% [4] email
+  {Robert Gruhlke, Claudia Schillings}% [5] coauthors
+  {Nested expectations: models and estimators, Part II}% [6] special session. Leave this field empty for contributed talks. 
+    
+  
+Bayesian optimal experimental design (BOED) problems often involve nested integrals, making their direct computation challenging. To address this, a one-shot optimization approach is proposed, which decouples the design parameters from the forward model during the optimization process. In addition, the solution of the forward model can be replaced by a surrogate that is trained during the one-shot optimization. This allows for the generation of computationally inexpensive samples. Efficient sampling strategies are particularly important in BOED, as they reduce the high computational cost of nested integration, ultimately making the optimization more tractable.
+
+
+
+%\medskip
+%
+%If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+%Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+%APA reference style is recommended.
+%\begin{enumerate}
+% \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+% \item[{[2]}] Roberts, Gareth O, \& Rosenthal, Jeffrey S. (2002).  Optimal scaling for various Metropolis-Hastings algorithms, \textbf{16}(4), 351--367.
+%\end{enumerate}
+%
+%Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}
+
+\begin{talk}
+  {Langevin-based strategies for nested particle filters}% [1] talk title
+  {Sara P\'erez-Vieites}% [2] speaker name
+  {Aalto University}% [3] affiliations
+  {sara.perezvieites@aalto.fi}% [4] email
+  {Nicola Branchini, V\'ictor Elvira and Joaqu\'in M\'iguez}% [5] coauthors
+  
+    
+   
+Many problems in some of the most active fields of science require to estimate parameters and predict the evolution of complex dynamical systems using sequentially collected data. The nested particle filter (NPF) framework stands out since it is the only fully recursive probabilistic method for Bayesian inference. That is, it computes the joint posterior distribution of the parameters and states while maintaining a computational complexity of $\mathcal{O}(T)$, which makes it particularly suitable for long observation sequences. 
+
+A key strategy to keep particle diversity in the parameter space, given the static nature of the parameters, is jittering. The parameter space is explored by perturbing a subset of particles with arbitrary variance or applying a controlled variance to all particles. As the perturbations are controlled, it ensures convergence to the true posterior distribution while keeping the full framework recursive. However, this is not an efficient exploration strategy, particularly for problems with a higher dimension in the parameter space.
+
+To address this limitation, we propose a Langevin-based methodology within the NPF framework. A challenge is that the required score function is intractable. We propose to approximate the score with an accurate method that is provably stable over time, and to explore strategies to reduce its computational cost while retaining accuracy.
+This approach significantly improves the scalability of NPF in the parameter dimension, while still ensuring asymptotic convergence to the true posterior, as well as maintaining computational feasibility.
+
+\medskip
+
+
+%If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+%Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+%APA reference style is recommended.
+%\begin{enumerate}
+% \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+% \item[{[2]}] Roberts, Gareth O, \& Rosenthal, Jeffrey S. (2002).  Optimal scaling for various Metropolis-Hastings algorithms, \textbf{16}(4), 351--367.
+%\end{enumerate}
+
+%Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}

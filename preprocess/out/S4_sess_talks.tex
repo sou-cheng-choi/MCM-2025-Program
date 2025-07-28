@@ -1,0 +1,106 @@
+\section{Track D: Hardware or Software for (Quasi-)Monte Carlo Algorithms, Part I}\newpage
+
+\begin{talk}
+  {Multilevel quasi-Monte Carlo without replications}% [1] talk title
+  {Pieterjan Robbe}% [2] speaker name
+  {Sandia National Laboratories}% [3] affiliations
+  {pmrobbe@sandia.gov}% [4] email
+  {Aleksei Sorokin, Gianluca Geraci, Fred J. Hickernell, Mike Eldred}% [5] coauthors
+  {Hardware or Software for (Quasi-)Monte Carlo Algorithms}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+In this talk, we explore a novel approach to multilevel quasi-Monte Carlo (MLQMC) sampling that eliminates the need for stochastic replications. Our approach for estimating the level-wise variances is based on the Bayesian cubature framework introduced in [1]. Empirical results from a series of numerical experiments illustrate the effectiveness of our method in various applications. We discuss the integration of our new method in Dakota, Sandia's flagship UQ software package.
+
+\medskip
+
+\begin{enumerate}
+  \item[{[1]}] Jagadeeswaran, R., \& Hickernell, F.\,J. (2019). Fast automatic Bayesian cubature using lattice sampling. Statistics and Computing, \textbf{29}(6), 1215--1229.
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {A nested Multilevel Monte Carlo framework for efficient simulations on FPGAs}% [1] talk title
+  {Irina-Beatrice Haas}% [2] speaker name
+  {Mathematical Institute, University of Oxford}% [3] affiliations
+  {irina-beatrice.haas@maths.ox.ac.uk}% [4] email
+  {Michael B. Giles}% [5] coauthors
+  {Hardware or Software for (Quasi-)Monte Carlo Algorithm}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+
+Multilevel Monte Carlo (MLMC) is a computational method that reduces the cost of Monte Carlo simulations by combining SDE approximations with multiple resolutions. A further avenue for significantly reducing cost and improving power efficiency of MLMC, notably for financial option pricing, is the use of low-precision calculations on configurable hardware devices such as Field-Programmable Gate Arrays (FPGAs). With this goal in mind, in this talk, we propose a new MLMC framework that exploits approximate random variables and fixed-point operations with optimised precision to compute most SDE paths with a lower cost.
+
+For the generation of random Normal increments, we discuss several methods based on the approximation of the inverse normal CDF (see e.g., [3]), and we argue that these methods could be implemented on FPGAs using small Look-Up-Tables to generate random numbers more efficiently than on CPUs or GPUs. 
+
+To set the bit-width of variables in the path generation we propose a rounding error model and optimise the precision of all variables on each Monte Carlo level. This optimisation stage is independent of the desired overall accuracy, and can therefore be performed off-line. 
+
+With these two key improvements, our proposed framework [2] offers higher computational
+savings than the existing mixed-precision MLMC framework [1].
+
+
+\medskip
+
+%If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+%Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+%APA reference style is recommended.
+
+\begin{enumerate}
+
+    \item[{[1]}] Brugger, C., de Schryver, C., Wehn, N., Omland, S., Hefter, M., Ritter, K., Kostiuk, A., \& Korn, R. (2014). Mixed precision multilevel Monte Carlo on hybrid computing systems. In Proceedings of the IEEE Conference on Computational Intelligence for Financial Engineering \& Economics (CIFEr) (pp. 215--222). IEEE. \url{https://doi.org/10.1109/CIFEr.2014.6924076}
+    
+    \item[{[2]}] Haas, I. B., \& Giles, M. B. (2025). A nested MLMC framework for efficient simulations on FPGAs. Accepted to appear in Monte Carlo Methods and Applications. arXiv preprint arXiv:2502.07123. \url{https://arxiv.org/abs/2502.07123}
+
+     \item[{[3]}] Giles, M.B., \& Sheridan-Methven, O. (2023). Approximating Inverse Cumulative Distribution Functions to Produce Approximate Random Variables. ACM Transactions on Mathematical Software, 49(3), no 26. \url{https://doi.org/10.1145/3604935}
+\end{enumerate}
+
+%Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}
+
+\begin{talk}
+  {CUDA implementation of MLMC on NVIDIA GPUs}% [1] talk title
+  {Mike Giles}% [2] speaker name
+  {University of Oxford}% [3] affiliations
+  {mike.giles@maths.ox.ac.uk}% [4] email
+  {}% [5] coauthors
+  {Hardware or Software for (Quasi-)Monte Carlo Algorithms}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+
+This talk will discuss the implementation of Multilevel Monte Carlo
+on NVIDIA GPUs.  It will focus on some of the tricks needed for best
+performance, such as on-the-fly generation of random numbers within
+CUDA kernels, and latency-hiding through GPU computations in anticipation
+of requests from the CPU host process which manages the MLMC optimisation.
+It will also discuss the opportunities and challenges in exploiting
+mixed-precision computing, using nested MLMC to perform most calculations
+at half precision (fp16) and just a few at single precision (fp32).
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Giles, M.B. \& Sheridan-Methven, O. (2022)
+  Analysis of nested multilevel Monte Carlo using approximate
+  Normal random variables. {\it SIAM/ASA
+Journal on Uncertainty Quantification}, \textbf{10}(1), 200--226.
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {Scalable and User-friendly QMC Sampling with UMBridge}% [1] talk title
+  {Chung Ming Loi}% [2] speaker name
+  {Durham University}% [3] affiliations
+  {chung.m.loi@durham.ac.uk}% [4] email
+  {Anne Reinarz}% [5] coauthors  Will and James?
+  {Hardware and Software for Quasi-Monte Carlo Methods}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+Uncertainty quantification (UQ) plays a crucial role in geoscience: Bayesian inference determines model parameters, such as the permeability and porosity of the sub-surface, that are typically impossible to determine accurately from observations. In practice, it is crucial to study the uncertainty in the inferred parameters to correctly quantify risk and make decisions. Despite its scientific value, performing UQ for an application is often a lengthy process due to a need for interdisciplinary expertise in both UQ and advanced simulation codes. In this talk, we will look at improving the workflow and computational efficiency of quasi-Monte Carlo (i.e., sampling/ensemble based) approaches to UQ applications. We introduce UM-Bridge [2], a universal software interface that facilitates integration of complex simulation models with an entire range of leading UQ packages. By separating concerns between simulation and UQ, UM-Bridge allows rapid development of cutting-edge applications. The newly implemented load balancing framework in UM-Bridge further enables scaling workloads to High Performance Computing clusters.
+
+\begin{enumerate}
+    \item[{[1]}] Graham, I. G., Kuo, F. Y., Nuyens, D., Scheichl, R., and Sloan, I. H. (2011). Quasi-Monte Carlo methods for elliptic PDEs with random coefficients and applications. Journal of Computational Physics, 230(10), 3668-3694.
+    \item[{[2]}]  L. Seelinger, V. Cheng-Seelinger, A. Davis, M. Parno, and A. Reinarz, “UM-Bridge: Uncertainty quantification and modeling bridge,” Journal of Open Source Software, vol. 8, no. 83, p. 4748, 2023. [Online]. Available: https://doi.org/10.21105/joss.04748
+\end{enumerate}
+
+\end{talk}

@@ -1,0 +1,507 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mcm_macros}
+
+\ExplSyntaxOn
+\cs_new:Npn \expandableinput #1
+{ \use:c { @@input } { \file_full_name:n {#1} } }
+\AddToHook{env/tabular/begin}
+{ \cs_set_eq:NN \input \expandableinput }
+\AddToHook{env/tabularx/begin}
+{ \cs_set_eq:NN \input \expandableinput }
+\ExplSyntaxOff
+
+% These commands show the draft water mark
+%\usepackage{draftwatermark}
+%\SetWatermarkAngle{60}
+%\SetWatermarkLightness{0.85}
+%\SetWatermarkFontSize{5cm}
+%\SetWatermarkScale{8.5}
+%\SetWatermarkText{DRAFT}
+
+\usepackage{tabularx,booktabs,enumitem}
+\usepackage{multirow,multicol}
+% The package allows rows and columns to be coloured, and even individual cells.
+\usepackage{colortbl,longtable}
+\usepackage{amsmath,amssymb,ifthen}
+\usepackage{graphicx,url,wrapfig,xcolor,rotating,epsfig}
+\usepackage{xparse}
+
+%===== Define geometry of the page
+%\setlength{\textheight}{25.2cm}
+%\setlength{\textwidth}{16.5cm} %\setlength{\textwidth}{18.2cm}
+%\setlength{\voffset}{-1.6cm}
+%\setlength{\hoffset}{-0.3cm} %\setlength{\hoffset}{-1.2cm}
+%\setlength{\evensidemargin}{-0.3cm}
+%\setlength{\oddsidemargin}{0.3cm}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{0.3cm}
+
+\renewcommand{\topfraction}{1}
+\renewcommand{\textfraction}{0}
+\setlength{\floatsep}{12pt plus 2pt minus 2pt}
+
+\hyphenation{quasi-random}
+\hyphenation{models}
+\hyphenation{poly-nomial}
+\hyphenation{poly-nomials}
+
+\definecolor{MySpecial1}{rgb}{0.9,1,0.9} % lighter green
+\definecolor{MySpecial2}{rgb}{0.75,1,0.75} % green
+\definecolor{MySpecial3}{rgb}{0.6,1,0.6} % darker green
+\definecolor{MyPlenary}{rgb}{1,1,0.8} % yellow
+\definecolor{MyEvent}{rgb}{1,0.83,0.61} % orange
+\definecolor{MyBlank}{rgb}{0.97,0.97,0.97} % gray
+
+\definecolor{UWGrey1}{HTML}{DFDFDF} % light grey
+\definecolor{UWGrey2}{HTML}{A2A2A2} % bright grey
+\definecolor{UWGrey3}{HTML}{787878} % grey
+\definecolor{UWGrey4}{HTML}{000000} % dark grey
+
+\definecolor{UWYellow1}{HTML}{F2EDA8} % light yellow
+\definecolor{UWYellow2}{HTML}{FAE100} % bright yellow
+\definecolor{UWYellow3}{HTML}{FED34C} % yellow
+\definecolor{UWYellow4}{HTML}{EAAB00} % dark yellow
+
+\definecolor{UWPink0}{HTML}{FFBEEF} % lighter pink
+\definecolor{UWPink1}{HTML}{EFBBF0} % light pink
+\definecolor{UWPink2}{HTML}{EF60AD} % bight pink
+\definecolor{UWPink3}{HTML}{DF1AA0} % pink
+\definecolor{UWPink4}{HTML}{A2006E} % dark pink
+
+\newcommand{\EmptyColor}{UWGrey1}
+\newcommand{\EventColor}{UWGrey1}
+\newcommand{\PlenaryColor}{UWYellow3}
+\newcommand{\OpeningClosingColor}{UWYellow1}
+\newcommand{\TutorialColor}{UWYellow2}
+\newcommand{\SessionTitleColor}{UWPink2}
+\newcommand{\SessionLightColor}{UWPink1}
+\newcommand{\SessionDarkColor}{UWPink0}
+
+\newcommand{\update}[1]{\begingroup\color{blue}#1\endgroup}
+\newcommand{\todo}[1]{\begingroup\color{red}#1\endgroup}
+
+\newcommand{\scnote}[1]{{\color{red}{\bf Sou-Cheng}: #1}}
+
+% ------------------------------------------------------------------------
+% New Definitions
+% ------------------------------------------------------------------------
+
+\newcommand{\mask}[1]{}		% this comment is not used, consider deleting it
+
+\makeatletter
+\newcommand{\clearemptydoublepage}{%
+ \newpage{\pagestyle{empty}{\cleardoublepage}}}
+
+% -- chapter ---------------------------------------------------------------
+% -- starts on a new odd page with no page number
+% -- no numbering
+% -- appears in the table of content
+% -- becomes the running header on even pages
+\renewcommand{\chapter}{%
+ \clearemptydoublepage\thispagestyle{empty}%
+ \secdef \Chapter \sChapter}%
+\newcommand{\Chapter}[2][default]{\sChapter {#2}}%
+\newcommand{\sChapter}[1]{%
+ \refstepcounter{chapter}%
+ \addcontentsline{toc}{chapter}{#1}%
+ \markboth{{\sffamily\small#1}}{{\sffamily\small#1}}%
+ \quad\vskip 8cm\hfill{\sffamily\Huge #1}\vskip 0.5cm\hrule%\vskip 1 cm% %\clearpage%
+ \pagebreak%
+ }
+
+% -- section ---------------------------------------------------------------
+% -- starts on a new page with no page number
+% -- no numbering
+% -- appears in the table of content
+% -- becomes the running header on odd pages
+\renewcommand{\section}{%
+ \clearpage%
+ \secdef \Section \sSection}%
+\newcommand{\Section}[2][default]{\sSection {#2}}%
+\newcommand{\sSection}[1]{%
+ \refstepcounter{section}%
+ \addcontentsline{toc}{section}{#1}%
+ \markright{{\sffamily\small #1}}%
+ {\sffamily\Large #1}\vskip 0.3cm\hrule\vskip 0.6cm%
+ }
+
+% -- table of contents -----------------------------------------------------
+% -- looks like a section
+\renewcommand\tableofcontents{%
+ \section{\contentsname}%
+ \@starttoc{toc}%
+ }
+
+% -- other sectioning commands ---------------------------------------------
+% -- no numbering
+% -- change the font style
+\setcounter{secnumdepth}{-2}
+\renewcommand\subsection{\@startsection {subsection}{1}{\z@}%
+ {-3.5ex \@plus -1ex \@minus -.2ex}%
+ {2.3ex \@plus.2ex}%
+ {\sffamily\large\underline}}
+\renewcommand\subsubsection{\@startsection{subsubsection}{2}{\z@}%
+ {-3.25ex\@plus -1ex \@minus -.2ex}%
+ {1.5ex \@plus .2ex}%
+ {\sffamily\large}}
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+ {3.25ex \@plus1ex \@minus.2ex}%
+ {-1em}%
+ {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent}%
+ {3.25ex \@plus1ex \@minus .2ex}%
+ {-1em}%
+ {\normalfont\normalsize\bfseries}}
+
+% -- bibliography ---------------------------------------------------------
+% -- just comment out two lines so that it is not a chapter
+\renewenvironment{thebibliography}[1]
+ {%\chapter*{\bibname
+ % \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}}%
+ \list{\@biblabel{\@arabic\c@enumiv}}%
+ {\settowidth\labelwidth{\@biblabel{#1}}%
+ \leftmargin\labelwidth
+ \advance\leftmargin\labelsep
+ \@openbib@code
+ \usecounter{enumiv}%
+ \let\p@enumiv\@empty
+ \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+ \sloppy\clubpenalty4000\widowpenalty4000%
+ \sfcode`\.\@m}
+ {\def\@noitemerr
+ {\@latex@warning{Empty `thebibliography' environment}}%
+ \endlist}
+
+\makeatother
+
+% -- adding a talk
+\newcounter{talk}
+\newenvironment{talk}[9]% [1] talk title
+ % [2] speaker name, [3] affiliations, [4] email,
+ % [5] coauthors, [6] special session
+ % [7] time slot
+ % [8] talk id, [9] session id or photo
+ {\needspace{6\baselineskip}%
+ \refstepcounter{talk}
+ \vskip 0pt\nopagebreak%
+ \colorbox{UWPink0}{\makebox[\textwidth][r]{#7}}\nopagebreak%
+ \ifthenelse{\equal{#9}{photo}}{%
+ \\\\\colorbox{UWPink0}{\makebox{\includegraphics[width=3cm]{./Photos/#8.jpg}}} 
+ %\ifthenelse{\equal{#10}{}{}}{#10}
+ \nopagebreak}{}%
+ \vskip 0pt\nopagebreak%
+ \label{#8}%
+ \textbf{#1}\vspace{3mm}\\\nopagebreak%
+ \textit{#2}\\\nopagebreak%
+ #3\\\nopagebreak%
+ \url{#4}\vspace{3mm}\\\nopagebreak%
+ \ifthenelse{\equal{#5}{}}{}{Coauthor(s): #5\vspace{3mm}\\\nopagebreak}%
+ \ifthenelse{\equal{#6}{}}{}{Special session: #6\quad p.\pageref{#9}\vspace{3mm}\\\nopagebreak}%
+}
+ {\leavevmode\vspace{1cm}\\\nopagebreak}%
+
+ % -- adding a talk with photo credit
+\newcounter{talkcr}
+\newenvironment{talkcr}[9]% [1] talk title
+ % [2] speaker name, [3] affiliations, [4] email,
+ % [5] coauthors, [6] special session
+ % [7] time slot
+ % [8] talk id, [9] session id or photo
+ {\needspace{6\baselineskip}%
+ \refstepcounter{talkcr}
+ \vskip 0pt\nopagebreak%
+ \colorbox{UWPink0}{\makebox[\textwidth][r]{#7}}\nopagebreak%
+ \ifthenelse{\equal{#9}{photo}}{%
+ \\\\\colorbox{UWPink0}{\makebox{\includegraphics[width=3cm]{./Photos/#8.jpg}}} 
+ %\ifthenelse{\equal{#10}{}{}}{#10}
+ {\tiny Photo: @ Claudia B\"orner}
+ \nopagebreak}{}%
+ \vskip 0pt\nopagebreak%
+ \label{#8}%
+ \textbf{#1}\vspace{3mm}\\\nopagebreak%
+ \textit{#2}\\\nopagebreak%
+ #3\\\nopagebreak%
+ \url{#4}\vspace{3mm}\\\nopagebreak%
+ \ifthenelse{\equal{#5}{}}{}{Coauthor(s): #5\vspace{3mm}\\\nopagebreak}%
+ \ifthenelse{\equal{#6}{}}{}{Special session: #6\quad p.\pageref{#9}\vspace{3mm}\\\nopagebreak}%
+}
+ {\leavevmode\vspace{1cm}\\\nopagebreak}%
+
+ % -- adding a panel session
+\newcounter{talkp}
+\newenvironment{talkp}[5]% [1] talk title
+ % [2] speaker name, [3] panelists  [4] time slot
+ % [5] talk id
+ {\needspace{6\baselineskip}%
+ \refstepcounter{talkp}
+ \vskip 0pt\nopagebreak%
+ \colorbox{UWPink0}{\makebox[\textwidth][r]{#4}}\nopagebreak%
+ %\ifthenelse{\equal{#9}{photo}}{%
+ %\\\\\colorbox{UWPink0}{\makebox{\includegraphics[width=3cm]{./Photos/#8.jpg}}}
+ %\ifthenelse{\equal{#10}{}{}}{#10}
+ %{\tiny Photo: @ Claudia B\"orner}
+ %\nopagebreak}{}%
+ \vskip 0pt\nopagebreak%
+ \label{#5}%
+ \textbf{#1}\vspace{3mm}\\\nopagebreak%
+ \textit{Moderator: #2}\\\nopagebreak%
+ %#3\\\nopagebreak%
+ %\url{#4}\vspace{3mm}\\\nopagebreak%
+ \ifthenelse{\equal{#3}{}}{}{Panelists: #3\vspace{3mm}\\\nopagebreak}%
+ %
+}
+ {\leavevmode\vspace{1cm}\\\nopagebreak}%
+
+% -- adding a special session
+\usepackage{titlecaps}
+\Resetlcwords
+\Addlcwords{and as but for if nor or so yet} % short conjunctions
+\Addlcwords{a an the} % articles
+\Addlcwords{as at by for in of off on per to up via} % short prepositions
+\newcounter{specialsession}
+\newenvironment{session}[9] % [1] session title
+ % [2] organiser name, [3] affiliations, [4] email
+ % [5] organiser name, [6] affiliations, [7] email
+ % [8] session id
+ % [9] third organiser info, if any
+ {\needspace{6\baselineskip}
+ \refstepcounter{specialsession}
+ \vskip 0pt\nopagebreak%
+ \label{#8}%
+% \textbf{Special Session~\ifnum\value{specialsession}<10 0\fi\arabic{specialsession}. 
+\textbf{\titlecap{#1}}\vspace{3mm}\\\nopagebreak%
+ \ifthenelse{\equal{#5}{}}{Organizer:}{Organizers:}\vspace{2mm}\\\nopagebreak%
+ \textit{#2}\\\nopagebreak%
+ #3\\\nopagebreak%
+ \url{#4}\vspace{3mm}\\\nopagebreak%
+ \ifthenelse{\equal{#5}{}}{}{\textit{#5}\\\nopagebreak%
+ #6\\\nopagebreak%
+ \url{#7}\vspace{3mm}\\\nopagebreak}%
+ \ifthenelse{\equal{#9}{}}{}{#9}%
+ \quad\\\nopagebreak%
+ \vspace{-2ex}\textbf{Session Description}:\\\nopagebreak%
+}
+ {\vskip 0pt\nopagebreak}%
+
+% third organiser info, if any
+\newcommand{\thirdorganizer}[3]
+% [1] organiser name, [2] affiliations, [3] email
+{\textit{#1}\\\nopagebreak%
+ #2\\\nopagebreak%
+ \protect\url{#3}\vspace{3mm}\\\nopagebreak}%
+
+
+% -- adding a special session part
+\newcommand{\sessionPart}[2]{% [1] part title,
+ % [2] time slot
+ \vspace{12pt}
+ \ifthenelse{\equal{#1}{}}{}{\colorbox{UWYellow2}{\makebox[\textwidth][l]{#1}}\nopagebreak\\}%
+ \colorbox{UWYellow2}{\makebox[\textwidth][l]{#2}}\nopagebreak%
+ \vskip 0pt\nopagebreak%
+}%
+
+% -- adding a special session talk
+\newcommand{\sessionTalk}[3]{% [1] talk title, [2] speaker name, [3] label
+ \needspace{3\baselineskip}%
+ \vskip 0pt\nopagebreak%
+ \textit{#2}\\\nopagebreak%
+ {\titlecap{#1}} \qquad p.~\pageref{#3}\nopagebreak%
+ \vskip 0pt\nopagebreak%
+}%
+
+% -- adding a participant
+\newcommand{\participant}[5]{% [1] name, [2] address, [3] email, [4-8] page refs
+ \begin{minipage}{0.45\textwidth} \raggedright%
+ \vskip 0pt\nopagebreak%
+ \textbf{#1}\\\nopagebreak%
+ #2\\ \nopagebreak%
+ %\ifthenelse{\equal{#2}{}}{}{#2\\ \nopagebreak}%
+ \url{#3}\\\nopagebreak%
+ \ifthenelse{\equal{#4}{}}{}{p.~\pageref{#4}}%
+ \ifthenelse{\equal{#5}{}}{}{, p.~\pageref{#5}}%
+ %\ifthenelse{\equal{#6}{}}{}{, p.~\pageref{#6}}%
+% \ifthenelse{\equal{#7}{}}{}{, p.~\pageref{#7}}%
+% \ifthenelse{\equal{#8}{}}{}{, p.~\pageref{#8}}%
+ \end{minipage}%
+ \vskip 0.5cm%
+}%
+
+% -- adding a participant no email
+\usepackage{xparse}
+\makeatletter
+\def\ParticipantList#1{%
+  % Check if argument is empty
+  \if\relax\detokenize{#1}\relax
+    % Empty argument, do nothing
+  \else
+    \ParticipantList@i#1,\@nil
+  \fi
+}
+\def\ParticipantList@i#1,#2\@nil{%
+  % Check if first argument is empty
+  \if\relax\detokenize{#1}\relax
+    % Skip empty first argument, continue with rest
+    \ifx\relax#2\relax
+      % nothing more
+    \else
+      \ParticipantList@i#2\@nil
+    \fi
+  \else
+    p.~\pageref{#1}%
+    \ifx\relax#2\relax
+      % nothing more
+    \else
+      ,~\ParticipantList@i#2\@nil
+    \fi
+  \fi
+}
+\makeatother
+
+%— \participantne takes: {name}{affiliation}[label1,label2,…] —
+\NewDocumentCommand{\participantne}{ m m O{} }{%
+  \begin{minipage}{0.45\textwidth}\raggedright
+    \textbf{#1}\\
+    \ifthenelse{\equal{#2}{}}{}{#2\\}%
+    \IfNoValueF{#3}{%
+      \ParticipantList{#3}%
+    }%
+  \end{minipage}\vskip0.5cm%
+}
+
+
+% -- adding a time slot
+\newcommand{\timeslot}[4]{% [1] day, [2] from, [3] to, [4] room
+ #1, #2 -- #3, #4}%
+
+% -- use this command if we do not want to show the schedule
+%\renewcommand{\timeslot}[4]{% [1] day, [2] from, [3] to, [4] room
+% Schedule to be announced later}%
+
+%---------------------------------------------------------
+% The following commands are for producing the timetables
+%---------------------------------------------------------
+%==== schedule table style
+% number of non-time columns, usually equals to number of parallel sessions
+\newcommand{\numcols}{5}
+\newcommand{\numgaps}{\the\dimexpr\numcols-1}
+\arrayrulecolor{white}		% default table border color
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{Z}{>{\hsize=\dimexpr\numcols\hsize+\tabcolsep * (2 * (\numcols - 1) ) + \arrayrulewidth* (\numcols - 1) \relax}Y}
+
+% -- adding a table heading
+\newcommand{\TableHeading}[1] % [1] day, date -- time segment (e.g. Afternoon II)
+ {& \multicolumn{\numcols}{Z}{\cellcolor{white}%
+ 	\large\textbf{#1}
+ }}
+
+% -- adding a table time, consider deleting it
+\newcommand{\tableTime}[2] % [1] from, [2] to
+ {#1--#2}%
+
+% -- adding a table event, usually a coffee break
+\newcommand{\TableEvent}[2]{
+	\rowcolor{\EventColor}				% color of the row
+	#1 &		 					% start time -- end time (e.g., 12:00 -- 18:00)
+	\multicolumn{\numcols}{Z}{#2}		% activity and note
+}
+\newcommand{\OpeningClosingEvent}[2]{
+	\rowcolor{\OpeningClosingColor}				% color of the row
+	#1 &		 					% start time -- end time (e.g., 12:00 -- 18:00)
+	\multicolumn{\numcols}{Z}{#2}		% activity and note
+}
+
+
+% -- adding a table plenary entry
+\newcommand{\tablePlenary}[6]{
+% [1] time, [2] location, [3] chair,
+% [4] speaker, [5] talk title, [6] talk id.
+	\rowcolor{\PlenaryColor} #1 &
+	\multicolumn{\numcols}{Z}{
+	\textbf{Plenary Talk: }  
+	\textbf{\textit{#4}}\unskip, p.~\pageref{#6}\par
+	Chair: \textit{#3}\unskip, #2\unskip}
+}%
+
+% -- adding a table tutorial entry
+\newcommand{\tableTutorial}[6]{
+	% [1] time, [2] location, [3] chair,
+	% [4] speaker, [5] talk title, [6] talk id.
+	\rowcolor{\TutorialColor} #1 &
+	\multicolumn{\numcols}{Z}{
+		#2\par%
+		\textbf{Tutorial} \vspace{1mm}\par%
+		\textbf{\textit{#4}} \par%
+		\textbf{#5} \quad p.~\pageref{#6} \vspace{1mm}\par%
+		\qquad Chair: \textit{#3}}
+}%
+
+% -- adding a table discussion entry
+\newcommand{\tableDiscussion}[5] % [1] location, [2] chair
+ % [3] speaker, [4] talk title, [5] talk id
+ {#1\par%
+ \textbf{Open Forum}: %\vspace{1mm}\par%
+ \textbf{#4} \quad p.~\pageref{#5} \vspace{1mm}\par%
+ \qquad Chair: \textit{#3}}% chair by speaker
+
+
+
+% -- adding a table special session entry
+\newcommand{\tableSpecial}[8]
+% [1] location, [2] organiser, [3] organiser
+% [4] session title, [5] part, [6] of, [7] session id, [8] chair
+ {#1\par%
+  \textbf{Special Session}\par%
+  \ifthenelse{\equal{#3}{}}{\textit{#2}}%
+                           {\textit{#2} and \textit{#3}}\par%
+  #4\ifthenelse{\equal{#6}{1}}{}{, Part #5 of #6}\quad p.~\pageref{#7} \par%
+  Chair: \textit{#8}}%
+
+% -- adding a table contributed session entry
+\newcommand{\tableContributed}[5] % [1] location, [2] chair
+                                  % [3] description, [4] part, [5] of
+ {#1\par%
+  \textbf{Technical Session} \vspace{2mm} \par%
+  Chair: \textit{#2}}%
+
+% -- adding a table talk entry
+\newcommand{\tableTalk}[3] % [1] speaker, [2] talk title, [3] talk id
+ {\hspace{-1ex}\textit{#1}\unskip, #2\unskip, p.~\pageref{#3}}%
+
+ 
+
+% -- adding a table special session entry
+\newcommand{\tableSpecialCL}[4]
+% [1] location, 
+% [2] session title, [3] session id, [4] chair
+%if it's part 1 or part 2 just put it in the title
+ {
+ #1\par%
+ \textbf{Special Session}
+ #2\unskip, p.~\pageref{#3}\par%
+ Chair: \textit{#4}}% 
+
+% -- adding a table contributed session entry
+\newcommand{\tableContributedCL}[3] % [1] location, [3] chair
+ % [2] description, 
+ {#1\par%
+ #2\par%
+ Chair: \textit{#3}}%
+
+% -- adding a table contributed session entry
+\newcommand{\tableContributedCancelled}[2] % [1] location, [3] chair
+ % [2] description, 
+ {#1\par%
+ #2\quad  \par%
+ CANCELLED SESSION}%
+
+
+% ----------------------------------------------------------------------------------------------------------
+% -- This reduces the spacing in the enumerate environment
+\newcounter{myenum}
+\renewenvironment{enumerate}
+ {\begin{list}{\arabic{myenum}.}{%
+ \usecounter{myenum}%
+ \setlength{\labelsep}{0.7em}%
+ \setlength{\topsep}{0em}%
+ \setlength{\itemsep}{0em}%
+ \setlength{\leftmargin}{30pt}}}{\end{list}}

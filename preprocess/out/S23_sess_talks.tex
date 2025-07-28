@@ -1,0 +1,58 @@
+\section{Track B: Analysis of Langevin and Related Sampling Algorithms, Part I}\newpage
+
+\begin{talk}
+  {Finite-Particle Convergence Rates for Stein Variational Gradient Descent}% [1] talk title
+  {Krishnakumar Balasubramanian}% [2] speaker name
+  {University of California, Davis}% [3] affiliations
+  {kbala@ucdavis.edu}% [4] email
+  {}% [5] coauthors
+  
+    
+   
+ We provide finite-particle convergence rates for the Stein Variational Gradient Descent (SVGD) algorithm in the Kernelized Stein Discrepancy ($\mathsf{KSD}$) and Wasserstein-2 metrics. Our key insight is that the time derivative of the relative entropy between the joint density of $N$ particle locations and the $N$-fold product target measure, starting from a regular initial distribution, splits into a dominant `negative part' proportional to $N$ times the expected $\mathsf{KSD}^2$ and a smaller `positive part'. This observation leads to $\mathsf{KSD}$ rates of order $1/\sqrt{N}$, in both continuous and discrete time, providing a near optimal (in the sense of matching the corresponding i.i.d. rates) double exponential improvement over the recent result by~[1]. Under mild assumptions on the kernel and potential, these bounds also grow polynomially in the dimension $d$. By adding a bilinear component to the kernel, the above approach is used to further obtain Wasserstein-2 convergence in continuous time. For the case of `bilinear + Mat\'ern' kernels, we derive Wasserstein-2 rates that exhibit a curse-of-dimensionality similar to the i.i.d. setting. We also obtain marginal convergence and long-time propagation of chaos results for the time-averaged particle laws. 
+
+\medskip
+
+
+\begin{enumerate}
+ \item[{[1]}] Shi, J., \& Mackey, L. (2023). A finite-particle convergence rate for Stein variational gradient descent. Advances in Neural Information Processing Systems, 36, 26831-26844.
+ %\item[{[2]}] L’Ecuyer, Pierre, \& Christiane Lemieux. (2002). Recent advances in randomized quasi-Monte Carlo methods. Modeling uncertainty: An examination of stochastic theory, methods, and applications, 419-474.
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {Convergence rates of kinetic Langevin dynamics with weakly confining potentials}% [1] talk title
+  {Lihan Wang}% [2] speaker name
+  {Carnegie Mellon University}% [3] affiliations
+  {lihanw@andrew.cmu.edu}% [4] email
+  {Giovanni Brigati, Gabriel Stoltz, Andi Q. Wang}% [5] coauthors
+  
+    
+   
+We discuss the long-time convergence behavior of kinetic Langevin dynamics, and show how the growth of the potentials in space and velocity impact the convergence rates of the dynamics, via weighted and weak Poincar\'e inequalities. The analysis is inspired by the Armstrong-Mourrat variational framework for hypocoercivity, which combines a weighted Poincar\'e-Lions inequality in time-augmented state space and an $L^2$ energy estimate.
+
+
+\end{talk}
+
+\begin{talk}
+  {Delocalization of Bias in Unadjusted Hamiltonian Monte Carlo}% [1] talk title
+  {Xiaoou Cheng}% [2] speaker name
+  {New York University}% [3] affiliations
+  {chengxo@nyu.edu}% [4] email
+  {Yifan Chen, Jonathan Niles-Weed, Jonathan Weare}% [5] coauthors
+  {Analysis of Langevin and Related Sampling Algorithms, Part I}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+Hamiltonian Monte Carlo is a commonly used algorithm to sample high dimensional probability distributions. However, for strongly log-concave distributions, existing analyses of the unadjusted algorithm show that the number of iterations follows a power law in terms of the dimension $d$, to ensure convergence within a desired error in the $W_2$ metric. Also, because of the large bias, Hamiltonian Monte Carlo is often Metropolized to remove the bias effectively. [1] suggests that for unadjusted Langevin algorithm, similar power law dimension scaling of convergence and bias in the $W_2$ metric can be misleading. There, for strongly log-concave distributions with certain sparse interactions, the \emph{marginal} distribution of a small number of $K$ variables can be well-approximated in the $W_2$ metric, with a small number of iterations proportional to $K$ up to \emph{logarithmic} terms in $d$. A novel $W_{2,\ell^\infty}$ metric is used in analysis. We show that this \emph{delocalization of bias} effect also exists in unadjusted Hamiltonian Monte Carlo with the leapfrog integrator, which suggests that Metropolization may not be necessary in this situation. A key observation is that the propagator of the leapfrog integrator is closely related to Chebyshev polynomials.
+
+\medskip
+
+% If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+% Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+% APA reference style is recommended.
+\begin{enumerate}
+ \item[{[1]}] Chen, Y., Cheng, X., Niles-Weed, J., \& Weare, J. (2024). Convergence of Unadjusted Langevin in High Dimensions: Delocalization of Bias. \textit{arXiv preprint arxiv: 2408.13115}.
+\end{enumerate}
+
+\end{talk}

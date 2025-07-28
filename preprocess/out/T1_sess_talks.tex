@@ -1,0 +1,62 @@
+\section{Track E: Technical Session 1 - Markov Chain Monte Carlo}\newpage
+
+\begin{talk}
+  {Stereographic Multi-Try Metropolis Algorithms for Heavy-tailed Sampling}% [1] talk title
+  {Zhihao Wang}% [2] speaker name
+  {University of Copenhagen}% [3] affiliations
+  {zw@math.ku.dk}% [4] email
+  {Jun Yang}% [5] coauthors
+  
+    
+   
+We introduce a novel family of gradient-free Markov chain Monte Carlo (MCMC) algorithms that integrate the principles of multi-try Metropolis (MTM) and stereographic MCMC, designed specifically for efficient sampling of heavy-tailed distributions. Through scaling analysis and extensive simulations, we demonstrate that the proposed stereographic multi-try Metropolis (SMTM) algorithm outperforms both traditional Euclidean MTM and existing stereographic random-walk Metropolis. Furthermore, the SMTM algorithm has the potential to benefit from modern hardware, such as GPUs, allowing for improved performance through parallel implementation.
+\end{talk}
+
+\begin{talk}
+  {Creating rejection-free samplers by rebalancing skew-balanced jump processes}% [1] talk title
+  {Ruben Seyer}% [2] speaker name
+  {Chalmers University of Technology and University of Gothenburg}% [3] affiliations
+  {rubense@chalmers.se}% [4] email
+  {Erik Jansson, Moritz Schauer, Akash Sharma}% [5] coauthors
+  
+    
+   
+Markov chain sampling methods form the backbone of modern computational statistics.
+However, many popular methods are prone to random walk behaviour, i.e.\@{} diffusion-like exploration of the sample space, leading to slow mixing that requires intricate tuning to alleviate.
+Non-reversible samplers can resolve some of these issues.
+We introduce a device that turns jump processes that satisfy a skew-detailed balance condition for a reference measure into a process that samples a target measure that is absolutely continuous with respect to the reference measure.
+This sampler is rejection-free, non-reversible and time-continuous.
+As an example, we apply the device to Hamiltonian dynamics discretized by the leapfrog integrator, resulting in a rejection-free non-reversible time-continuous version of Hamiltonian Monte Carlo (HMC).
+We prove the geometric ergodicity of the resulting sampler, and demonstrate its increased robustness to hyperparameter tuning compared to HMC through numerical examples.
+This comes at a computational cost at worst double that of HMC, in practice lower than other popular non-reversible samplers such as the Bouncy Particle Sampler.
+\end{talk}
+
+\begin{talk}
+  {Theoretical guarantees for lifted samplers}% [1] talk title
+  {Philippe Gagnon}% [2] speaker name
+  {Universit\'e de Montr\'eal}% [3] affiliations
+  {philippe.gagnon.3@umontreal.ca}% [4] email
+  {Florian Maire}% [5] coauthors
+  {}% [6] special session. Leave this field empty for contributed talks.
+    
+   
+The work I would like to present is about a particular class of Markov chain Monte Carlo (MCMC) methods which use non-reversible Markov chains commonly referred to as \textit{lifted Markov chains}; the methods are commonly referred to as \textit{lifted samplers}. The methods are not particularly new (they date back at least to Horowitz [1]), but they have recently been the subject of significant research work motivated by a general belief that, in statistical applications, they lead to more efficient estimators than their reversible counterparts which correspond to Metropolis--Hastings (MH) algorithms (see, e.g., Andrieu and Livingstone [2]). It was thus somewhat surprising to observe that it is not always the case in some recent work (see, e.g., Gagnon and Maire [3]). One can thus wonder what degree of inefficiency these chains may exhibit in worst-case scenarios. This is an important question given that lifted samplers are popular in practice, a consequence of the fact that they are often as easy to implement on a computer as their MH counterparts and often have the same computational complexity.
+
+The main contribution of our work is to provide an answer to this question under arguably the most general framework. We proceed by leveraging the seminal work of Tierney [4] to define a lifted version of a generalized MH algorithm. Virtually any (reversible) MCMC method can be seen as a special case of this generalized MH algorithm, ranging from the traditional MH algorithm of Hastings [5] to the reversible jump algorithm of Green [6]. Our main theoretical result allows for a comparison between the generalized MH algorithm and its lifted version in terms of the variance of produced estimators. It essentially guarantees that the variance of estimators produced by the lifted version cannot be more than twice that of estimators produced by the generalized MH algorithm. This result indicates that, while there is potentially a lot to gain from lifting a Markov chain, there is not much to lose. We also show that our result is optimal, in the sense that it is not possible to improve on the factor 2 without additional assumptions. The definition of the lifted version of the generalized MH algorithm allows us to understand how a lifted sampler can be constructed under such a general framework, which adds a methodological contribution to our theoretical contribution.
+
+The efficiency of Markov chains is traditionally assessed by studying the characteristics of their Markov transition operators. To establish our theoretical result, we needed to connect the efficiency of two significantly different operators (those of the MH and lifted algorithms): in addition to not being defined on the same domain, one is self-adjoint while the other is not, which further complicates the analysis. One of our main achievements was to identify a specific auxiliary operator which acts as a bridge and allows to connect the efficiency of the two aforementioned operators. This auxiliary operator is compared to the MH one through a Peskun ordering [7] established via a careful analysis of the Markov kernels, yielding sharp bounds. The connections between the MH and lifted algorithms is completed by comparing the auxiliary operator with the lifted one using a result in Andrieu and Livingstone [2].
+
+\medskip
+
+\begin{enumerate}
+ \item[{[1]}] Horowitz, A.\ M.\ (1991) A generalized guided Monte Carlo algorithm. Phys.\ Lett.\ B, \textbf{268}, 247--252.
+ \item[{[2]}] Andrieu, C.\ and Livingstone, S.\ (2021) Peskun--Tierney ordering for Markovian Monte Carlo: Beyond the reversible scenario. Ann.\ Statist., \textbf{49}, 1958--1981.
+    \item[{[3]}] Gagnon, P.\ and Maire, F.\ (2024) An asymptotic Peskun ordering and its application to lifted samplers. Bernoulli, \textbf{30}, 2301--2325.
+    \item[{[4]}] Tierney, L.\ (1998) A note on Metropolis--Hastings kernels for general state spaces. Ann.\ Appl.\ Probab., \textbf{8}, 1--9.
+    \item[{[5]}] Hastings, W.\ K.\ (1970) Monte Carlo sampling methods using Markov chains and their applications. Biometrika, \textbf{57}, 97--109.
+    \item[{[6]}] Green, P.\ J.\ (1995) Reversible jump Markov chain Monte Carlo computation and Bayesian model determination. Biometrika, \textbf{82}, 711--732.
+    \item[{[7]}] Peskun, P.\ (1973) Optimum Monte-Carlo sampling using Markov chains. Biometrika, \textbf{60}, 607--612
+\end{enumerate}
+
+
+\end{talk}

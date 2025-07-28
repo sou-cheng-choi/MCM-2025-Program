@@ -1,0 +1,87 @@
+\section{Track I: Frontiers in (Quasi-)Monte Carlo and Markov Chain Monte Carlo Methods, Part II}\newpage
+
+\begin{talk}
+  {Quasi-uniform quasi-Monte Carlo digital nets}% [1] talk title
+  {Takashi Goda}% [2] speaker name
+  {Graduate School of Engineering, The University of Tokyo}% [3] affiliations
+  {goda@frcer.t.u-tokyo.ac.jp}% [4] email
+  {Josef Dick, Kosuke Suzuki}% [5] coauthors
+  {Frontiers in (Quasi-)Monte Carlo and Markov Chain Monte Carlo Methods}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+We investigate the quasi-uniformity properties of digital nets, a class of quasi-Monte Carlo point sets. Quasi-uniformity is a space-filling property that plays a crucial role in applications such as designs of computer experiments and radial basis function approximation. However, it remains open whether common low-discrepancy digital nets satisfy quasi-uniformity.
+
+In this talk, we introduce the concept of \emph{well-separated} point sets as a tool for constructing quasi-uniform low-discrepancy digital nets. We establish an algebraic criterion to determine whether a given digital net is well-separated and use this criterion to construct an explicit example of a two-dimensional digital net that is both low-discrepancy and quasi-uniform. Furthermore, we present counterexamples of low-discrepancy digital nets that fail to achieve quasi-uniformity, highlighting the limitations of existing constructions.
+
+\begin{enumerate}
+ \item[{[1]}] T. Goda, The Sobol’ sequence is not quasi-uniform in dimension 2. \emph{Proc. Amer. Math. Soc.}, 152(8):3209--3213, 2024.
+ \item[{[2]}] J. Dick, T. Goda, \& K. Suzuki, On the quasi-uniformity properties of quasi-Monte Carlo digital nets and sequences. \emph{arXiv preprint arXiv:2501.18226}, 2025.
+\end{enumerate}
+\end{talk}
+
+\begin{talk}
+  {Boosting the inference for generative models by (Quasi-)Monte Carlo resampling}% [1] talk title
+  {Ziang Niu}% [2] speaker name
+  {University of Pennsylvania}% [3] affiliations
+  {ziangniu@wharton.upenn.edu}% [4] email
+  {Bhaswar B. Bhattacharya, Fran\c{c}ois-Xavier Briol, Anirban Chatterjee, Johanna Meier.}% [5] coauthors
+  {Frontiers in (Quasi-)Monte Carlo and Markov Chain Monte Carlo Methods}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+In the era of generative models, statistical inference based on classical likelihood for such models has faced a challenge. This is due to highly nontrivial model structures and thus computing the likelihood functions is almost impossible. Often time, information on these generative models can only be obtained by sampling from the models but the necessity of sampling can further pose a tradeoff between computational burden and statistical accuracy. In this talk, we propose a framework for statistical inference for generative models leveraging the techniques from (Quasi-)Monte Carlo. Despite the unavoidable balance of statistical accuracy and computation, both computational and statistical performances can be boosted by employing (Quasi-)Monte Carlo techniques. The presentation will be based on two papers.
+
+\begin{enumerate}
+ \item[{[1]}] A. Chatterjee, Z. Niu \& B. Bhattacharya (2024). {\it A kernel-based conditional two-sample test using nearest neighbors (with applications to calibration, regression curves, and simulation-based inference)}. Preprint.
+ \item[{[2]}] Z. Niu, J. Meier \& F-X. Briol (2023). \it{Discrepancy-based inference for
+  intractable generative models using
+  Quasi-Monte Carlo.} Electronic Journal of Statistics.
+\end{enumerate}
+
+\medskip
+
+\end{talk}
+
+\begin{talk}
+  {A hit-and-run approach for sampling and analyzing ranking models}% [1] talk title
+  {Chenyang Zhong}% [2] speaker name
+  {Department of Statistics, Columbia University}% [3] affiliations
+  {cz2755@columbia.edu}% [4] email
+  {}% [5] coauthors
+  {Frontiers in (Quasi-)Monte Carlo and Markov Chain Monte Carlo Methods}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+%Your abstract goes here. Please do not use your own commands or macros.
+The analysis of ranking data has gained much recent interest across various applications, including recommender systems, market research, and electoral studies. This talk focuses on the Mallows permutation model, a probabilistic model for ranking data introduced by C. L. Mallows. The Mallows model specifies a family of non-uniform probability distributions on permutations and is characterized by a distance metric on permutations. We focus on two popular choices: the $L^1$ (Spearman’s footrule) and $L^2$ (Spearman’s rank correlation) distances. Despite their widespread use in statistics and machine learning, Mallows models with these metrics present significant computational challenges due to the intractability of their normalizing constants.
+
+Hit and run algorithms form a broad class of MCMC algorithms, including Swendsen-Wang and data augmentation. In this talk, I will first explain how to sample from Mallows models using hit and run algorithms. For both models, we establish $O(\log n)$ mixing time upper bounds, which provide the first theoretical guarantees for efficient sampling and enable computationally feasible Monte Carlo maximum likelihood estimation. Then, I will also discuss how the hit and run algorithms can be utilized to prove theorems about probabilistic properties of the Mallows models.
+
+\medskip
+
+%If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+%Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+%APA reference style is recommended.
+%\begin{enumerate}
+% \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+% \item[{[2]}] Roberts, Gareth O, \& Rosenthal, Jeffrey S. (2002).  Optimal scaling for various Metropolis-Hastings algorithms, \textbf{16}(4), 351--367.
+%\end{enumerate}
+
+%Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}
+
+\begin{talk}
+  {Interior-Point Frank-Wolfe (IPFW) for Linearly Constrained Functional Optimization Over Probability Spaces}% [1] talk title
+  {Raghu Pasupathy}% [2] speaker name
+  {Purdue University}% [3] affiliations
+  {pasupath@purdue.edu}% [4] email
+  {D. Yu, S. G. Henderson}% [5] coauthors
+  
+    
+   
+Many challenging problems in statistics and applied probability can be posed as that of minimizing a smooth functional over a linearly constrained space of probability measures supported on a compact subset of the Euclidean space. Examples include the classical experimental design problem, the P-means problem, the problem of moments, and certain problems involving service systems.  In this talk, we propose interior-point Frank-Wolfe (IPFW) type first-order recursions that handle linear functional constraints while operating on probability spaces. A barrier objective as in classical interior point is first posed, and the resulting central path is solved imprecisely using the Frank-Wolfe (FW) recursion. Importantly, and as in the unconstrained context, the FW subproblem can be solved in ``closed form,'' as a point mass distribution concentrating on the minimum of the barrier's \emph{influence function}. The resulting iteration is a simply specified update involving point-mass distributions. We provide convergence and complexity calculations, and some discussion of the derivative-free context. 
+
+\medskip
+
+
+
+
+\end{talk}

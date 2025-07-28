@@ -1,0 +1,91 @@
+\section{Track G: Analysis of Langevin and Related Sampling Algorithms, Part II}\newpage
+
+\begin{talk}
+%  {Modified Overdamped Langevin Dynamics for Nonconvex Sampling with Equality and Inequality Constraints: Exponential Convergence and Hard Landing Algorithms}% [1] talk title
+{Langevin-Based Sampling under Nonconvex Constraints}
+  {Molei Tao}% [2] speaker name
+  {Georgia Tech}% [3] affiliations
+  {mtao@gatech.edu}% [4] email
+  {Kijung Jeon, Michael Muehlebach}% [5] coauthors
+  {Analysis of Langevin and Related Sampling Algorithms}% [6] special session. Leave this field empty for contributed talks. 
+    
+
+Given an unnormalized density $\rho$ and a constraint set $\Sigma$ in $\mathbb{R}^n$, we aim at sampling from a constrained distribution $Z^{-1} \rho(x) I_{\Sigma}(x) dx$. While the case when $\Sigma$ is convex has been extensively studied, \emph{no} convexity is needed in this talk, in which case quantitative results are scarce. % The case when the density is described by first-order oracles and the constraint set is described by a collection of equalities and inequalities will be considered. 
+Our method admits multiple interpretations, but this talk will focus on a Langevin perspective, where overdamped Langevin dynamics is first modified, and then discretized so that a sampling algorithm can be constructed. The quantitative convergence of the continuous dynamics will be detailed, but if time permits, the performance of the time-discretization (i.e., the actual sampler) will also be discussed.
+
+%\textbf{[Revised version]}
+%Consider an unnormalized density $\rho$ and a constraint set $\Sigma \subset \mathbb{R}^d$ defined by finitely many equality and inequality constraints. We aim to sample from the target density $\rho_\Sigma(x) \propto \rho(x)I_{\Sigma}(x) dx$. While the case when $\Sigma$ is convex has been extensively studied, traditional approaches for nonconvex $\Sigma$ have heuristically relied on projection operators or on designing algorithms that steer trajectories along directions orthogonal to $\Sigma$ (e.g., landing algorithms or orthogonal direction samplers). However, these methods are typically limited to equality constraints, and even in that setting, rigorous analyses of convergence rates remain scarce. In contrast, we propose a new framework that can design an overdamped Langevin dynamics which accommodates both equality and inequality constraints without relying slack variable method. The modified dynamics also deterministically corrects trajectories along the normal direction of the constraint surface, thus obviating the need for explicit projections. Additionally, we introduce a heuristic hard landing algorithm to address challenges arising from discretization. Under suitable regularity conditions on $\rho$ and $\Sigma$, we prove that the continuous dynamics converge exponentially fast to $\rho_\Sigma$.
+
+
+
+\medskip
+
+% If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+% Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+% APA reference style is recommended.
+% \begin{enumerate}
+%  \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+%  \item[{[2]}] L’Ecuyer, Pierre, \& Christiane Lemieux. (2002). Recent advances in randomized quasi-Monte Carlo methods. Modeling uncertainty: An examination of stochastic theory, methods, and applications, 419-474.
+% \end{enumerate}
+
+% Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}
+
+\begin{talk}
+  {Convergence of Unadjusted Langevin in High Dimensions: Delocalization of Bias}% [1] talk title
+  {Yifan Chen}% [2] speaker name
+  {UCLA, Courant Institute}% [3] affiliations
+  {yifanc96@gmail.com}% [4] email
+  {Xiaoou Cheng, Jonathan Niles-Weed, Jonathan Weare}% [5] coauthors
+  
+    
+   
+The unadjusted Langevin algorithm is commonly used to sample probability distributions in extremely high-dimensional settings. However, existing analyses of the algorithm for strongly log-concave distributions suggest that, as the dimension $d$ of the problem increases, the number of iterations required to ensure convergence within a desired error in the $W_2$ metric scales in proportion to $d$ or $\sqrt{d}$. In this work, we argue that, the behavior for a \emph{small number} of variables can be significantly better: a number of iterations proportional to $K$, up to logarithmic terms in $d$,
+often suffices for the algorithm to converge to within a desired $W_2$ error for all $K$-marginals.
+We refer to this effect as 
+\textit{delocalization of bias}. 
+We show that the delocalization effect does not hold universally and prove its validity for Gaussian distributions and strongly log-concave distributions with certain sparse/local interactions. Our analysis relies on a novel $W_{2,\ell^\infty}$ metric to measure convergence. A key technical challenge we address is the lack of a one-step contraction property in this metric. Finally, we use asymptotic arguments to explore potential generalizations of the delocalization effect beyond the Gaussian and sparse/local interactions setting.
+
+\end{talk}
+
+\begin{talk}
+  {Entropy methods for the delocalization of bias in Langevin Monte Carlo}% [1] talk title
+  {Fuzhong Zhou}% [2] speaker name
+  {Columbia University, IEOR department}% [3] affiliations
+  {fz2329@columbia.edu}% [4] email
+  {Daniel Lacker}% [5] coauthors
+  {Analysis of
+   Langevin and Related Sampling Algorithms, Part II.}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+The unadjusted Langevin algorithm is widely used for sampling from complex high-dimensional distributions. It is well known to be biased, with the bias as measured in squared Wasserstein-2 distance scaling linearly with the dimension. However, the remarkable recent work [1] has revealed a \textit{delocalization of bias} effect: For a class of distributions with \textit{sparse interactions}, the bias between lower-dimensional marginals scales only with the lower dimension, not the full dimension. In this work, we strengthen the results of [1] in the sparse interaction regime by removing a logarithmic factor, measuring distance in KL-divergence, and relaxing the strong log-concavity assumption. In addition, we expand the scope of the delocalization phenomenon by showing that it holds for a different class of distributions, with \textit{weak interactions}. Our proofs are based on a hierarchical analysis of the KL-divergence between marginals.
+
+
+
+\medskip
+
+
+
+\begin{enumerate}
+ \item[{[1]}] Y. Chen, X. Cheng, J. Niles-Weed, and J. Weare (2024). {\it Convergence of unadjusted Langevin in high dimensions: Delocalization of bias}. arXiv preprint arXiv:2408.13115.
+\end{enumerate}
+
+
+\end{talk}
+
+\begin{talk}
+  {Convergence of $\Phi$-Divergence and $\Phi$-Mutual Information Along Langevin Markov Chains}% [1] talk title
+  {Siddharth Mitra}% [2] speaker name
+  {Yale University}% [3] affiliations
+  {siddharth.mitra@yale.edu}% [4] email
+  {Jiaming Liang, Andre Wibisono}% [5] coauthors
+  
+    
+   
+The mixing time of a Markov chain determines when the marginal law of the Markov chain is close to the stationary distribution and can be studied in many statistical divergences such as KL divergence and chi-squared divergence, all the way to families of divergences such as $\Phi$-divergences. However, the mixing time does not determine the dependency between samples along the Markov chain, which can be measured in terms of their mutual information, chi-squared mutual information, or more generally their $\Phi$-mutual information. In this talk, we study the mixing time of Langevin Markov chains in $\Phi$-divergence and also study the $\Phi$-mutual information between the iterates. The Markov chains we focus on are the Langevin Dynamics in continuous-time, and the Unadjusted Langevin Algorithm and Proximal Sampler in discrete-time and we show that for these Markov chains, the $\Phi$-divergence and the $\Phi$-mutual information decreases exponentially fast. Our proof technique is based on showing the Strong Data Processing Inequalities (SDPIs) hold along the Markov chains. To prove fast mixing of the Markov chains, we show the SDPIs hold for the stationary distribution. In contrast, to prove the contraction of $\Phi$-mutual information, we need to show the SDPIs hold along the entire trajectories of the Markov chains; we prove this when the iterates along the Markov chains satisfy the corresponding $\Phi$-Sobolev inequality.
+
+
+\medskip
+
+
+\end{talk}

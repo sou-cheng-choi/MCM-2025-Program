@@ -17,3 +17,4 @@ dependencies:
       - matplotlib==3.7.1
       - requests==2.32.3
       - parsl==2025.5.19   
+      - streamlit>=1.28.0

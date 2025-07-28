@@ -1,0 +1,64 @@
+\section{Track G: Next-generation optimal experimental design: theory, scalability, and real world impact: Part II}\newpage
+
+\begin{talk}
+  {Goal-Oriented Sensor Placement for Infinite-Dimensional Bayesian Inverse Problems}% [1] talk title
+  {Alen Alexanderian}% [2] speaker name
+  {North Carolina State University}% [3] affiliations
+  {alexanderian@ncsu.edu}% [4] email
+  {}
+  {Next-generation optimal experimental design: theory, scalability, and real world impact}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+%your abstract goes here. Please do not use your own commands or macros.
+We consider optimal experimental design (OED) for infinite-dimensional Bayesian
+inverse problems governed by partial differential equations with
+infinite-dimensional inversion parameters.  Specifically, we focus on the case
+where we seek sensor placements that minimize the uncertainty in a prediction or
+goal functional.  To address this, we propose a goal-oriented OED (gOED)
+approach that uses a quadratic approximation of the parameter-to-prediction
+mapping to obtain a measure of posterior uncertainty in the prediction quantity
+of interest (QoI).  We focus on linear inverse problems in which the prediction
+is a nonlinear functional of the inversion parameters. We seek to find sensor
+placements that result in minimized posterior variance of the prediction QoI. In
+this context, and under the assumption of Gaussian prior and noise models, we
+derive a closed-form expression for the gOED criterion. We also discuss
+efficient and accurate computational approaches for computing the gOED objective
+and its optimization.  We illustrate the proposed approach in model inverse
+problems governed by an advection-diffusion equation.
+
+\medskip
+
+\end{talk}
+
+\begin{talk}
+    Bayesian  Experimental Design (BED) is a powerful tool to reduce the cost of running a sequence of experiments.
+    When based on the Expected Information Gain (EIG), design optimization corresponds to the maximization of some intractable expected  contrast between prior and posterior distributions.
+    Scaling this maximization to high dimensional and complex settings has been an issue due to BED inherent computational complexity.
+    In this work, we introduce a pooled posterior distribution with cost-effective sampling properties and provide a tractable access to the EIG contrast maximization via a new EIG gradient expression. Diffusion-based samplers are used to compute the dynamics of the pooled posterior and ideas from bi-level optimization are leveraged to derive an efficient joint sampling-optimization loop.
+    The resulting efficiency gain allows to extend BOED to the well-tested generative capabilities of diffusion models.
+    By incorporating generative models into the BOED framework, we expand its scope and its use in scenarios that were previously impractical. Numerical experiments and comparison with state-of-the-art methods show the potential of the approach.
+    As a practical application, we showcase how our method accelerates Magnetic Resonance Imaging (MRI) acquisition times while preserving image quality.
+    This presentation will also detail how Diffuse, a new modulable Python package for diffusion models facilitate composability and research in diffusion models through its simple and intuitive API, allowing researchers to easily integrate and experiment with various model components.
+
+\end{talk}
+
+\begin{talk}
+  {Robust Bayesian Optimal Experimental Design under Model Misspecification}% [1] talk title
+  {Tommie A. Catanach}% [2] speaker name
+  {Sandia National Laboratories}% [3] affiliations
+  {tacatan@sandia.gov}% [4] email
+  {}% [5] coauthors
+  {Next-generation optimal experimental design: theory, scalability, and real world impact: Part II}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+Bayesian Optimal Experimental Design (BOED) has become a powerful tool for improving uncertainty quantification by strategically guiding data collection. However, the reliability of BOED depends critically on the validity of its underlying assumptions and the possibility of model discrepancy. In practice, the chosen data acquisition strategy may inadvertently reinforce prior assumptions—overlooking data that could challenge them—or rely on low-fidelity models whose error is not well characterized, leading to biased inferences. These biases can be particularly severe because BOED often targets extreme parameter regions as the most “informative,” potentially magnifying the impact of model error.
+
+In this talk, we present a new information criterion, Expected Generalized Information Gain (EGIG)[1], that explicitly accounts for model discrepancy in BOED. EGIG augments standard Expected Information Gain by balancing the trade-off between experiment performance (i.e., how much information is gained) and robustness (i.e., how susceptible the design is to model misspecification). Concretely, EGIG measures how poorly inference under an incorrect model might perform, compared to a more appropriate model for the experiment. We will discuss the theoretical underpinnings of EGIG, as well as nested Monte Carlo algorithms for incorporating it into BOED for nonlinear inference problems. These methods handle both quantifiable discrepancies (e.g., low-fidelity vs. high-fidelity models) and unknown discrepancies represented by a distribution of potential errors, thereby enhancing the robustness and reliability of BOED in real-world settings.
+
+SNL is managed and operated by NTESS under DOE NNSA contract DE-NA0003525. 
+\medskip
+
+\begin{enumerate}
+ \item[{[1]}] Catanach, T. A., \& Das, N. (2023). {\it Metrics for Bayesian optimal experiment design under model misspecification}. In 2023 62nd IEEE Conference on Decision and Control (CDC) (pp. 7707-7714). IEEE.
+\end{enumerate}
+\end{talk}

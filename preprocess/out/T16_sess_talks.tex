@@ -1,0 +1,89 @@
+\section{Track I: Technical Session 16 - Statistics}\newpage
+
+\begin{talk}
+  {Empirical Statistical Comparative Analysis of SNP Heritability Estimators and Gradient Boosting Machines (GBM) Using Genetic Data from the UK Biobank}% [1] talk title
+  {Kazeem Adeleke$^{*1}$} % [2] speaker name
+  {University of the West of England, UK}% [3] affiliations
+  {adedayo.adeleke@uwe.ac.uk} % [4] email
+  { Peter Ogunyinka$^{2}$, Emmanuel Ologunleko$^{3}$ and Dawud Agunbiade$^{4}$} % [5] coauthors
+  
+    
+   
+This study addresses the methodological challenges in estimating genetic heritability by comparing traditional statistical approaches with advanced machine learning techniques. We evaluated three distinct methods: sibling regression, LD-score regression, and Gradient Boosting Machines (GBMs), using both simulated datasets and real-world data from the UK Biobank. Our methodology involved generating simulated genotypes following Mendelian inheritance patterns and creating corresponding phenotypes incorporating family-specific genetic effect sizes. We conducted Genome-Wide Association Studies (GWAS) on firstborn children from each family and performed comprehensive heritability analyses using all three methods. Results demonstrated that while sibling regression effectively captured within-family genetic similarities and LD-score regression accounted for population-wide linkage disequilibrium patterns, GBMs showed superior capability in predicting phenotypes by capturing complex genetic interactions. The integration of GBMs with traditional methods revealed enhanced predictive power and provided new insights into the genetic architecture of complex traits. Our findings emphasize the value of combining conventional statistical approaches with machine learning techniques for more robust heritability estimation in large-scale UK Biobank studies.
+
+\medskip
+
+%If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+%Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+%APA reference style is recommended.
+%\begin{enumerate}
+% \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+% \item[{[2]}] Roberts, Gareth O, \& Rosenthal, Jeffrey S. (2002).  Optimal scaling for various Metropolis-Hastings algorithms, \textbf{16}(4), 351--367.
+%\end{enumerate}
+
+%Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}
+
+\begin{talk}
+  {Cheap permutation testing}% [1] talk title
+  {Carles Domingo-Enrich}% [2] speaker name
+  {Microsoft Research New England}% [3] affiliations
+  {carlesd@microsoft.com}% [4] email
+  {Raaz Dwivedi, Lester Mackey}% [5] coauthors
+  
+    
+   
+Permutation tests are a popular choice for distinguishing distributions and testing independence, due to their exact, finite-sample control of false positives and their minimax optimality when paired with U-statistics. However, standard permutation tests are also expensive, requiring a test statistic to be computed hundreds or thousands of times to detect a separation between distributions. In this work, we offer a simple approach to accelerate testing: group your datapoints into bins and permute only those bins. For U and V-statistics, we prove that these cheap permutation tests have two remarkable properties. First, by storing appropriate sufficient statistics, a cheap test can be run in time comparable to evaluating a single test statistic. Second, cheap permutation power closely approximates standard permutation power. As a result, cheap tests inherit the exact false positive control and minimax optimality of standard permutation tests while running in a fraction of the time. We complement these findings with improved power guarantees for standard permutation testing and experiments demonstrating the benefits of cheap permutations over standard maximum mean discrepancy (MMD), Hilbert-Schmidt independence criterion (HSIC), random Fourier feature, Wilcoxon-Mann-Whitney, cross-MMD, and cross-HSIC tests.
+
+% \medskip
+
+% If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+% Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+% APA reference style is recommended.
+% \begin{enumerate}
+%  \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+%  \item[{[2]}] L’Ecuyer, Pierre, \& Christiane Lemieux. (2002). Recent advances in randomized quasi-Monte Carlo methods. Modeling uncertainty: An examination of stochastic theory, methods, and applications, 419-474.
+% \end{enumerate}
+
+% Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}
+
+\begin{talk}
+  {Moving PCG beyond LCGs}% [1] talk title
+  {Christopher Draper}% [2] speaker name
+  {Florida State University}% [3] affiliations
+  {chd16@fsu.edu}% [4] email
+  { Michael Mascagni}% [5] coauthors
+  
+    
+   
+PCG is a set of generators released by Melissa E. O’Neill in 2014 [1]. The original technical report outlined a number of lightweight
+scrambling techniques. Each scrambling technique offered some improvement to the quality of the linear congruential generators
+they were designed for. However the real strength of the scrambling techniques was that they could easily be combined in different
+combinations to offer much stronger improvements. The PCG technical report concludes with the creation of the PCG library, a
+popular PRNG library that implements a number of generators described in the technical report. Starting from the observation that the
+PCG work was narrowly focused on implementing their scrambling techniques for specific linear congruential generators, we explore
+the PCG scrambling techniques and their potential application for being applied to other PRNGs. We show the steps taken to generalize the PCG
+scrambling techniques to work with any arbitrary number of bits and parameter values. Then test the PCG scrambling techniques
+across different linear congruential generators and then test the PCG scrambling techniques across a number of different PRNGs.
+\medskip
+
+\begin{enumerate}
+ \item[{[1]}] Melissa E. O’Neill. 2014. PCG: A Family of Simple Fast Space-Efficient Statistically Good Algorithms for Random Number Generation. Technical Report HMC-CS-2014-0905. Harvey Mudd College, Claremont, CA.
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {Hybrid least squares for learning functions from highly noisy data}% [1] talk title
+  {Yiming Xu}% [2] speaker name
+  {University of Kentucky}% [3] affiliations
+  {yiming.xu@uky.edu}% [4] email
+  {Ben Adcock, Bernhard Hientzsch, Akil Narayan}% [5] coauthors
+  
+    
+   
+Motivated by the request for efficient estimation of conditional expectations, we consider a least-squares function approximation problem with heavily polluted data. In such scenarios, existing methods based on the small noise assumption become suboptimal. We propose a hybrid approach that combines Christoffel sampling with optimal experimental design to address this issue. The proposed algorithm adheres to appropriate optimality criteria for both sample points generation and function evaluation, leading to improved computational efficiency and sample complexity. We also extend the algorithm to convex-constrained settings with similar theoretical guarantees. Moreover, when the target function is defined as the expectation of a random field, we introduce adaptive random subspaces to approximate the target function and establish results concerning its approximation capacity. Our findings are corroborated through numerical studies on synthetic data and a more challenging stochastic simulation problem in computational finance.
+\medskip
+
+\end{talk}

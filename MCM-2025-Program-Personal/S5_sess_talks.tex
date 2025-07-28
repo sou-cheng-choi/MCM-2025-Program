@@ -1,0 +1,99 @@
+\section{Track F: Stochastic Computation and Complexity, Part II}\newpage
+
+\begin{talk}
+  {Optimality of deterministic and randomized QMC-cubatures on several scales of function spaces}% [1] talk title
+  {Michael Gnewuch}% [2] speaker name
+  {University of Osnabrueck}% [3] affiliations
+  {mgnewuch@uos.de}% [4] email
+  {Josef Dick, Lev Markhasin, Winfried Sickel, Yannick Meiners}% [5] coauthors
+  {Stochastic Computation and Complexity}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+   
+We study the integration problem over the s-dimensional unit cube on four scales of Banach spaces of integrands. First, we consider Haar wavelet spaces $H_{p, q, \alpha}$, $1\le p, q \le \infty$, $\alpha > 1/p$, consisting of functions whose Haar wavelet coefficients exhibit a certain decay behavior measured by the parameters $p,q$, and, most importantly, $\alpha$.  We study the worst-case error of a deterministic cubature rule over the norm unit ball 
+%(i.e., the operator norm of the difference of the integration functional and the cubature rule)
+and provide upper bounds for quasi-Monte Carlo (QMC) cubature rules based on arbitrary $(t,m,s)$-nets as well as matching lower error bounds for arbitrary cubature rules. These results show that using arbitrary $(t,m,s)$-nets as integration nodes yields the best possible rate of convergence. In the Hilbert space setting $p=2 = q$ it was earlier shown by Heinrich, Hickernell and Yue [2]  that scrambled (t,m,s)-nets yield optimal convergence rates in the randomized setting, where the randomized worst-case error is considered. 
+
+We establish several suitable function space embeddings that allow to transfer the deterministic and randomized upper error bounds on Haar wavelet spaces
+to certain spaces of fractional smoothness $1/p < \alpha  \le 1$ and to Sobolev and Besov spaces of dominating mixed smoothness $1/p < a \le 1$.
+Known lower bounds for Sobolev and Besov spaces of dominating mixed smoothness show that (deterministic or suitably randomized) $(t,m,s)$-nets yield optimal convergence rates also on the corresponding scales of spaces.   
+
+The talk is based on the preprint [1] and the master thesis of my student Yannick Meiners.
+\medskip
+
+\begin{enumerate}
+ \item[{[1]}] M. Gnewuch, J. Dick, L. Markhasin, W. Sickel, QMC integration based on arbitrary $(t,m,s)$-nets yields optimal convergence rates on several scales of function spaces, preprint 2024, arXiv:2409.12879. 
+        \item[{[2]}] S. Heinrich, F. J. Hickernell and R. X. Yue, Optimal quadrature for Haar wavelet spaces, Math. Comput., 73 (2004), 259--277.
+ \end{enumerate}
+\end{talk}
+
+\begin{talk}
+  {Optimal designs for function discretization and construction of tight frames}% [1] talk title
+  {Kateryna Pozharska}% [2] speaker name
+  {Institute of Mathematics of NAS of Ukraine and Chemnitz University of Technology}% [3] affiliations
+  {pozharska.k@gmail.com}% [4] email
+  {Felix Bartel,  Lutz K\"ammerer,  Martin Sch\"afer, Tino Ullrich}% [5] coauthors
+  {Stochastic Computation and Complexity}% [6] special session. Leave this field empty for contributed talks. 
+    
+
+
+In the talk we will present a direct and constructive approach for the construction of tight frames and exact Marcinkiewicz-Zygmund inequalities in the Lebesgue space [1]. 
+It is based on a similar procedure of maximization of the determinant of a certain Gramian matrix with respect to points and weights, already used in [2] for discretization problem for the uniform norm, and results in a discrete measure  with at most $n^2+1$ atoms, which accurately subsamples the $L_2$-norm of complex-valued functions contained in a  given $n$-dimensional subspace.
+
+This approach can as well be used for the reconstruction of functions from general RKHS in $L_p$ where one only has access to the most important eigenfunctions. The general results apply to the $d$-sphere or multivariate trigonometric polynomials on $\mathbb{T}^d$ spectrally supported on arbitrary finite index sets~$I \subset \mathbb{Z}^d$.  Numerical experiments indicate the sharpness of this result. 
+
+
+\begin{enumerate}
+ \item[{[1]}]  Bartel, Felix,  \& K\"ammerer, Lutz,  \& Pozharska,  Kateryna, \& Sch\"afer, Martin,  \& \newline Ullrich, Tino (2024). {\it Exact discretization, tight frames and recovery via $D$-optimal designs}. arXiv:2412.02489.
+    
+ \item[{[2]}] Krieg, David, \&  Pozharska, Kateryna, \& Ullrich, Mario \&  Ullrich, Tino (2024). \newline  {\it Sampling projections in the uniform norm}. arXiv:2401.02220.
+
+\end{enumerate}
+
+
+\end{talk}
+
+\begin{talk}
+  {Complexity of approximating piecewise smooth functions in the presence of deterministic or random noise}% [1] talk title
+  {Leszek Plaskota}% [2] speaker name
+  {University of Warsaw}% [3] affiliations
+  {L.Plaskota@mimuw.edu.pl}% [4] email
+  {}% [5] coauthors
+  {Stochastic Computation and Complexity}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+Consider the smoothness class of $1$-periodic functions $f:\mathbb R\to\mathbb R$ for which 
+$$|f^{(r)}(x)-f^{(r)}(y)|\le |x-y|^\rho,\quad x,y\in\mathbb R,$$ 
+where $r\in\{0,1,2,\ldots\}$ and $0<\rho\le 1.$ It is well known that the optimal worst-case error of $L^p$-approximation ($1\le p\le\infty$) of such functions that can be achieved from $n$ exact evaluations of $f$ is proportional to $e_n=n^{-(r+\rho)}.$ Less obvious is what happens when the functions are piecewise smooth only with unknown break points. Even less obvious is the situation when the function values are additionally corrupted by some noise, i.e., when evaluating the value of $f$ at $x$ we obtain $y=f(x)+\xi$ where $|\xi|\le\delta$ (determnistic noise) or $\xi$ is a zero-mean random variable of variance $\sigma^2$ (random noise). In this talk, we construct an algorithm which despite the presence of noise and break points achieves the worst case $L^p$-error still proportional to $e_n$ provided the noise level $\delta$ or $\sigma$ is of the same order $e_n$ (exept the case of $p=\infty$ and random noise where we have an additional logarithmic factor in the error). The algorithm uses divided differences and special adaptive extrapolation technique to locate the break points and approximate in their neighborhoods. 
+
+\end{talk}
+
+\begin{talk}
+  {The Quality of Lattice Sequences}% [1] talk title
+  {Larysa Matiukha}% [2] speaker name
+  {Illinois Institute of Technology}% [3] affiliations
+  {lmatiukha@hawk.iit.edu}% [4] email
+  {Yuhan Ding, Fred J. Hickernell}% [5] coauthors
+  
+    
+
+Lattices are a popular choice of nodes for approximating multidimensional integrals by a sample mean, typically using sample sizes of the form $n = b^m$ for some prime base $b$ and non-negative integer $m$. However, a computational time budget or hardware failure may prevent us from choosing the preferred number of samples. In this talk, we present an upper bound on the figure of merit $P_\alpha$ for extensible lattice sequences with arbitrary $n$, derived in Banach space setting. We show that while the error decays relatively slowly for general $n$, it improves significantly when $n$ is a small integer multiple of a power of the base, reaching the optimal decay of $\mathcal{O}(n^{-\alpha})$. % maybe not "optimal" 
+Additionally, we investigated a related figure of merit $P_{\alpha,2}$ in a Hilbert space, allowing easier computation for arbitrary $n$. Numerical results for $P_{1,2}$ using both equal and optimally chosen sample weights show a decay of $\mathcal{O}(n^{-1})$ in both cases, while optimal weights lead to a generally smaller and non-increasing error. 
+
+
+% Motivated by a scenario where, due to computational time constraint or computer failure, we cannot choose the preferred sample size $n = b^m$, we derive an upper bound on the figure of merit $P_\alpha$ for lattice sequences with an arbitrary number of points $n$. 
+% Our derivation demonstrates that the error decays relatively slowly for  general $n$, but when $n$ is a small multiple of a power of the base $b$, the decay is close to that of the preferred values of $n$.
+%Your abstract goes here. Please do not use your own commands or macros.
+
+% \medskip
+
+% If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+% Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+% APA reference style is recommended.
+% \begin{enumerate}
+%  \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+%  \item[{[2]}] Roberts, Gareth O, \& Rosenthal, Jeffrey S. (2002).  Optimal scaling for various Metropolis-Hastings algorithms, \textbf{16}(4), 351--367.
+% \end{enumerate}
+
+% Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}

@@ -1,0 +1,82 @@
+\section{Track H: Recent Advances in Stochastic Gradient Descent}\newpage
+
+\begin{talk}
+  {Inference for Stochastic Gradient Descent with Infinite Variance}% [1] talk title
+  {Jose Blanchet}% [2] speaker name
+  {Stanford University}% [3] affiliations
+  {jose.blanchet@stanford.edu}% [4] email
+  {Peter Glynn, Aleks Mijatovic, Wenhao Yang}% [5] coauthors
+  {Recent Advances in Stochastic Gradient Descent}% [6] special session. Leave this field empty for contributed talks. 
+    
+                
+Stochastic gradient descent (SGD) with infinite variance gradients arises, perhaps surprisingly, quite often in applications. Even in settings involving “finite variance” in theory, infinite variance models appear to provide a better statistical fit over spatial and temporal scales of interest in applied settings. Motivated by this, we investigate a general methodology that enables the development of valid confidence regions for SGD with infinite variance. Along the way, we also obtain key results and properties for SGD with infinite variance, for example, asymptotic limits, optimal convergence rates, etc., which are counterparts of celebrated results known only in the finite variance case.
+
+
+\medskip
+
+% If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+% Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+% APA reference style is recommended.
+% \begin{enumerate}
+%  \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+%  \item[{[2]}] L’Ecuyer, Pierre, \& Christiane Lemieux. (2002). Recent advances in randomized quasi-Monte Carlo methods. Modeling uncertainty: An examination of stochastic theory, methods, and applications, 419-474.
+% \end{enumerate}
+
+% Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}
+
+\begin{talk}
+  {Exit-Time Analysis for Kesten's Recursion in Stochastic Gradient Descent}% [1] talk title
+  {Chang-Han Rhee}% [2] speaker name
+  {Northwestern University}% [3] affiliations
+  {chang-han.rhee@northwestern.edu}% [4] email
+  {Jeeho Ryu, Insuk Seo}% [5] coauthors
+  
+    
+
+
+Stochastic gradient descent has been a classical subject in operations research and stochastic simulation literature.
+On the other hand, Kesten's recursion has been studied extensively in probability theory and related fields. 
+Recently, Kesten's recursion has garnered renewed interest as a model for stochastic
+gradient descent (SGD) with a quadratic objective function and the emergence of heavy-tailed dynamics in machine learning. 
+In particular, due to the connection between the heavy-tailed behaviors of SGD and the generalization performance of the neural network it trains, the emergence and characterization of heavy tails in SGD have been revisited. 
+Unlike the classical contexts, these developments call for analysis of its asymptotic behavior under both negative and positive Lyapunov exponents. In this talk, I'll discuss the exit times of Kesten's stochastic recurrence equation in both cases. Depending on the sign of the Lyapunov exponent, the exit time scales either polynomially or logarithmically as the radius of the exit boundary increases.
+
+\medskip
+
+\begin{enumerate}
+ \item[{[1]}] 
+    Rhee, Chang-Han, Jeeho Ryu, \& Insuk Seo (2025+). Exit time analysis for Kesten's stochastic recurrence equations. arXiv:2503.05219.
+    
+
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {Stochastic Gradient Descent with Adaptive Data}% [1] talk title
+  {Jing Dong}% [2] speaker name
+  {Columbia University}% [3] affiliations
+  {jing.dong@gsb.columbia.edu}% [4] email
+  {Ethan Che, Xin Tong}% [5] coauthors
+  {Recent Advances in Stochastic Gradient Descent}% [6] special session. Leave this field empty for contributed talks. 
+    
+                
+Stochastic gradient descent (SGD) is a powerful optimization technique that is particularly useful in online learning scenarios. Its convergence analysis is relatively well understood under the assumption that the data samples are independent and identically distributed (iid). However, applying SGD to policy optimization
+problems in operations research involves a distinct challenge: the policy changes the environment and thereby affects the data used to update the policy. The adaptively generated data stream involves samples that are non-stationary, no longer independent from each other, and affected by previous decisions. The influence of previous decisions on the data generated introduces bias in the gradient estimate, which presents a potential source of instability for online learning not present in the iid case. In this paper, we introduce simple criteria for the adaptively generated data stream to guarantee the convergence of SGD. We show that the convergence
+speed of SGD with adaptive data is largely similar to the classical iid setting, as long as the mixing time of the policy-induced dynamics is factored in. Our Lyapunov-function analysis allows one to translate existing stability analysis of stochastic systems studied in operations research into convergence rates for SGD, and
+we demonstrate this for queueing and inventory management problems. We also showcase how our result can be applied to study the sample complexity of an actor-critic policy gradient algorithm.   
+
+
+\medskip
+
+% If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+% Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+% APA reference style is recommended.
+% \begin{enumerate}
+%  \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+%  \item[{[2]}] L’Ecuyer, Pierre, \& Christiane Lemieux. (2002). Recent advances in randomized quasi-Monte Carlo methods. Modeling uncertainty: An examination of stochastic theory, methods, and applications, 419-474.
+% \end{enumerate}
+
+% Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}

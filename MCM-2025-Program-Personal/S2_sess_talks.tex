@@ -1,0 +1,96 @@
+\section{Track B: Domain Uncertainty Quantification}\newpage
+
+\begin{talk}
+  {Domain UQ for stationary and time-dependent PDEs using QMC}% [1] talk title
+  {Andr\'e-Alexander Zepernick}% [2] speaker name
+  {Free University of Berlin}% [3] affiliations
+  {a.zepernick@fu-berlin.de}% [4] email
+  {Ana Djurdjevac, Vesa Kaarnioja, Claudia Schillings}% [5] coauthors
+  {Domain Uncertainty Quantification}% [6] special session
+
+The problem of modelling processes with partial differential equations posed on random domains arises in various applications like biology or engineering. We study uncertainty quantification for partial differential equations subject to domain uncertainty. For the random domain parameterization, we adopt an approach, which was also examined by Chernov and L\^{e} [1,2] as well as Harbrecht, Schmidlin, and Schwab [3], where one assumes the input random field to be Gevrey regular. This approach has the advantage of being substantially more general than models which assume a particular parametric representation of the input random field such as a Karhunen--Lo\`eve series expansion. As model problems we consider both the Poisson equation as well as the heat equation and design randomly shifted lattice quasi-Monte Carlo (QMC) cubature rules for the computation of response statistics subject to domain uncertainty. The QMC rules obtained in [4] exhibit dimension-independent, faster-than-Monte Carlo cubature convergence rates. Our theoretical results are illustrated by numerical examples.
+\begin{enumerate}
+    \item[{[1]}] Chernov, Alexey, \& L\^{e}, T\`ung (2024). Analytic and Gevrey class regularity for parametric elliptic eigenvalue problems and applications. \emph{SIAM Journal on Numerical Analysis}, \textbf{62}(4), 1874--1900.
+    \item[{[2]}] Chernov, A., \& L\^{e}, T\`ung (2024). Analytic and Gevrey class regularity for parametric semilinear reaction-diffusion problems and applications in uncertainty quantification. \emph{Computers \& Mathematics with Applications}, \textbf{164}, 116--130.
+    \item[{[3]}] Harbrecht, Helmut, Schmidlin, Marc, \& Schwab, Christoph (2024). The Gevrey class implicit mapping theorem with application to UQ of semilinear elliptic PDEs. \emph{Mathematical Models and Methods in Applied Sciences.}, \textbf{34}(5), 881--917.
+    \item[{[4]}] Djurdjevac, Ana, Kaarnioja, Vesa, Schillings, Claudia \& Zepernick, Andr\'e-Alexander (2025). Uncertainty quantification for stationary and time-dependent PDEs subject to Gevrey regular random domain deformations. Preprint, \emph{arXiv:2502.12345 [math.NA]}.
+\end{enumerate}
+
+\medskip
+
+\end{talk}
+
+\begin{talk}
+  {Domain Uncertainty Quantification for Electromagnetic Wave Scattering via First-Order Sparse Boundary Element Approximation}% [1] talk title
+  {Carlos Jerez-Hanckes}% [2] speaker name
+  {INRIA Chile}% [3] affiliations
+  {carlos.jerez@inria.cl}% [4] email
+  {Paul Escapil-Inchausp\'e}% [5] coauthors
+  {Domain uncertainty quantification}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+Quantifying the effects on electromagnetic waves scattered by objects of uncertain shape is key for robust design, particularly in high-precision applications. Assuming small random perturbations departing from a nominal domain, the first-order sparse boundary (FOSB) element method has been proven to directly compute statistical moments with poly-logarithmic complexity [1,2] for a prescribed accuracy, without resorting to computationally intense Monte Carlo (MC) simulations. However, implementing FOSB is not straightforward as the lack of compelling computational results for EM scattering attests [3]. In this work, we present a first full 3D implementation of FOSB for shape-related uncertainty quantification (UQ) in EM scattering [4]. In doing so, we address several implementation issues such as ill-conditioning and large computational and memory requirements and present a comprehensive, state-of-the-art, easy-to-use, open-source computational framework to directly apply this technique when dealing with complex objects. Exhaustive numerical experiments confirm our claims and demonstrate the technique's applicability and provide pathways for further improvement.
+
+\medskip
+
+%If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+%Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+%APA reference style is recommended.
+\begin{enumerate}
+ \item[{[1]}] Jerez-Hanckes, Schwab (2017). {\it Electromagnetic Wave Scattering by Random Surfaces: Uncertainty Quantification via Sparse Tensor Boundary Elements}, IMA Journal of Numerical Analysis {\bf 37}(3), 1175--1210.
+ \item[{[2]}] Hiptmair, Jerez-Hanckes, Schwab (2013). {\it Sparse Tensor Edge Elements}, BIT Numerical Mathematics {\bf 53}, 925--943.
+ \item[{[3]}] Escapil-Inchausp\'e, Jerez-Hanckes (2020). {\it Helmholtz Scattering by Random Domains: First-Order Sparse Boundary Elements Approximation}, SIAM Journal of Scientific Computing {\bf 42}(5), A2561--A2592.
+ \item[{[4]}] Escapil-Inchausp\'e, Jerez-Hanckes (2024). {\it Shape Uncertainty Quantification for Electromagnetic Wave Scattering via First-Order Sparse Boundary Element Approximation}, IEEE Transactions in Antennas \& Propagation {\bf 72}(8):6627--6637.
+\end{enumerate}
+
+%Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}
+
+\begin{talk}
+  {Quantifying uncertainty in spectral clusterings: expectations for perturbed and incomplete data}% [1] talk title
+  {J\"urgen D\"olz}% [2] speaker name
+  {University of Bonn}% [3] affiliations
+  {doelz@ins.uni-bonn.de}% [4] email
+  {Jolanda Weygandt}% [5] coauthors
+  {Domain Uncertainty Quantification}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+Spectral clustering is a popular unsupervised learning technique which partitions a set of unlabelled data into disjoint clusters. However, the data under consideration are often experimental data, implying that the data is subject to measurement errors and measurements may even be lost or invalid. These uncertainties in the input data induce corresponding uncertainties in the resulting clusters. In this talk, we model the uncertainties as random, implying that the clusters need to be considered random as well. We further discuss a mathematical framework based on random set theory for the computational approximation of statistically expected clusterings.
+\end{talk}
+
+\begin{talk}
+  {Model Problems for PDEs on Uncertain Domains}% [1] talk title
+  {Harri Hakula}% [2] speaker name
+  {Aalto University}% [3] affiliations
+  {Harri.Hakula@aalto.fi}% [4] email
+  {}% [5] coauthors
+  {Domain Uncertainty Quantification}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+%Your abstract goes here. Please do not use your own commands or macros.
+Partial differential equation related uncertainty quantification has become one of the
+topical research areas in applied mathematics and, in particular, engineering.
+Stochastic finite element methods are applied both in source and eigenvalue problems.
+Remarkably, computational function theory provides a rich set of invariants 
+and identities that
+can be applied in designing model problems where the domain is random or uncertain. 
+In this talk the focus is on conformal capacity in a simple, 
+yet general case where the sides of a quadrilateral are assumed to be random 
+and parameterised with a suitable Karhunen-Lo\`eve expansion [1].
+Lattice quasi-Monte Carlo (QMC) cubature rules are used for computing the expected value of the solution to the resulting Poisson problem subject to domain uncertainty. 
+
+High-order finite element methods ($hp$-FEM) are used in the deterministic problems.
+The special features related to modelling random domains in $hp$-context are discussed.
+Convergence properties of the lattice QMC quadratures are presented. The talk
+concentrates on numerical experiments demonstrating the theoretical error estimates.
+The new results on the associated Steklov eigenvalue problem are also covered.
+
+
+\medskip
+
+\begin{enumerate}
+ \item[{[1]}] Hakula, H., Harbrecht, H., Kaarnioja, V., Kuo, F. Y., \& Sloan, I. H. (2024). Uncertainty quantification for random domains using periodic random variables. Numerische Mathematik, 156(2), 273--317. https://doi.org/10.1007/s00211-023-01392-6
+\end{enumerate}
+
+% Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}

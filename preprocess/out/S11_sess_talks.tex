@@ -1,0 +1,81 @@
+\section{Track D: Frontiers in (Quasi-)Monte Carlo and Markov Chain Monte Carlo Methods, Part I}\newpage
+
+\begin{talk}
+  {Functional estimation of the marginal likelihood}% [1] talk title
+  {Jonathan Weare}% [2] speaker name
+  {Courant Institute of Mathematical Sciences, New York University}% [3] affiliations
+  {weare@nyu.edu}% [4] email
+  {Omiros Papaspiliopoulos, Timoth\'ee Stumpf-F\'etizon}% [5] coauthors
+  
+    
+   
+We propose a framework for computing, optimizing and integrating with respect to
+a smooth marginal likelihood in statistical models that involve high-dimensional parameters/latent
+variables and continuous low-dimensional hyperparameters. The method requires samples from
+the posterior distribution of the parameters for different values of the hyperparameters on a simulation grid and returns inference on the marginal likelihood defined everywhere on its domain,
+and on its functionals. We explain the relationship between the method and many of the methods that have been
+used in this context, including sequential Monte Carlo, Gibbs sampling, Monte Carlo maximum
+likelihood, and umbrella sampling. We establish the consistency of the proposed estimators as
+the sampling effort increases, both when the simulation grid is kept fixed and when it becomes
+dense in the domain. We showcase the approach on Gaussian process regression and classification and crossed effect models.
+
+
+\end{talk}
+
+\begin{talk}
+  {Randomized QMC Methods via Combinatorial Discrepancy}% [1] talk title
+  {Nikhil Bansal}% [2] speaker name
+  {University of Michigan}% [3] affiliations
+  {bansaln@umich.edu}% [4] email
+  {Haotian Jiang}% [5] coauthors
+  {Frontiers in (Quasi-)Monte Carlo and Markov Chain Monte Carlo Methods}% [6] special session. Leave this field empty for contributed talks. 
+    
+
+A folklore result in geometric discrepancy theory, called the Transference Principle, allows one to use methods from combinatorial discrepancy to show the existence of good QMC point sets with low star discrepancy.
+Unfortunately, this connection was not of much use until recently, as most results in combinatorial discrepancy were non-algorithmic. Recently however, there has been a major revolution in algorithmic combinatorial discrepancy [1]. 
+
+In this talk, I will explain how recent innovations in combinatorial discrepancy can be used to give an algorithm to produce randomized QMC point sets that  achieve substantially better error than given by the classical Koksma-Hlawka inequality. Moreover, the algorithm only requires random samples, as opposed to carefully chosen points, and also optimally combines the best features of both MC and QMC methods.  
+% In particular, the error is $\widetilde{O}(\sigma_{\mathsf{SO}}(f)/n)$, where $\sigma_{\mathsf{SO}}(f)$ is a new measure of variation that we introduce, which is substantially smaller than the Hardy-Krause variation.     
+    % \item The algorithm only requires random samples, as opposed to carefully chosen points in QMC constructions. It also it automatically combines the best features of both Monte-Carlo and Quasi-Monte-Carlo methods in an optimal way.  
+
+ 
+% In particular, we will see how one can leverage subgaussianity and other structural properties of the discrepancy problem arising from the transference principle to obtain certain careful cancellations in the Hlawka-Zaremba formula for integration error. In contrast, these cancellations are completely lost in the Koksma-Hlawka inequalities.
+
+The talk does not require any background on combinatorial discrepancy and will be a gentle introduction to the area. 
+These results appear in the paper [2].
+
+\medskip
+
+\begin{enumerate}
+ \item[{[1]}] Bansal, Nikhil (2022). {\it Discrepancy and Related Algorithms}. Survey article accompanying an invited talk at 
+     International Congress of Mathematicians (ICM) 2022.
+     
+ \item[{[2]}]  Bansal, Nikhil and Jiang, Haotian (2025). {\em Quasi-Monte Carlo Beyond Hardy-Krause.} Proceedings of Symposium on Discrete Algorithms (SODA). Invited to Journal of the ACM (JACM). 
+\end{enumerate}
+\end{talk}
+
+\begin{talk}
+  {The Walk on Spheres Monte Carlo Algorithm for Solving Partial Differential Equations}% [1] talk title
+  {Michael Mascagni}% [2] speaker name
+  {Florida State University and NIST, USA}% [3] affiliations
+  {mascagni@fsu.edu}% [4] email
+  {}% [5] coauthors
+  {Frontiers in (Quasi-)Monte Carlo and Markov Chain Monte Carlo Methods}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+The stochastic representation of the solutions of partial differential equations (PDEs) and integral equations (IEs) has been known for decades.  These representations have led to a variety of Monte Carlo methods for the numerical solution of both PDEs and IEs, among them is a method called the Walk on Spheres (WoS) algorithm.  WoS has been quite successful in solving linear elliptic and parabolic PDEs with Dirichlet boundary conditions in a very cost-effective way.  This numerical analysis work was taken up by the computer graphics community, who are experts in Monte Carlo through their use of it in image rendering via ray tracing.  Their interest stems from the fact that WoS and ray tracing both permit the representation of the geometry of the problem in a very compact and computational efficient way via Bounding Volume Hierarchy.  This has lead to the expansion of the scope and efficiency of WoS in a wide variety of ways which will be presented here.
+\end{talk}
+
+\begin{talk}
+  {Enhancing Gaussian Process Surrogates for Optimization and Posterior Approximation via Random Exploration}% [1] talk title
+  {Hwanwoo Kim}% [2] speaker name
+  {Duke University}% [3] affiliations
+  {hwanwoo.kim@duke.edu}% [4] email
+  {Daniel Sanz-Alonso}% [5] coauthors
+  {Frontiers in (Quasi-)Monte Carlo and Markov Chain Monte Carlo Methods}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+In this talk, we propose novel noise-free Bayesian optimization strategies that rely on a random exploration step to enhance the accuracy of Gaussian process surrogate models. The new algorithms retain the ease of implementation of the classical GP-UCB algorithm, but the additional random exploration step accelerates their convergence, nearly achieving the optimal convergence rate. Furthermore, to facilitate Bayesian inference with an intractable likelihood, we propose to utilize the optimization iterates as design points to build a Gaussian process surrogate model for the unnormalized log-posterior density. We show that the Hellinger distance between the true and the approximate posterior distributions decays at a near-optimal rate. We demonstrate the effectiveness of our algorithms in benchmarking non-convex problems test functions for optimization, and in a black-box engineering design problem. We also showcase the effectiveness of our posterior approximation approach in Bayesian inference for parameters of dynamical systems.
+
+
+\end{talk}

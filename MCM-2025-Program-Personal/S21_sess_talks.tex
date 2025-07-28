@@ -1,0 +1,88 @@
+\section{Track H: Monte Carlo Applications in High-performance Computing, Computer Graphics, and Computational Science}\newpage
+
+\begin{talk}
+  {Gaining efficiency in Monte Carlo policy gradient methods for stochastic optimal control}% [1] talk title
+  {Arash Fahim}% [2] speaker name
+  {Florida State University}% [3] affiliations
+  {afahim@fsu.edu}% [4] email
+  {Md. Arafatur Rahman, Citi Group, NYU}% [5] coauthors
+  
+    
+   
+In this paper, we propose an efficient implementation of a deep policy gradient method (PGM) for stochastic optimal control problems in continuous time. The proposed method has the ability to distribute the allocation of computational resources, i.e., the number of Monte Carlo  sample paths of a controlled diffusion process and complexity of the neural network architecture, more efficiently and improves performance for certain continuous-time problems that require a fine time discretization to achieve a desired accuracy. At each step of the method, we train a policy, modeled by a neural network, for a discretized optimal control problem in a different time scale. The first step has the coarsest time discretization. As we proceed to further steps, the time grid renders finer and a new policy is trained on the finer time scale. We provide a theoretical result on efficiency gained by this method and conclude the paper by numerical experiments on a linear-quadratic stochastic optimal control problem.
+
+\medskip
+
+% If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+% Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+% APA reference style is recommended.
+% \begin{enumerate}
+%  \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+%  \item[{[2]}] L’Ecuyer, Pierre, \& Christiane Lemieux. (2002). Recent advances in randomized quasi-Monte Carlo methods. Modeling uncertainty: An examination of stochastic theory, methods, and applications, 419-474.
+% \end{enumerate}
+
+% Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}
+
+\begin{talk}
+  {Examining the Fault Tolerance of High-Performance Monte Carlo Applications through Simulation}% [1] talk title
+  {Sharanya Jayaraman}% [2] speaker name
+  {Department of Computer Science, Florida State University}% [3] affiliations
+  {sjayaraman@fsu.edu}% [4] email
+  {}% [5] coauthors
+  {Monte Carlo Applications in High-performance Computing, Computer Graphics, and Computational Science}% [6] special session. 
+   
+Monte Carlo methods are naturally fault-tolerant due to their stochastic nature and are highly scalable, making them well-suited for high-performance computing environments$^{[1]}$. In this work, we use a custom-built, cloud-based exascale simulator to investigate the resilience of Monte Carlo and multi-level Monte Carlo methods under various hardware and software fault scenarios. We examine the behavior of the calculations and the propagation of inaccuracies in the presence and absence of common mitigation strategies, such as checkpointing$^{[2]}$. Our simulations offer insights into how faults propagate through computations, enabling us to evaluate techniques for constraining and mitigating the impact of unpredictable failures. The results may be used as guidance for deploying Monte Carlo-based applications on exascale systems, thereby enhancing their reliability.
+
+\medskip
+
+References
+\begin{enumerate}
+ \item[{[1]}] Pauli, Stefan, Arbenz, Peter, \&  Schwab, Christoph, (2015). {\it Intrinsic fault tolerance of multilevel Monte Carlo methods}, Journal of Parallel and Distributed Computing \textbf{84}, 24-36.
+ \item[{[2]}] Chang, C., Deringer, V.L., Katti, K.S. et al. (2023) {\it Simulations in the era of exascale computing}, Nat Rev Mater \textbf{8}, 309--313 
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {Building Monte Carlo ``Renderers'' for Physics}% [1] talk title
+  {Rohan Sawhney}% [2] speaker name
+  {Nvidia Corporation}% [3] affiliations
+  {rsawhney@nvidia.com}% [4] email
+  {}% [5] coauthors
+  {Monte Carlo Applications in High-performance Computing, Computer Graphics, and Computational Science}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+Accurately analyzing large amounts of geometric data is critical for many scientific and engineering applications. Techniques based on partial differential equations (PDEs) provide powerful tools for analyzing physical systems, but conventional solvers are not yet at a stage where they “just work” on problems of real-world complexity. A constant challenge is spatial discretization, which divides the domain into a high-quality volumetric mesh for PDE-based analysis. Unfortunately, this approach does not scale well to modern computer architectures, and as such, there remains a large divide between our ability to \emph{visualize} and \emph{analyze} the natural world.
+
+This talk provides a broad overview of grid-free Monte Carlo methods for solving PDEs based on the walk on spheres (WoS) algorithm. WoS makes a radical departure from conventional solvers by reformulating fundamental PDEs like the Poisson equation as recursive integrals that can be solved using the Monte Carlo method. Since these integrals closely resemble those in light transport, one can leverage deep knowledge from Monte Carlo rendering to build new scalable algorithms with vastly different numerical tradeoffs, such as trivial parallelism, the ability to
+evaluate the solution at any point in the domain without solving a global system
+of equations, and avoiding volumetric meshing altogether.
+
+%\medskip
+
+%If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+%Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+%APA reference style is recommended.
+%\begin{enumerate}
+% \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+% \item[{[2]}] L’Ecuyer, Pierre, \& Christiane Lemieux. (2002). Recent advances in randomized quasi-Monte Carlo methods. Modeling uncertainty: An examination of stochastic theory, methods, and applications, 419-474.
+%\end{enumerate}
+
+%Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}
+
+\begin{talk}
+  {WoS-NN: Collaborating Walk-on-Spheres with Machine Learning to Solve Elliptic PDEs}% [1] talk title
+  {Silei Song}% [2] speaker name
+  {Department of Computer Science, Florida State University}% [3] affiliations
+  {ss19cu@fsu.edu}% [4] email
+  {Michael Mascagni, Arash Fahim}% [5] coauthors
+  {Monte Carlo Applications in High-performance Computing, Computer Graphics, and Computational Science}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+Solving elliptic partial differential equations (PDEs) is a fundamental step in various scientific and engineering studies. As a classic stochastic solver, the Walk on Spheres (WoS) method is a well-established and efficient algorithm that provides accurate local estimates for PDEs. However, limited by the curse of dimensionality, WoS may not offer sufficiently precise global estimations, which becomes more serious in high-dimensional scenarios. Recent developments in machine learning offer promising strategies to address this limitation. By integrating machine learning techniques with WoS and space discretization approaches, we developed a novel stochastic solver, WoS-NN. This new method solves elliptic problems with Dirichlet boundary conditions, facilitating precise and rapid global solutions and gradient approximations. A typical experimental result demonstrated that the proposed WoS-NN method provides accurate field estimations, reducing $76.32\%$ errors while using only $8\%$ of path samples compared to the conventional WoS method, which saves abundant computational time and resource consumption. WoS-NN can also be utilized as a fast and effective gradient estimator based on established implementations of the original WoS method. This new method reduced the impacts of the curse of dimensionality and can be widely applied to areas like geometry processing, bio-molecular modeling, financial mathematics, etc.
+
+\medskip
+
+\end{talk}

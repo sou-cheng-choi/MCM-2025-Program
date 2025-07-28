@@ -1,0 +1,102 @@
+\section{Track A: Stochastic Computation and Complexity, Part V}\newpage
+
+\begin{talk}
+  {On the quantum complexity of parametric integration in Sobolev spaces}% [1] talk title
+  {Stefan Heinrich}% [2] speaker name
+  {RPTU Kaiserslautern-Landau, 
+Germany}% [3] affiliations
+  {heinrich@informatik.uni-kl.de}% [4] email
+  {}% [5] coauthors
+  {Stochastic computation and complexity}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+We consider the following problem of parametric integration in Sobolev spaces. We seek to approximate
+$$
+S:W_p^r(D)\to L_q(D_1), \quad (Sf)(s)=\int_{D_2}f(s,t)dt \quad (s\in D_1),
+$$ 
+where 
+%
+\begin{eqnarray*}
+&&D=[0,1]^d=D_1\times D_2,\quad D_1=[0,1]^{d_1}, \quad D_2=[0,1]^{d_2}, 
+\\
+&&1\le p,q\le \infty, \quad d,d_1,d_2,r\in {\bf N},\quad d=d_1+d_2,\quad \frac{r}{d_1}>\left(\frac{1}{p}-\frac{1}{q}\right)_+\, .
+\end{eqnarray*}
+%
+We study the complexity of this problem in the quantum setting of Information-Based Complexity [1]. Under the assumption that $W_p^r(D)$ is embedded into $C(D)$ (embedding condition) the case $p=q$ was solved by Wiegand [2]. Here we treat the case $p=q$ without embedding condition and the general case $p\ne q$ with or without the embedding condition. We also compare the rates with those in the (classical) randomized setting [3].
+
+
+\medskip
+
+\begin{enumerate}
+
+\item[{[1]}] Heinrich, Stefan (2002).\  Quantum summation with an application to integration. 
+Journal of Complexity 18, 1--50.
+\item[{[2]}] Wiegand, Carsten (2006).\ {\it Optimal Monte Carlo and Quantum Algorithms for Parametric Integration}. Shaker Verlag.
+\item[{[3]}] Heinrich, Stefan (2024).\  Randomized complexity of parametric integration and
+the role of adaptation  II. Sobolev spaces. Journal of Complexity 82, 101823.
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {Quantum Integration in Tensor Product  Besov Spaces}% [1] talk title
+  {Bernd K\"a{\ss}emodel}% [2] speaker name
+  {Faculty of Mathematics, Technische Universit\"at Chemnitz}% [3] affiliations
+  {bernd.kaessemodel@mathematik.tu-chemnitz.de}% [4] email
+  {Tino Ullrich}% [5] coauthors
+  {Stochastic Computation and Complexity}% [6] special session. Leave this field empty for contributed talks. 
+    
+
+We begin with a brief introduction to the basic concepts of quantum computing and quantum information-based complexity for multivariate integration and approximation problems in various smoothness classes. We then discuss characterizations of functions in tensor product Besov spaces (mixed smoothness) using the tensorized Faber-Cieselski basis with coefficients based on mixed iterated differences. Relying on such a decomposition we develop a quantum algorithm to establish bounds for the worst case quantum integration error for this function class. 
+
+\medskip
+%
+%If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+%Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+%APA reference style is recommended.
+%\begin{enumerate}
+% \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+% \item[{[2]}] Roberts, Gareth O, \& Rosenthal, Jeffrey S. (2002).  Optimal scaling for various Metropolis-Hastings algorithms, \textbf{16}(4), 351--367.
+%\end{enumerate}
+%
+%Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}
+
+\begin{talk}
+  {Taming the Interacting Particle Langevin Algorithm -- The Superlinear Case}% [1] talk title
+  {Nikolaos Makras}% [2] speaker name
+  {University of Edinburgh, School of Mathematics}% [3] affiliations
+  {N.Makras@sms.ed.ac.uk}% [4] email
+  {Tim Johnston, Sotirios Sabanis}% [5] coauthors
+  
+    
+   
+Recent advances in stochastic optimization have yielded the interacting particle Langevin algorithm (IPLA), which leverages the notion of interacting particle systems (IPS) to efficiently sample from approximate posterior densities. This becomes particularly crucial in relation to the framework of Expectation-Maximization (EM), where the E-step is computationally challenging or even intractable. Although prior research has focused on scenarios involving convex cases with gradients of log densities that grow at most linearly, our work extends this framework to include polynomial growth. Taming techniques are employed to produce an explicit discretization scheme that yields a new class of stable, under such non-linearities, algorithms which are called tamed interacting particle Langevin algorithms (tIPLA). We obtain non-asymptotic convergence error estimates in Wasserstein-2 distance for the new class under the best known rate. 
+
+\medskip
+
+\begin{enumerate}
+ \item[{[1]}] Tim Johnston, Nikolaos Makras and Sotirios Sabanis, {\it Taming the Interacting Particle Langevin Algorithm -- The Superlinear Case} (2024). Preprint: \href{https://arxiv.org/abs/2403.19587}{arxiv:2403.19587} 
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {Sampling with Langevin Dynamics from non-smooth and non-logconcave potentials.}
+  {Iosif Lytras}
+  {Archimedes/Athena Research Centre and National Technical University of Athens}% [3] affiliations
+  {i.lytras@athenarc.gr}% [4] email
+  {Tim Johnston, Nikos Makras, Sotirios Sabanis}  % [5] coauthors
+  
+    
+   
+In this article, we study the problem of sampling from distributions whose densities are not necessarily smooth nor log-concave. We propose a simple Langevin-based algorithm that does not rely on popular but computationally challenging techniques, such as the Moreau Yosida envelope or Gaussian smoothing. We derive non-asymptotic guarantees for the convergence of the algorithm to the target distribution in Wasserstein distances. Non asymptotic bounds are also provided for the performance of the algorithm as an optimizer, specifically for the solution of associated excess risk optimization problems.\\
+Possible extensions to potentials with log-gradients that grow super-linearly may also be discussed.
+
+This is based on the joint work in [1].
+\medskip
+
+\begin{enumerate}
+    \item [{[1]}] Johnston, T., Lytras, I., Makras, N., Sabanis, S. (2025). The Performance Of The Unadjusted Langevin Algorithm Without Smoothness Assumptions. arXiv preprint arXiv:2502.03458.
+\end{enumerate}
+\end{talk}

@@ -447,6 +447,103 @@ def generate_tex_talks(csv_path: str = "plenary_abstracts_talkid.csv",
         print(f"WARN: Missing talk abstracts for IDs: {missing}")
 
 
+def generate_individual_session_files():
+    """
+    Generate individual .tex files for each session (special sessions and technical sessions).
+    For each session ID (e.g., S1, T4), reads all session-*.tex files and outputs
+    the content to preprocess/out/SessionID_sess_talks.tex
+    """
+    import glob
+    
+    # Process both special sessions and technical sessions
+    session_types = [
+        {
+            'csv_path': os.path.join(interimdir, "special_session_submissions_sessionid.csv"),
+            'session_type': 'Special Sessions'
+        },
+        {
+            'csv_path': os.path.join(interimdir, "contributed_talk_submissions_talkid.csv"),
+            'session_type': 'Technical Sessions'
+        }
+    ]
+    
+    abstracts_dir = os.path.join(indir, 'abstracts')
+    
+    for session_config in session_types:
+        csv_path = session_config['csv_path']
+        session_type = session_config['session_type']
+        
+        if not os.path.exists(csv_path):
+            print(f"WARN: CSV file not found: {csv_path}")
+            continue
+        
+        df = pd.read_csv(csv_path, dtype=str)
+        if 'SessionID' not in df.columns:
+            print(f"WARN: SessionID column not found in {csv_path}")
+            continue
+        
+        # Get unique session IDs  
+        session_ids = df['SessionID'].dropna().astype(str).str.strip().unique()
+        session_ids = [sid for sid in session_ids if sid and sid.lower() != 'nan']
+        
+        print(f"Processing {session_type}: {len(session_ids)} sessions")
+        
+        for session_id in session_ids:
+            # Find all abstract files for this session (e.g., S10-1.tex, T4-1.tex, etc.)
+            pattern = os.path.join(abstracts_dir, f"{session_id}-*.tex")
+            abstract_files = glob.glob(pattern)
+            
+            if not abstract_files:
+                print(f"WARN: No abstract files found for session {session_id}")
+                continue
+            
+            # Sort files naturally (S10-1.tex, S10-2.tex, T4-1.tex, T4-2.tex, etc.)
+            abstract_files = sorted(abstract_files, key=lambda x: [
+                int(tok) if tok.isdigit() else tok 
+                for tok in re.split(r'(\d+)', os.path.basename(x))
+            ])
+            
+            # Process each abstract file and collect the talk blocks
+            talk_blocks = []
+            for abs_file in abstract_files:
+                try:
+                    # Read file with fallback encoding
+                    try:
+                        content = open(abs_file, 'r', encoding='utf-8').read()
+                    except UnicodeDecodeError:
+                        content = open(abs_file, 'r', encoding='latin-1').read()
+                    
+                    # Extract talk environment
+                    talk_block = extract_talk_environment(content)
+                    
+                    # Clean the talk block using util function
+                    talk_block = ut.clean_tex_content(talk_block)
+                    talk_blocks.append(talk_block)
+                    
+                except Exception as e:
+                    print(f"WARN: Error processing {abs_file}: {e}")
+                    continue
+            
+            if not talk_blocks:
+                print(f"WARN: No valid talk blocks found for session {session_id}")
+                continue
+            
+            # Write output file
+            output_path = os.path.join(outdir, f"{session_id}_sess_talks.tex")
+            
+            # Get session info for header
+            session_info = df[df['SessionID'] == session_id].iloc[0] if len(df[df['SessionID'] == session_id]) > 0 else None
+            session_title = session_info['SessionTitle'] if session_info is not None and 'SessionTitle' in session_info else f"Session {session_id}"
+            
+            # Write header and content
+            with open(output_path, 'w', encoding='utf-8') as out:
+                out.write(f"\\section{{{session_title}}}\\newpage\n\n")
+                out.write("\n\n".join(talk_blocks))
+                out.write("\n")
+            
+            print(f"Generated: {output_path} (with {len(talk_blocks)} talks)")
+
+
 if __name__ == '__main__':
     # map sheet keys to filename prefixes
     prefix_map = {
@@ -471,3 +568,7 @@ if __name__ == '__main__':
                 strict=False,
                 prefix=prefix_map[key]
             )
+    
+    # Generate individual session files for special and technical sessions
+    generate_individual_session_files() 
+    

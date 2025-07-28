@@ -1,0 +1,85 @@
+\section{Track G: Recent Progress on Algorithmic Discrepancy Theory and Applications}\newpage
+
+\begin{talk}
+  {Algorithmic Discrepancy Theory: An Overview}% [1] talk title
+  {Haotian Jiang}% [2] speaker name
+  {University of Chicago}% [3] affiliations
+  {jhtdavid@uchicago.edu}% [4] email
+  {}
+  {Recent Progress on Algorithmic Discrepancy Theory and Applications}
+  %{Names of coauthors go here, no affiliations of coauthors please, all affiliations will be included in an appendix of the program book}% [5] coauthors
+    
+   
+Combinatorial discrepancy theory studies the following question: given a universe of elements $U=\{1,\ldots, n\}$ and a collection $\mathcal{S} = \{S_1, \ldots, S_m\}$ of subsets of $U$, how well can we partition $U$ into two pieces, so that all sets in $\mathcal{S}$ are split as evenly as possible.
+%Discrepancy theory studies the irregularities of distributions. Typical questions studied in discrepancy theory include: ``What is the most uniform way of distributing $n$ points in the unit square, and how big must the irregularity be?", ``What is the best way to divide a set of $n$ objects into two groups that are as 'similar' as possible?" 
+The study of this question has found extensive applications in many areas of mathematics, computer science, statistics, finance, etc. 
+
+The past decade has seen tremendous progress in designing efficient algorithms for this problem. These developments have led to many surprising applications in areas such as differential privacy, graph sparsification, approximation algorithms and rounding, kernel density estimation, randomized controlled trials, and quasi-Monte Carlo methods.
+
+In this talk, I will briefly survey some recent algorithmic developments in this area. 
+
+%\medskip
+
+%If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+%Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+% APA reference style is recommended.
+% \begin{enumerate}
+%  \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+%  \item[{[2]}] L’Ecuyer, Pierre, \& Christiane Lemieux. (2002). Recent advances in randomized quasi-Monte Carlo methods. Modeling uncertainty: An examination of stochastic theory, methods, and applications, 419-474.
+% \end{enumerate}
+
+% Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}
+
+\begin{talk}
+  {Improving the Design of Randomized Experiments via Discrepancy Theory}% [1] talk title
+  {Peng Zhang}% [2] speaker name
+  {Rutgers University}% [3] affiliations
+  {pz149@rutgers.edu}% [4] email
+  {}
+  % {Names of coauthors go here, no affiliations of coauthors please, all affiliations will be included in an appendix of the program book}% [5] coauthors
+  {Recent Progress on Algorithmic Discrepancy Theory and Applications}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+Randomized controlled trials (RCTs) or A/B tests are the ``gold standard" for estimating the causal effects of new treatments. In a trial, we want to randomly assign experimental units into two groups so that certain unit-specific pre-treatment variables, called covariates, are balanced across different groups. Balancing covariates improves causal effect estimates if covariates correlate with treatment outcomes. Simultaneously, we want our assignment of the units to be robust or sufficiently random such that our estimate is not bad if covariates do not correlate with treatment outcomes. We will show a close connection between the design of RCTs and discrepancy theory and how recent advances in algorithmic discrepancy theory could improve the design of RCTs.
+
+\medskip
+
+% If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+% Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+% APA reference style is recommended.
+% \begin{enumerate}
+%  \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+%  \item[{[2]}] L’Ecuyer, Pierre, \& Christiane Lemieux. (2002). Recent advances in randomized quasi-Monte Carlo methods. Modeling uncertainty: An examination of stochastic theory, methods, and applications, 419-474.
+% \end{enumerate}
+
+% Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}
+
+\begin{talk}
+  {Online Factorization for Online Discrepancy Minimization}% [1] talk title
+  {Aleksandar Nikolov}% [2] speaker name
+  {University of Toronto}% [3] affiliations
+  {anikolov@cs.toronto.edu}% [4] email
+  {Haohua Tang}% [5] coauthors
+  
+    
+   
+A recent line of work, initiated by a paper of Bansal and Spencer [2], has made remarkable progress in developing online algorithms for combinatorial discrepancy minimization. In the online discrepancy minimization model, the algorithm receives a sequence of elements of some set system, or, more generally, a sequence of vectors, to color. The new element/vector must be colored immediately upon being received. We now have online algorithms that nearly match some important (offline) discrepancy bounds when the sequence of elements/vectors is stochastic or oblivious: examples include Spencer's theorem [2], and Banaszczyk's theorem [1,3]. In this work, we explore if the factorization method for discrepancy minimization [4] can also be adapted to the offline setting. We introduce a model of online factorization of matrices, and, as a case study, show how to factor online the incidence matrix of a collection of $n$ halfspaces in $d$ dimensions. As a result, we obtain an online algorithm to color an oblivious sequence of $T$ points in $d$ dimensions, so that the discrepancy with respect to a pre-specified collection of $n$ halfspaces is on the order of $n^{\frac12 - \frac{1}{2d}}$ up to logarithmic terms. 
+
+\medskip
+
+\begin{enumerate}
+    \item[{[1]}] Ryan Alweiss, Yang P. Liu, Mehtaab Sawhney:
+Discrepancy minimization via a self-balancing walk. STOC 2021: 14-20
+
+ \item[{[2]}] Nikhil Bansal, Joel H. Spencer:
+On-line balancing of random inputs. Random Struct. Algorithms 57(4): 879-891 (2020)
+
+    \item[{[3]}] Janardhan Kulkarni, Victor Reis, Thomas Rothvoss:
+Optimal Online Discrepancy Minimization. STOC 2024: 1832-1840
+
+    \item[{[4]}] Jiri Matousek, Aleksandar Nikolov, Kunal Talwar, Factorization Norms and Hereditary Discrepancy, IMRN (3), 751-780, 2020. 
+
+\end{enumerate}
+\end{talk}

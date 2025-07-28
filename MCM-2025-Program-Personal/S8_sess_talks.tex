@@ -1,0 +1,74 @@
+\section{Track A: Stochastic Computation and Complexity, Part III}\newpage
+
+\begin{talk}
+  {Computing the stationary measure of McKean-Vlasov SDEs}% [1] talk title
+  {Jean-Fran\c{c}ois CHASSAGNEUX}% [2] speaker name
+  {ENSAE-CREST \& IP Paris}% [3] affiliations
+  {chassagneux@ensae.fr}% [4] email
+  {Gilles Pag\`es}% [5] coauthors
+  {Stochastic Computation and Complexity}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+Under some confluence assumption, it is known that the stationary distribution of a McKean-Vlasov SDE is the limit of the empirical measure of its associated self-interacting diffusion. 
+Our numerical method consists of introducing the Euler scheme with decreasing step size of this self-interacting diffusion and seeing its empirical measure as the approximation of the stationary distribution of the original McKean-Vlasov SDEs.
+This simple approach is successful (under some reasonable assumptions) as we are able to prove convergence with a rate for the Wasserstein distance between the two measures both in the L2 and almost sure sense. In this talk, I will first explain the rationale behind this approach and  I will discuss the various convergence results we have obtained so far.
+
+
+
+% \medskip
+
+% If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+% Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+% APA reference style is recommended.
+% \begin{enumerate}
+%  \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+%  \item[{[2]}] Roberts, Gareth O, \& Rosenthal, Jeffrey S. (2002).  Optimal scaling for various Metropolis-Hastings algorithms, \textbf{16}(4), 351--367.
+% \end{enumerate}
+
+% Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}
+
+\begin{talk}
+  {On the convergence of the Euler-Maruyama scheme for McKean-Vlasov SDEs}% [1] talk title
+  {Noufel Frikha}% [2] speaker name
+  {Universit\'e Paris 1 Panth\'eon-Sorbonne}% [3] affiliations
+  {noufel.frikha@univ-paris1.fr}% [4] email
+  {Cl\'ement Rey, Xuanye Song}% [5] coauthors
+  
+    
+   
+Relying on the backward Kolmogorov PDE stated on the Wasserstein space, we obtain several new results concerning the approximation error of some non-linear diffusion process in the sense of McKean-Vlasov by the corresponding Euler-Maruyama discretization scheme of its system of interacting particles. We notably present explicit error estimates, at the level of the trajectories, at the level of the semigroup (stated on the Wasserstein space) and at the level of the densities. Some Gaussian density estimates of the transition density and its first-order derivative for the Euler-Maruyama scheme are also established. This presentation is based on joint works with Cl\'ement Rey (Ecole Polytechnique) and Xuanye Song (Universit\'e Paris Cit\'e).
+
+\medskip
+
+
+\begin{enumerate}
+ \item[{[1]}] Frikha, N.  \& Song, X. (2025). {\it On the convergence of the Euler-Maruyama scheme for McKean-Vlasov SDEs}, arXiv:2503.22226.
+ \item[{[2]}] Frikha, N. \& Rey, C. (2025).  {\it On the weak convergence of the Euler-Maruyama scheme for McKean-Vlasov SDEs: expansion of the densities}.
+\end{enumerate}
+
+
+\end{talk}
+
+\begin{talk}
+  {Wasserstein Convergence of Score-based Generative Models under Semiconvexity and Discontinuous Gradients }% [1] talk title
+  {Sotirios Sabanis}% [2] speaker name
+  {University of Edinburgh \& National Technical University of Athens \& Archimedes/Athena Research Centre}% [3] affiliations
+  {s.sabanis@ed.ac.uk}% [4] email
+  {Stefano Bruno}% [5] coauthors
+  {Stochastic Computation and Complexity}% [6] special session. Leave this field empty for contributed talks.
+    
+   
+\noindent Score-based Generative Models (SGMs) approximate a data distribution by perturbing it with Gaussian noise and subsequently denoising it via a learned reverse diffusion process. These models excel at modeling complex data distributions and generating diverse samples, achieving state-of-the-art performance across domains such as computer vision, audio generation, reinforcement learning, and computational biology. Despite their empirical success, existing Wasserstein-2 convergence analysis typically assumes strong regularity conditions—such as smoothness or strict log-concavity of the data distribution—that are rarely satisfied in practice.
+  
+ \noindent In this work, we establish the first non-asymptotic Wasserstein-2 convergence guarantees for SGMs targeting semiconvex distributions with potentially discontinuous gradients. Our upper bounds are explicit and sharp in key parameters, achieving optimal dependence of $O(\sqrt{d})$ on the data dimension $d$ and convergence rate of order one. The framework accommodates a wide class of practically relevant distributions, including symmetric modified half-normal distributions, Gaussian mixtures, double-well potentials, and elastic net potentials. By leveraging semiconvexity without requiring smoothness assumptions on the potential such as differentiability, our results substantially broaden the theoretical foundations of SGMs, bridging the gap between empirical success and rigorous guarantees in non-smooth, complex data regimes.
+
+\medskip
+
+
+\begin{enumerate}
+ \item[{[1]}] Bruno, Stefano \& Sabanis, Sotirios (2025). {\it Wasserstein Convergence of Score-based Generative Models under Semiconvexity and Discontinuous Gradients}. ArXiv.
+\end{enumerate}
+
+
+\end{talk}

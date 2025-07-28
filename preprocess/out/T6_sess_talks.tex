@@ -1,0 +1,32 @@
+\section{Track E: Technical Session 6 - Sampling}\newpage
+
+\begin{talk}
+  {Sampling from high-dimensional, multimodal distributions
+using automatically tuned, tempered Hamiltonian Monte Carlo}% [1] talk title
+  {Joonha Park}% [2] speaker name
+  {University of Kansas, Department of Mathematics}% [3] affiliations
+  {j.park@ku.edu}% [4] email
+  {}% [5] coauthors
+  
+    
+
+Hamiltonian Monte Carlo (HMC) is widely used for sampling from high-dimensional target distributions with probability density known up to proportionality. While HMC possesses favorable dimension scaling properties, it encounters challenges when applied to strongly multimodal distributions. Traditional tempering methods, commonly used to address multimodality, can be diﬃcult to tune, particularly in high dimensions. In this study, we propose a method that combines a tempering strategy with Hamiltonian Monte Carlo, enabling eﬃcient sampling from high-dimensional, strongly multimodal distributions. Our approach involves proposing candidate states for the constructed Markov chain by simulating Hamiltonian dynamics with time-varying mass, thereby searching for isolated modes at unknown locations. Moreover, we develop an automatic tuning strategy for our method, resulting in an automatically-tuned, tempered Hamiltonian Monte Carlo (ATHMC). Unlike simulated tempering or parallel tempering methods, ATHMC provides a distinctive advantage in scenarios where the target distribution changes at each iteration, such as in the Gibbs sampler. We numerically show that our method scales better with increasing dimensions than an adaptive parallel tempering method and demonstrate its eﬃcacy for a variety of target distributions, including mixtures of log-polynomial densities and Bayesian posterior distributions for a sensor network self-localization problem.
+   
+\end{talk}
+
+\begin{talk}
+  {Localized consensus-based sampling for non-Gaussian distributions}% [1] talk title
+  {Arne Bouillon}% [2] speaker name
+  {KU Leuven, Leuven, Belgium}% [3] affiliations
+  {arne.bouillon@kuleuven.be}% [4] email
+  {Alexander Bodard, Panagiotis Patrinos, Dirk Nuyens, and Giovanni Samaey}% [5] coauthors
+  
+    
+
+  Drawing samples distributed according to a given unnormalized probability density function is a common task in Bayesian inverse problems. Algorithms based on an ensemble of interacting \emph{particles}, moving in parameter space, are gaining in popularity for these problems since they are often parallelizable, derivative-free, and affine-invariant. However, most are only accurate for near-Gaussian target distributions; an example is the consensus-based sampling (CBS) method [1]. We propose a novel way to derive CBS from ensemble-preconditioned Langevin diffusions by first approximating the target potential by its anisotropic Moreau envelope, then approximating the proximal operator by a weighted mean, and finally assuming that the initial and target distributions are Gaussian. We adapt these approximations with non-Gaussian distributions in mind and arrive at a new interacting-particle method for sampling, which we call \emph{localized consensus-based sampling}. Numerical tests illustrate that localized CBS compares favorably to alternative methods in terms of affine-invariance and performance on non-Gaussian distributions.
+\medskip
+
+\begin{enumerate}
+  \item[{[1]}] Carrillo, J. A., Hoffmann, F., Stuart, A. M., \& Vaes, U. (2022). Consensus-based sampling. Studies in Applied Mathematics, \textbf{148}(3), 1069--1140.
+\end{enumerate}
+\end{talk}

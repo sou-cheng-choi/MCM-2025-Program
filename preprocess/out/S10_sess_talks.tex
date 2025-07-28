@@ -1,0 +1,62 @@
+\section{Track C: Heavy-tailed Sampling}\newpage
+
+\begin{talk}
+  {Parallel computations for Metropolis Markov chains based on Picard maps}% [1] talk title
+  {Sebastiano Grazzi}% [2] speaker name
+  {Department of Decision Sciences and BIDSA, Bocconi University, Via Roentgen, 1, 20136, Milan, Italy}% [3] affiliations
+  {sebastiano.grazzi@unibocconi.it}% [4] email
+  {Giacomo Zanella}% [5] coauthors
+  {Heavy-tailed Sampling}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+
+ We develop parallel algorithms for simulating zeroth-order Metropolis Markov chains based on the Picard map. 
+%We develop schemes to parallelize gradient-free Markov chain Monte Carlo algorithms based on the Picard map. 
+For Random Walk Metropolis Markov chains targeting log-concave distributions $\pi$ on $\mathbb{R}^d$, our algorithm  
+generates samples %from a measure 
+close to $\pi$ %in Chi-squared distance 
+in $\mathcal{O}(\sqrt{d})$ iterations with $\mathcal{O}(\sqrt{d})$ parallel processors, 
+therefore speeding-up the convergence of the corresponding sequential implementation by a factor $\sqrt{d}$. Furthermore, a modification of our algorithm generates samples from an approximate measure $\tilde \pi_\epsilon$ in $\mathcal{O}(1)$ iterations and $\mathcal{O}(d)$ parallel processors. In this talk, I will present the methodology, the analysis and numerical simulations. Our algorithms are straightforward to implement and may constitute a useful tool for practitioners seeking to sample from a prescribed distribution $\pi$ using only point-wise evaluations proportional to $\pi$.
+\end{talk}
+
+\begin{talk}
+  {A large deviation principle for Metropolis-Hastings sampling}% [1] talk title
+  {Federica Milinanni}% [2] speaker name
+  {KTH Royal Institute of Technology}% [3] affiliations
+  {fedmil@kth.se}% [4] email
+  {Pierre Nyquist}% [5] coauthors
+  {Heavy-tailed Sampling}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+   
+Sampling algorithms from the class of Markov chain Monte Carlo (MCMC) methods are widely used across scientific disciplines. Good performance measures are essential to analyse these methods, to compare different MCMC algorithms, and to tune parameters within a given method. Common tools that are used for analysing convergence properties of MCMC algorithms are, e.g., mixing times, spectral gap and functional inequalities (e.g., Poincar\'e, log-Sobolev). A further, rather novel, approach consists of the use of large deviations theory to study the convergence of empirical measures of MCMC chains. At the heart of large deviations theory is the large deviation principle, which allows us to describe the rate of convergence of the empirical measures through a so-called rate function.
+
+In this talk, we will consider Markov chains generated via MCMC methods of Metropolis-Hastings type for sampling from a target distribution on a Polish space. We will state a large deviation principle for the corresponding empirical measure, show examples of algorithms from this class for which the theorem applies, and illustrate how the result can be used to tune algorithms' parameters.
+
+\medskip
+
+\end{talk}
+
+\begin{talk}
+  {Sharp Characterization and Control of Global Dynamics of SGDs with Heavy Tails}% [1] talk title
+  {Xingyu Wang}% [2] speaker name
+  {University of Amsterdam}% [3] affiliations
+  {x.wang4@uva.nl}% [4] email
+  {Chang-Han Rhee, Sewoong Oh}% [5] coauthors
+  {Heavy tailed sampling }% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+The empirical success of deep learning is often attributed to the mysterious ability of stochastic gradient descents (SGDs) to avoid sharp local minima in the loss landscape, as sharp minima are believed to lead to poor generalization. To unravel this mystery and potentially further enhance such capability of SGDs, it is imperative to go beyond the traditional local convergence analysis and obtain a comprehensive understanding of SGDs' global dynamics within complex non-convex loss landscapes. In this talk, we characterize the global dynamics of SGDs through the heavy-tailed large deviations and local stability framework. This framework systematically characterizes the rare events in heavy-tailed dynamical systems; building on this, we characterize intricate phase transitions in the first exit times, which leads to the heavy-tailed counterparts of the classical Freidlin-Wentzell and Eyring-Kramers theories. Moreover, applying this framework to SGD, we reveal a fascinating phenomenon in deep learning: by injecting and then truncating heavy-tailed noises during the training phase, SGD can almost completely avoid sharp minima and hence achieve better generalization performance for the test data.
+
+% \medskip
+
+% If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+% Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+% APA reference style is recommended.
+% \begin{enumerate}
+%  \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+%  \item[{[2]}] L’Ecuyer, Pierre, \& Christiane Lemieux. (2002). Recent advances in randomized quasi-Monte Carlo methods. Modeling uncertainty: An examination of stochastic theory, methods, and applications, 419-474.
+% \end{enumerate}
+
+% Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}

@@ -1,0 +1,99 @@
+\section{Track A: Forward and Inverse Problems for Stochastic Reaction Networks}\newpage
+
+\begin{talk}
+  {Fixed-budget simulation method for growing cell populations}% [1] talk title
+  {Zhou Fang}% [2] speaker name
+  {Academy of Mathematics and Systems Science, Chinese Academy of Sciences}% [3] affiliations
+  {zhfang@amss.ac.cn}% [4] email
+  {Shaoqing Chen, Zheng Hu, Da Zhou}% [5] coauthors
+  {Forward and Inverse Problems for Stochastic Reaction Networks}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+Investigating the dynamics of growing cell populations is crucial for unraveling key biological mechanisms in living organisms, with many important applications in therapeutics and biochemical engineering. Classical agent-based simulation algorithms are often inefficient for these systems because
+they track each individual cell, making them impractical for fast (or even exponentially) growing
+cell populations. To address this challenge, we introduce a novel stochastic simulation approach
+based on a Feynman-Kac-like representation of the population dynamics. This method, named the
+Feynman-Kac-inspired Gillespie’s Stochastic Simulation Algorithm (FKG-SSA), always employs a
+fixed number of independently simulated cells for Monte Carlo computation of the system, resulting in a constant computational complexity regardless of the population size. Furthermore, we
+theoretically show the statistical consistency of the proposed method, indicating its accuracy and
+reliability. Finally, a couple of biologically relevant numerical examples are presented to illustrate the
+approach. Overall, the proposed FKG-SSA effectively addresses the challenge of simulating growing
+cell populations, providing a solid foundation for better analysis of these systems.
+
+
+\end{talk}
+
+\begin{talk}
+  {Dimensionality Reduction for Efficient Rare Event Estimation}% [1] talk title
+  {Sophia M\"unker}% [2] speaker name
+  {RWTH Aachen University}% [3] affiliations
+  {muenker@uq.rwth-aachen.de}% [4] email
+  {Chiheb Ben Hammouda, Nadhir Ben Rached, Ra\'ul Tempone}% [5] coauthors
+  {Forward and Inverse Problems for Stochastic Reaction Networks}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+A Stochastic Reaction Network (SRN) is a continuous-time, discrete-space Markov chain that models the random interaction of $d$ species through reactions, commonly applied in bio-chemical systems. We are interested in efficiently estimating rare event probabilities, where we consider path-dependent observables. Therefore, we present an importance sampling (IS) method based on the discrete Tau-Leap (TL) scheme to enhance the performance of Monte Carlo (MC) estimators. The primary challenge in IS is selecting an appropriate change of probability measure to significantly reduce variance, which often requires deep insights into the underlying problem. To address this, we propose a generic approach to obtain an efficient path-dependent measure change, based on an original connection between finding optimal IS parameters and solving a variance minimization problem using a stochastic optimal control (SOC) formulation [1]. The optimal IS parameters can be derived by solving a Hamilton-Jacobi-Bellman equation.
+
+To address the curse of dimensionality, we propose the Markovian Projection (MP) technique to reduce the SRN to a lower-dimensional SRN (called MP-SRN) while preserving the marginal distribution of the original high-dimensional system. When solving the resulting SOC problem numerically to derive the variance reducing IS parameters, we derive the parameter for a reduced-dimensional model. These IS parameters can be applied to the full-dimensional SRN in the forward run. Analysis and numerical experiments demonstrate that our IS strategies substantially reduce the variance of the MC estimator, leading to lower computational complexity in the rare event regime compared to standard MC methods. 
+
+At the end of the talk, we give a small outlook on a multilevel-IS scheme to further improve the efficiency of the estimator.
+
+
+\begin{enumerate}
+   \item[{[1]}] Ben Hammouda, C., Ben Rached, N., Tempone, R., \& Wiechert, S. (2024). Automated importance sampling via optimal control for stochastic reaction networks: A Markovian projection-based approach. Journal of Computational and Applied Mathematics, 446, 115853.
+\end{enumerate}
+
+\medskip
+\end{talk}
+
+\begin{talk}
+  {Filtered Markovian Projection: Dimensionality Reduction in Filtering for Stochastic Reaction Networks}% [1] talk title
+  {Maksim Chupin}% [2] speaker name
+  {King Abdullah University of Science and Technology (KAUST)}% [3] affiliations
+  {maksim.chupin@kaust.edu.sa}% [4] email
+  {Chiheb Ben Hammouda, Sophia M\"{u}nker, Ra\'{u}l Tempone}% [5] coauthors
+  {Forward and Inverse Problems for Stochastic Reaction Networks}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+Stochastic reaction networks (SRNs) model stochastic effects for various applications, including intracellular chemical or biological processes and epidemiology. A key challenge in practical problems modeled by SRNs is that only a few state variables can be dynamically observed. Given the measurement trajectories, one can estimate the conditional probability distribution of unobserved (hidden) state variables by solving a system filtering equation. The current numerical methods, such as the Filtered Finite State Projection [1], are hindered by the curse of dimensionality, significantly affecting their computational performance. To overcome this, we propose to use a dimensionality reduction technique based on the Markovian projection (MP), initially introduced for forward problems [2]. In this work, we explore how to adapt the existing MP approach to the filtering problem and introduce a novel version of the MP, the Filtered MP, that guarantees the consistency of the resulting estimator [3]. The novel method employs a reduced-variance particle filter for estimating the jump intensities of the projected model and solves the filtering equations in a low-dimensional space, improving computational efficiency over existing methods.
+
+
+
+
+
+\medskip
+
+\begin{enumerate}
+ \item[{[1]}] D’Ambrosio, E., Fang, Z., Gupta, A., Kumar, S., \& Khammash, M. (2022). Filtered finite state projection method for the analysis and estimation of stochastic biochemical reaction networks. bioRxiv, 2022-10.
+ \item[{[2]}] Hammouda, C. B., Rached, N. B., Tempone, R., \& Wiechert, S. (2024). Automated importance sampling via optimal control for stochastic reaction networks: A Markovian projection--based approach. Journal of Computational and Applied Mathematics, 446, 115853.
+    \item [{[3]}] Hammouda, C. B., Chupin, M., M\"unker, S., \& Tempone, R. (2025). Filtered Markovian Projection: Dimensionality Reduction in Filtering for Stochastic Reaction Networks. arXiv preprint arXiv:2502.07918.
+\end{enumerate}
+
+
+\end{talk}
+
+\begin{talk}
+  {State and parameter inference in stochastic reaction networks}% [1] talk title
+  {Muruhan Rathinam}% [2] speaker name
+  {University of Maryland Baltimore County}% [3] affiliations
+  {muruhan@umbc.edu}% [4] email
+  {Mingkai Yu}% [5] coauthors
+  
+    
+Continuous time Markov chain models are widely used to model intracellular chemical reactions networks that arise in systems and synthetic biology. In this talk, we address the problem of inference of state and parameters of such systems from partial observations. We present details of recent particle filtering methods that are applicable to two different scenarios: one in which the observations are made continuously in time and the other in which the observations are made in discrete snapshots of time.            We provide the theoretical justification as well as numerical results to illustrate these methods.       
+   
+\medskip
+
+%If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+%Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+%APA reference style is recommended.
+\begin{enumerate}
+ \item[{[1]}] Rathinam, Muruhan \& Yu, Mingkai (2021). {\it State and parameter estimation from exact partial state observation in stochastic reaction networks}. The Journal of Chemical Physics. 
+ 154(3).
+ \item[{[2]}] Rathinam, Muruhan \& Yu, Mingkai (2023). Stochastic Filtering of Reaction Networks Partially Observed in Time Snapshots. Journal of Computational Physics. 
+Volume 515, 15 October 2024, 113265. 
+
+\end{enumerate}
+
+%Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}

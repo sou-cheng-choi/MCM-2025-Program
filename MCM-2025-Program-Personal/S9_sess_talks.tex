@@ -1,0 +1,93 @@
+\section{Track B: Next-generation optimal experimental design: theory, scalability, and real world impact: Part I}\newpage
+
+\begin{talk}
+  {Optimal Pilot Sampling for Multi-fidelity Monte Carlo Methods}% [1] talk title
+  {Xun Huan}% [2] speaker name
+  {University of Michigan, Department of Mechanical Engineering}% [3] affiliations
+  {xhuan@umich.edu}% [4] email
+  {Thomas Coons, Aniket Jivani}% [5] coauthors
+  
+    
+
+Bayesian optimal experimental design (OED) aims to maximize an expected utility, often chosen to be the expected information gain (EIG), over a given design space. Estimating EIG typically relies on Monte Carlo methods, which require repeated evaluations of a computational model simulating the experimental process. 
+However, when the model is expensive to evaluate, standard Monte Carlo becomes impractical.
+%When performing forward uncertainty quantification (UQ) of a computationally intensive mathematical model, traditional sampling methods such as Monte Carlo can be prohibitively expensive. 
+
+Multi-fidelity variants of Monte Carlo, such as Approximate Control Variate (ACV) estimators, can significantly expedite such estimations by leveraging an ensemble of low-fidelity models that approximate the high-fidelity model with varying degrees of accuracy and cost. 
+To apply these techniques in an error-optimal manner, the covariance matrix across model outputs must be estimated from independent pilot model evaluations. This step incurs a significant but often overlooked computational cost. 
+Furthermore, the optimal allocation of computational resources between 
+%the model evaluations needed for 
+covariance estimation and 
+%the model evaluations needed for 
+ACV estimation remains an open problem.  Existing approaches fail to accommodate optimal estimators and may not be accurate with small pilot sample sizes.
+
+In this work, we introduce a novel framework for dynamically allocating resources between these two tasks.
+%prescribing the budget allocation between covariance estimation and ACV evaluation that 
+Our method employs Bayesian inference
+to quantify uncertainty in the covariance matrix and derives an adaptive expected loss metric
+%that is adaptively estimated and minimized as pilot samples are drawn, informing the user when 
+to determine when to terminate pilot sampling. 
+We demonstrate and analyze our framework through a benchmark nonlinear OED problem. 
+
+\medskip
+
+%If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+%Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files. APA reference style is recommended.
+%\begin{enumerate}
+% \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+% \item[{[2]}] L’Ecuyer, Pierre, \& Christiane Lemieux. (2002). Recent advances in randomized quasi-Monte Carlo methods. Modeling uncertainty: An examination of stochastic theory, methods, and applications, 419-474.
+%\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {A recursive Monte Carlo approach to optimal Bayesian experimental design}% [1] talk title
+  {Adrien Corenflos}% [2] speaker name
+  {Department of Statistics, University of Warwick}% [3] affiliations
+  {adrien.corenflos@warwick.ac.uk}% [4] email
+  {Hany Abdulsamad, Sahel Iqbal, Sara P\'erez-Vieites, Simo S\"arkk\"a}% [5] coauthors
+  {Next-generation optimal experimental design: theory, scalability, and real world impact: Part I}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+    Bayesian experimental design is concerned with designing experiments that maximize information on a latent parameter of interest. 
+    This can be formally understood as minimizing the \emph{expected} entropy over the parameter, given the input, the expectation being taken over the data.
+    Solving this problem is intractable \emph{as is}, and several surrogate loss functions have been proposed to learn policies that, when deployed in nature, help inference by sampling more informative data.
+    A drawback of most of these, however, is that they introduce a substantial amount of bias, or otherwise exhibit a high variance.
+    In this talk, we will introduce another surrogate formulation of optimal Bayesian design as a risk-sensitive policy optimization, compatible with non-exchangeable models.
+    Under this formulation, minimizing the entropy of the posterior can be understood as sampling from a posterior distribution over the (random) designs.
+    We will then discuss two nested sequential Monte Carlo algorithms [1,2] to infer these optimal designs, and discuss how to embed them within a particle Markov chain Monte Carlo framework to perform gradient-based policy learning. 
+    We will discuss the respective advantages and drawbacks of both algorithms as well as those of alternative methods.
+\medskip
+
+
+\begin{enumerate}
+ \item[{[1]}]Iqbal, S., Corenflos, A., S\"arkka, S., \&  Abdulsamad, H.(2024). {\it Nesting Particle Filters for Experimental Design in Dynamical Systems}. In Forty-first International Conference on Machine Learning (ICML).
+ \item[{[2]}] Iqbal, S., Abdulsamad, H., P\'erez-Vieites, S., S\"arkka, S., \& Corenflos, A. (2024). {\it Recursive nested filtering for efficient amortized Bayesian experimental design}. In NeurIPS 2024 Workshop on Bayesian Decision-making and Uncertainty.
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {Weighted quantization using MMD:
+From mean field to mean shift via gradient flows}% [1] talk title
+  {Ayoub Belhadji}% [2] speaker name
+  {Massachusetts Institute of Technology}% [3] affiliations
+  {abelhadj@mit.edu}% [4] email
+  {Daniel Sharp, Youssef Marzouk}% [5] coauthors
+  {Next-generation optimal experimental design: theory, scalability, and real world impact: Part I}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+Approximating a probability distribution using a set of particles is a fundamental problem in machine learning and statistics, with applications including  quantization and optimal design. Formally, we seek a finite weighted mixture of Dirac measures that best approximates the target distribution. While much existing work relies on the Wasserstein distance to quantify approximation errors, maximum mean discrepancy (MMD) has received comparatively less attention, especially when allowing for variable particle weights. We study the quantization problem from the perspective of minimizing MMD via gradient flow in the Wasserstein--Fisher--Rao (WFR) geometry. This gradient flow yields an ODE system from which we further derive a fixed-point algorithm called \emph{mean shift interacting particles} (MSIP). We show that MSIP extends the non-interacting mean shift algorithm, widely used for identifying modes in kernel density estimates. Moreover, we show that MSIP can be interpreted as preconditioned gradient descent, and that it acts as a relaxation of Lloyd's algorithm for clustering. 
+Our numerical experiments demonstrate that MSIP and the WFR ODEs outperform other algorithms for quantization of multi-modal and high-dimensional targets.
+\medskip
+
+% If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+% Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+% APA reference style is recommended.
+% \begin{enumerate}
+%  \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+%  \item[{[2]}] L’Ecuyer, Pierre, \& Christiane Lemieux. (2002). Recent advances in randomized quasi-Monte Carlo methods. Modeling uncertainty: An examination of stochastic theory, methods, and applications, 419-474.
+% \end{enumerate}
+
+% Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}

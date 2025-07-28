@@ -1,0 +1,86 @@
+\section{Track D: Technical Session 9 - Sampling and Markov Chain Monte Carlo}\newpage
+
+\begin{talk}
+  {Quantitative results on sampling from quasi-stationary distributions}% [1] talk title
+  {Daniel Yukimura}% [2] speaker name
+  {IMPA, Rio de Janeiro, Brazil}% [3] affiliations
+  {yukimura@impa.br}% [4] email
+  {Roberto I. Oliveira}% [5] coauthors
+  
+    
+   
+    We study the rate of convergence of Sequential Monte Carlo (SMC) methods for approximating the quasi-stationary distribution (QSD) of Markov processes. 
+    For processes with killing or absorption, the QSD appears as a stable behavior observed before extinction, or as the limiting distribution of the process conditioned on not being absorbed. 
+    We give quantitative lower and upper bounds for the particle filter approximation of these distributions.
+    For the lower bound, we show that fast mixing is not enough to guarantee that simulation methods can converge in few steps.
+    In the upper bound, we show that SMC with adaptive resampling has a rate depending on the number of steps, the mixing time, and in how fast the processed gets killed.
+    Our result seems to be the first to have a quantitative dependency of this form that is valid for discrete time Markov chains in general state spaces.
+    Our techniques and concentration results for bounding the approximations of SMC with adaptive resampling are also novel, and we believe they might be applicable in other scenarios that can benefit from the lower variance obtained due to an adaptive approach.
+    % Finally, as an example, we apply these results to get quantitative estimates for a large class of killed processes in $\mathbb{Z}^d$, where we obtain the first bounds with the ``natural" time scale.
+    
+    
+
+\medskip
+
+
+\end{talk}
+
+\begin{talk}
+  {Multilevel simulation of ensemble Kalman methods: interactions across levels}% [1] talk title
+  {Toon Ingelaere}% [2] speaker name
+  {KU Leuven}% [3] affiliations
+  {toon.ingelaere@kuleuven.be}% [4] email
+  {Giovanni Samaey}% [5] coauthors
+  
+    
+
+        To solve problems in domains such as filtering, optimization, and posterior sampling,
+        ensemble Kalman methods have recently received much attention. These parallelizable and often gradient-free algorithms use an ensemble of particles that evolve in time, based on a combination of well-chosen dynamics and interaction between the particles. For computationally expensive dynamics, the cost of attaining a high accuracy quickly becomes prohibitive. To improve the asymptotic cost-to-error relation, different multilevel Monte Carlo techniques have been proposed. These methods simulate multiple differently sized ensembles at different resolutions, corresponding to different accuracies and costs. While particles within one of these ensembles do interact with each other, a key question is whether and how particles should interact across ensembles and levels.
+        In this talk, we will outline and compare the most common approaches to such multilevel ensemble interactions.
+
+\medskip
+
+\end{talk}
+
+\begin{talk}
+  {Low-Rank Thinning}% [1] talk title
+  {Annabelle Michael Carrell}% [2] speaker name
+  {University of Cambridge}% [3] affiliations
+  {ac2411@cam.ac.uk}% [4] email
+  {Albert Gong, Abhishek Shetty, Raaz Dwivedi, Lester Mackey}% [5] coauthors
+  
+    
+   
+The goal in thinning is to summarize a dataset using a small set of representative points. Remarkably, sub-Gaussian thinning algorithms like Kernel Halving and Compress can match the quality of uniform subsampling while substantially reducing the number of summary points. However, existing guarantees cover only a restricted range of distributions and kernel-based quality measures and suffer from pessimistic dimension dependence. To address these deficiencies, we introduce a new low-rank analysis of sub-Gaussian thinning that applies to any distribution and any kernel, guaranteeing high-quality compression whenever the kernel or data matrix is approximately low-rank. To demonstrate the broad applicability of the techniques, we design practical sub-Gaussian thinning approaches that improve upon the best known guarantees for approximating attention in transformers, accelerating stochastic gradient training through reordering, and distinguishing distributions in near-linear time. 
+
+\medskip
+
+\end{talk}
+
+\begin{talk}
+  {Randomness in the quantum age: A Comparative Study of Classical and Quantum Random Number Generators}% [1] talk title
+  {Hongmei Chi}% [2] speaker name
+  {Florida A\&M University}% [3] affiliations
+  {Hongmei.chi@famu.edu}% [4] email
+ % {Names of coauthors go here, no affiliations of coauthors please, all affiliations will be included in an appendix of the program book}% [5] coauthors
+ 
+     
+The advent of quantum computing marks a pivotal transformation in the domain of computational sciences, particularly in the generation and utilization of randomness. This paper provides a critical examination of Random Number Generators (RNGs) within the context of the quantum computing era, with a specific focus on the emerging class of Quantum Random Number Generators (QRNGs), which leverage the inherent unpredictability of quantum mechanical processes to produce true random numbers, offering significant advantages over classical pseudorandom number generators. 
+In this paper, we present a comprehensive analysis of QRNG principles, architectures, and implementations, focusing on key quantum phenomena such as photon path selection, quantum vacuum fluctuations, and quantum phase noise. We examine the theoretical foundations that guarantee randomness, explore entropy extraction techniques, and evaluate the performance metrics critical for cryptographic and high-security applications [1]. A comparative assessment of existing commercial and laboratory-scale QRNG systems is provided, highlighting trade-offs between speed, complexity, and certifiability of randomness [2].  We address the challenges in device-independent randomness certification and integration into modern communication and computing infrastructures. Our findings underscore QRNGs as essential components in advancing secure quantum technologies, with potential for wide-scale deployment in future quantum networks and cryptographic protocols [3].
+
+ %We investigate the theoretical underpinnings of QRNGs, grounded in fundamental quantum phenomena such as superposition and entanglement, which guarantee true randomness as prescribed by quantum indeterminacy. This work contrasts classical and quantum approaches, evaluates current QRNG implementations, and addresses the practical challenges in achieving scalable, secure, and certifiable quantum randomness. 
+ Finally, we explore the implications of QRNGs for post-quantum cryptographic protocols and assess the broader impact of quantum randomness on algorithmic design and security frameworks. This study underscores the necessity of integrating quantum-enhanced randomness into next-generation computational systems to ensure robustness in the face of quantum adversaries [4].
+
+\medskip
+
+\begin{enumerate}
+\item[{[1]}] Cirauqui, D., Garc\'ia-March, M. \'A., Guig\'o Corominas, G., Gra{\ss}, T., Grzybowski, P. R., Mu\~noz-Gil, G., ... \& Lewenstein, M. (2024). Comparing pseudo-and quantum-random number generators with Monte Carlo simulations. APL Quantum,  \textbf{1}(3).
+
+\item[{[2]}]  Lin, H., Lu, H., Wong, M. S., Almogbel, A., Alyamani, A., Ng, T. K., ... \& Ooi, B. S. (2025). Micro-LED-based quantum random number generators. Optics Express, \textbf{33}(11), 22154-22164.
+
+\item[{[3]}]  Yang, Y., Lin, Y., Xiao, J., \& Zhong, Z. (2025). Feasibility discussion of quantum cryptography for Internet of Things security: a literature review. Optical and Quantum Electronics, \textbf{57}(5), 264.
+
+\item [{[4]}]  Jacak, M. M., J\'oźwiak, P., Niemczuk, J., \& Jacak, J. E. (2021). Quantum generators of random numbers. Scientific Reports, \textbf{11}(1), 16108.
+\end{enumerate}
+
+\end{talk}

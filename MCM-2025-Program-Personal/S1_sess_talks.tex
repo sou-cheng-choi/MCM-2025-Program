@@ -1,0 +1,98 @@
+\section{Track A: Stochastic Computation and Complexity, Part I}\newpage
+
+\begin{talk}
+  {A strong order $1.5$ boundary-preserving discretization scheme for scalar SDEs defined in a domain}% [1] talk title
+  {Andreas Neuenkirch}% [2] speaker name
+  {University of Mannheim}% [3] affiliations
+  {neuenkirch@uni-mannheim.de}% [4] email
+  {Ruishu Liu, Xiaojie Wang}% [5] coauthors
+  {Stochastic Computation and Complexity}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+We study the strong approximation of scalar SDEs, which take values in a domain and have non-Lipschitz coefficients.
+By combining a Lamperti-type transformation with a semi-implicit discretization approach and a taming 
+strategy,  we construct a domain-preserving scheme that strongly converges under weak assumptions. 
+Moreover,
+we show that this scheme has a strong convergence order $1.5$ under additional assumptions on the coefficients of the SDE. In our scheme, the domain preservation is a consequence of the semi-implicit discretization approach, while the taming strategy allows controlling terms of the scheme that admit singularities but are required to obtain the desired order.
+
+Our general convergence results  are  applied to various SDEs from applications, with sub-linearly or super-linearly growing and non-globally Lipschitz coefficients.
+
+
+\medskip
+
+\begin{enumerate}
+ \item[{[1]}]  Ruishu Liu, Andreas Neuenkirch and Xiaojie Wang (2024+). A strong order $1.5$
+ boundary-preserving discretization scheme for scalar SDEs defined in a domain. {\it Mathematics of Computation.} doi:10.1090/mcom/4014 (to appear, online first)
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {An adaptive Milstein-type method for strong approximation of systems of SDEs
+   with a discontinuous drift coefficient}% [1] talk title
+  {Christopher Rauh\"ogger}% [2] speaker name
+  {University of Passau}% [3] affiliations
+  {christopher.rauhoegger@uni-passau.de}% [4] email
+  {}% [5] coauthors
+  {Stochastic Computation and Complexity}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+We consider $d$-dimensional systems of SDEs with a discontinuous drift coefficient. More precisely,
+we assume that there exists a $C^{5}$-hypersurface
+$\Theta\subseteq \mathbb{R}^{d}$ such that the drift coefficient is intrinsic Lipschitz continuous on $\mathbb{R}^{d}\setminus \Theta$ and has intrinsic Lipschitz continuous derivative on $\mathbb{R}^{d}\setminus \Theta$.
+Furthermore, the diffusion coefficient is $C^{1}$ on $\mathbb{R}^{d}$ and commutative with a bounded derivative that is intrinsic Lipschitz continuous on $\mathbb{R}^{d}\setminus \Theta$.
+
+It was proven in [1] for $d = 1$ and more recently in [2] for general $d \in \mathbb{N}$ that in this setting a transformed Milstein scheme achieves an $L_{p}$-error rate of order at least $3/4-$ in terms of the number of evaluations of the
+driving Brownian motion.
+Furthermore, it was proven in [3] that for $d = 1$ in the same setting an adaptive Milstein-type scheme achieves an $L_{p}$-error rate of order at least $1$ in terms of the average number of evaluations of the driving Brownian motion. 
+
+In this talk, we present a generalisation of the result from [3] to higher dimensions. More precisely, we introduce an adaptive transformed Milstein scheme which can be used for the approximation of solutions of $d$-dimensional systems of SDEs at the final time point in this setting and
+prove that this scheme achieves an $L_{p}$-error rate of order at least $1$ in terms of the average number of evaluations of the
+driving Brownian motion.
+
+\medskip
+
+\begin{enumerate}
+ \item[{[1]}] M\"{u}ller-Gronbach, Thomas \& Yaroslavtseva, Larisa. (2022). {\it A strong order 3/4 method for {SDE}s with discontinuous drift
+  coefficient}. IMA Journal of Numerical Analysis. 42. 229-259
+ \item[{[2]}] Rauh\"ogger, Christopher. (2025+). {\it Milstein-type methods for strong approximation of systems of SDEs with a discontinuous drift coefficient}. In preparation
+ \item[{[3]}] Yaroslavtseva, Larisa. (2022). {\it An adaptive strong order 1 method for {SDE}s with
+  discontinuous drift coefficient}. Journal of Mathematical Analysis and Applications. 513. 2. Paper Number 126180, 29
+\end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {Strong order 1 adaptive approximation of jump-diffusion SDEs with discontinuous drift}% [1] talk title
+  {Verena Schwarz}% [2] speaker name
+  {University of Klagenfurt}% [3] affiliations
+  {verena.schwarz@aau.at}% [4] email
+  {}% [5] coauthors
+  {Stochastic Computation and Complexity}% [6] special session. Leave this field empty for contributed talks. 
+    
+
+In this talk, we present an adaptive approximation scheme for jump-diffusion SDEs with discontinuous drift and (possibly) degenerate diffusion. The scheme is a transformation-based doubly-adaptive quasi-Milstein scheme, which 
+is doubly-adaptive in the sense that it is jump-adapted, i.e.~all jump times of the Poisson noise are grid points, and it includes an adaptive stepsize strategy to account for the discontinuities of the drift. It is proven to have strong convergence rate $1$ in $L^p$ for $p\in[1,\infty)$ with respect to the average computational cost for these SDEs. 
+To obtain our result, we prove that under slightly stronger assumptions which are still weaker than those in existing literature, a related doubly-adaptive quasi-Milstein scheme has a convergence order $1$. 
+\end{talk}
+
+\begin{talk}
+  {Approximation in Hilbert spaces of the Gaussian and related analytic kernels}% [1] talk title
+  {Toni Karvonen}% [2] speaker name
+  {Lappeenranta--Lahti University of Technology LUT}% [3] affiliations
+  {toni.karvonen@lut.fi}% [4] email
+  {Yuya Suzuki}% [5] coauthors
+  
+    
+   
+
+\medskip
+
+We consider linear approximation based on function evaluations in reproducing
+kernel Hilbert spaces of certain analytic weighted power series kernels on the interval $[-1, 1]$. This class contains the popular Gaussian kernel $K(x, y) = \exp(-\frac{1}{2} \varepsilon^2(x-y)^2)$.
+We derive almost matching upper and lower bounds on the worst-case error. When applied to
+the Gaussian kernel, our results state that, up to a sub-exponential factor, the
+$n$th minimal error decays as $(\varepsilon/2)^n (n!)^{-1/2}$. The proofs are based on weighted
+polynomial interpolation and classical polynomial coefficient estimates that we use
+to bound the Hilbert space norm of a weighted polynomial fooling function.
+\end{talk}

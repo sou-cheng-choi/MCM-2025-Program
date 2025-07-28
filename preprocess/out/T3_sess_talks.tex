@@ -1,0 +1,135 @@
+\section{Track C: Technical Session 3 - Simulation}\newpage
+
+\begin{talk}
+  {Monte Carlo simulation approach to solve distributed order fractional mathematical model}% [1] talk title
+  {Yashveer Kumar}% [2] speaker name
+  {INESC-ID, Rua Alves Redol 9, Lisbon, Portugal 1000-029}% [3] affiliations
+  {yashveerkumar.rs.mat18@inesc-id.pt}% [4] email
+  {Juan A. Acebron, INESC-ID,  Department of Mathematics, Carlos III University of Madrid, Spain.\\
+   Jose Monteiro, INESC-ID, IST, Universidade de Lisboa, Portugal.}% [5] coauthors
+  %
+    
+   
+   
+This work presents a novel approach to solving time-distributed order fractional nonhomogeneous differential equations using the Monte Carlo simulation method. Fractional differential equations with distributed orders are critical for modeling complex systems with memory and hereditary effects, such as viscoelastic materials, anomalous diffusion, and biological processes. The inclusion of time-distributed orders introduces additional challenges in analytical and numerical solutions, especially in the presence of nonhomogeneous terms.
+
+The proposed Monte Carlo method reformulates the distributed order fractional equation into an equivalent integral representation. By simulating random processes and utilizing probabilistic interpretations of fractional operators, the solution is computed as an average over numerous realizations. The flexibility of Monte Carlo simulations makes them particularly well-suited for addressing the inherent complexity of distributed order systems.
+
+Numerical experiments validate the efficiency and effectiveness of the Monte Carlo approach, illustrating its capability to handle various distributed order kernels and nonhomogeneous terms. This method offers a robust, scalable, and versatile framework for solving fractional differential equations, paving the way for broader applications in science and engineering.
+
+\medskip
+\begin{enumerate}
+ \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+ \item[{[2]}] Guidotti, Nicolas L. \& Acebron, Juan A.  \&  Monterio, Jose (2024). {\it A stochastic method for solving time-fractional differential equations}. Computers and Mathematics with Applications, 159, 240-253.
+ \item[{[3]}] Kumar, Yashveer \& Singh, Vineet Kumar (2021). {\it Computational approach based on wavelets for financial mathematical model governed by distributed order time-fractional partial differential equation}. Mathematics and Computers in Simulation, 190, 531-569.
+\end{enumerate}
+\end{talk}
+
+\begin{talk}
+  {Gradient-based MCMC in high dimensions}% [1] talk title
+  {Reuben Cohn-Gordon}% [2] speaker name
+  {University of California, Berkeley}% [3] affiliations
+  {reubenharry@gmail.com}% [4] email
+  {Jakob Robnik, Uro\v{s} Seljak}% [5] coauthors
+  
+    
+   
+Sampling from distributions over $\mathbb{R}^d$ for $d$ larger than $10^4$ arises as a computational challenge in many of the physical sciences, including particle physics [1], condensed matter physics [2], cosmology [3] and chemistry [4], as well as in Bayesian statistics and machine learning [5]. Commonly used gradient-based variants of Markov Chain Monte Carlo such as Hamiltonian Monte Carlo (HMC) [6] and in particular the No U-Turn Sampler [7], are designed for differentiable multivariate densities, but struggle in very high dimensions. 
+% The absence of a standard general purpose solution means that different fields use domain-specific approaches, despite the underlying similarity of the inference problem at hand. 
+We propose a general purpose approach to the gradient-based high-dimensional regime, based on two insights. First, in high-dimensional cases where limited asymptotic bias is acceptable, Markov Chain algorithms without Metropolis-Hastings (MH) adjustment are more statistically efficient; we provide theoretical and numerical evidence for this claim and show how to choose a step size to limit the incurred bias to an acceptable level. Second, in the case that MH adjustment is required, we show that a particular 4th-order integrator [8] drastically improves the statistical efficiency of HMC and related algorithms in high dimensions.
+
+% (3) that Langevin noise on momenta in the dynamics can be chosen as a function of autocorrelation length and
+
+\medskip
+
+% If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+% Please do not use the \texttt{bibliography} environment or \texttt{bibtex} files.
+% APA reference style is recommended.
+\begin{enumerate}
+\item[{[1]}] Duane, S., Kennedy, A. D., Pendleton, B. J., \& Roweth, D. (1987). Hybrid Monte Carlo. Physics Letters B, 195(2), 216-222.
+\item[{[2]}] Lunts, P., Albergo, M. S., \& Lindsey, M. (2023). Non-Hertz-Millis scaling of the antiferromagnetic quantum critical metal via scalable Hybrid Monte Carlo. Nature Communications, 14(1), 2547.
+\item[{[3]}] Lewis, A., \& Bridle, S. (2002). Cosmological parameters from CMB and other data: A Monte Carlo approach. Physical Review D, 66(10), 103511.
+\item[{[4]}] Tuckerman, M. E. (2023). Statistical mechanics: theory and molecular simulation. Oxford University Press.
+% \item[{[5]}] Betancourt, M., \& Girolami, M. (2015). Hamiltonian Monte Carlo for hierarchical models. Current trends in Bayesian methodology with applications, 79(30), 2-4.
+\item[{[5]}] Cobb, A. D., \& Jalaian, B. (2021, December). Scaling Hamiltonian Monte Carlo inference for Bayesian neural networks with symmetric splitting. In Uncertainty in Artificial Intelligence (pp. 675-685). PMLR.
+\item[{[6]}] Betancourt, M. (2017). A conceptual introduction to Hamiltonian Monte Carlo. arXiv preprint arXiv:1701.02434.
+\item[{[7]}] Hoffman, M. D., \& Gelman, A. (2014). The No-U-Turn sampler: adaptively setting path lengths in Hamiltonian Monte Carlo. J. Mach. Learn. Res., 15(1), 1593-1623.
+% \item[{[6]}] Minary, P., Martyna, G. J., \& Tuckerman, M. E. (2003). Algorithms and novel applications based on the isokinetic ensemble. I. Biophysical and path integral molecular dynamics. The Journal of chemical physics, 118(6), 2510-2526.
+% \item[{[7]}] Robnik, J., De Luca, G. B., Silverstein, E., \& Seljak, U. (2023). Microcanonical Hamiltonian Monte Carlo. Journal of Machine Learning Research, 24(311), 1-34.
+\item[{[8]}] Takaishi, T., \& De Forcrand, P. (2006). Testing and tuning symplectic integrators for the hybrid Monte Carlo algorithm in lattice QCD. Physical Review E—Statistical, Nonlinear, and Soft Matter Physics, 73(3), 036706.
+%  \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+%  \item[{[2]}] Roberts, Gareth O, \& Rosenthal, Jeffrey S. (2002).  Optimal scaling for various Metropolis-Hastings algorithms, \textbf{16}(4), 351--367.
+\end{enumerate}
+
+% Equations may be used if they are referenced. Please note that the equation numbers may be different (but will be cross-referenced correctly) in the final program book.
+\end{talk}
+
+\begin{talk}
+  {Benchmarking the Geant4-DNA 'UHDR' Example for Monte Carlo Simulation of pH Effects on Radiolytic Species Yields Using a Mesoscopic Approach}% [1] talk title
+  {Serena Fattori}% [2] speaker name
+  {Istituto Nazionale di Fisica Nucleare (INFN), Laboratori Nazionali del Sud (LNS), Catania, Italy}% [3] affiliations
+  {serena.fattori@lns.infn.it}% [4] email
+  {Hoang Ngoc Tran, Anh Le Tuan, Fateme Farokhi, Giuseppe Antonio Pablo Cirrone, Sebastien Incerti}% [5] coauthors
+  
+    
+   
+\textbf{Background and Aims}\\
+FLASH radiotherapy is an innovative cancer treatment technique that delivers high radiation doses in an extremely short time ($\geq$ 40 Gy/s), inducing the so-called FLASH effect—characterized by the sparing of healthy tissue while maintaining effective tumor control. However, the mechanisms underlying the FLASH effect remain unclear, and ongoing research aims to elucidate them. One approach to investigating this phenomenon is through Monte Carlo simulations of particle transport and the resulting radiolysis in aqueous media, enabling comparisons between FLASH and conventional irradiation.
+
+\textbf{Methods}\\
+To provide a useful tool for investigating the effects of FLASH irradiation, the Geant4-DNA example "UHDR" was introduced in the beta release 11.2.0 of Geant4 (June 2023). This example incorporates a newly developed radiolysis chemical stage based on the diffusion-reaction master equation (RDME), a mesoscopic method that bridges microscopic particle-level interactions and macroscopic chemical kinetics. This approach allows the extension of the simulation time to minutes post-irradiation, enabling the validation of equilibrium processes that may play a crucial role on long time scales. In this context, the impact of pH on radiolytic species yields towards equilibrium is particularly important. For the first time in Geant4-DNA, the UHDR example allows taking into account the effect of different pH values on water radiolysis.
+
+\textbf{Results}\\
+This study aims to benchmark the capability of the UHDR example to accurately reproduce the effect of pH on radiolytic species yields. Preliminary results are currently under analysis for 1 MeV electron and 300 MeV proton irradiation in the conventional modality, with comparisons against literature data.
+
+\textbf{Conclusions}\\
+The ability to simulate the impact of pH on water radiolysis represents a significant advancement in studying the evolution of radiolytic species toward equilibrium. This improvement could provide valuable insights into potential differences in chemical evolution under FLASH irradiation compared to conventional irradiation.
+
+
+\medskip
+
+%If you would like to include references, please do so by creating a simple list numbered by [1], [2], [3], \ldots. See example below.
+%\begin{enumerate}
+% \item[{[1]}] Niederreiter, Harald (1992). {\it Random number generation and quasi-Monte Carlo methods}. Society for Industrial and Applied Mathematics (SIAM).
+% \item[{[2]}] L’Ecuyer, Pierre, \& Christiane Lemieux. (2002). Recent advances in randomized quasi-Monte Carlo methods. Modeling uncertainty: An examination of stochastic theory, methods, and applications, 419-474.
+%\end{enumerate}
+
+
+\end{talk}
+
+\begin{talk}
+  {First-passage-based Last-passage Algorithm 
+   for Charge Density on a Conducting Surface}% [1] talk title
+  {Chi-Ok Hwang}% [2] speaker name
+  {Gwangju Institute of Science and Technology, Gwangju 61005, Republic of Korea }% [3] affiliations
+  {chwang@gist.ac.kr}% [4] email
+  {Jinseong Son, Maximiliano Islas Solis, Tsoggerel Tsogbadrakh}% [5] coauthors
+  
+    
+   
+According to probabilistic potential theory, first- and last-passage algorithms have been devel-
+oped. Usually the first-passage algorithms with an enclosing sphere are used for overall charge
+distribution on a closed conducting object and last-passage algorithms for charge density at a
+specific point on the conducting object. The first- and last-passage algorithms are inherently con-
+nected. In this paper, we combine the first- and last-passage algorithms. We develop an algorithm
+for computing charge density at a specific point on the conducting object via the overall charge
+density distribution on a conducting object which is the simulation result of the first-passage al-
+gorithm with an enclosing sphere. We demonstrate the algorithm for charge density on a sphere
+and on the unit cube held at unit potential. The results show good agreement with theoretical or
+other simulation ones.
+
+
+\medskip
+
+Acknowledgments: This work was supported by the GIST Research Institute (GRI) in 2024.
+\begin{enumerate}
+ \item[{[1]}] J. Son, J. Im, and C.-O. Hwang, Appl. Math. Comput. submitted (2021).
+ \item[{[2]}] H. Jang, U. Yu, Y. Chung, and C.-O. Hwang, Adv. Theory Simul. 3(8) (2020).
+  \item[{[3]}] H. Jang, J. Given, U. Yu, and C.-O. Hwang, Adv. Theory Simul.\hfill\break
+   \href{https://onlinelibrary.wiley.com/doi/full/10.1002/adts.202000268}{https://onlinelibrary.wiley.com/doi/full/10.1002/adts.20200026} (2021).
+ \item[{[4]}] C.-O. Hwang and T. Won, J. Korean Phys. Soc. 47, S464 (2005).
+ \item[{[5]}] J. A. Given, C.-O. Hwang, and M. Mascagni, Phys. Rev. E 66, 056704 (2002).
+\end{enumerate}
+
+
+\end{talk}

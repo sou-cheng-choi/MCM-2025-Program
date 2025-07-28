@@ -1,0 +1,110 @@
+\section{Track B: Hardware or Software for (Quasi-)Monte Carlo Algorithms, Part II}\newpage
+
+\begin{talk}
+{A High-performance Multi-level Monte Carlo Software for Full Field Estimates and Applications in Optimal Control}% [1] talk title
+{Niklas Baumgarten}% [2] speaker name
+{Heidelberg University}% [3] affiliations
+{niklas.baumgarten@uni-heidelberg.de}% [4] email
+{Robert Scheichl, Robert Kutri, David Schneiderhan, Sebastian Krumscheid, Christian Wieners, Daniele Corallo}% [5] coauthors
+{Hardware or Software for (Quasi-)Monte Carlo Algorithms, Part II}% [6] special session. Leave this field empty for contributed talks.
+
+
+We introduce a high-performance software framework for multi-level Monte Carlo (MLMC)
+and multi-level stochastic gradient descent (MLSGD) methods,
+designed for efficient uncertainty quantification and optimal control in high-dimensional PDE applications.
+The software operates under strict memory and CPU-time constraints,
+requiring no prior knowledge of problem regularity or memory demands.
+
+Built on the budgeted MLMC method with a sparse multi-index update algorithm,
+it enables full spatial-domain estimates at the same computational cost as single-point
+evaluations while maintaining memory usage comparable to the deterministic problem.
+Additionally, the framework integrates an MLSGD method for optimal control,
+achieving faster convergence at reduced computational costs compared to standard
+stochastic gradient descent methods.
+
+We validate the software on applications such as stochastic PDE-based sampling, subsurface flow,
+mass transport, acoustic wave equations, and high-dimensional control problems.
+
+
+\end{talk}
+
+\begin{talk}
+  {Fast Gaussian Processes}% [1] talk title
+  {Aleksei G Sorokin}% [2] speaker name
+  {Illinois Institute of Technology, Department of Applied Mathematics. \\ Sandia National Laboratories.}% [3] affiliations
+  {asorokin@hawk.iit.edu}% [4] email
+  {}%Pieterjan M Robbe, Fred J Hickernell}% [5] coauthors
+  {Hardware and Software for (Quasi-)Monte Carlo Algorithms, Part 2}% [6] special session. Leave this field empty for contributed talks. 
+    
+
+        Gaussian process regression (GPR) on $N$ data points typically costs $\mathcal{O}(N^3)$ as one must compute the inverse and determinant of a dense, unstructured Gram matrix. Here we present \texttt{fastgps}\footnote{\url{https://alegresor.github.io/fastgps/}}, a Python software which performs GPR at only $\mathcal{O}(N \log N)$ cost by forcing nice structure into the Gram matrices. Specifically, when one controls the design of experiments and is willing to use special kernel forms, pairing certain low discrepancy (LD) sequences with shift invariant kernels yields Gram matrices diagonalizable by fast transforms. Two such classes are:
+        \begin{enumerate}
+          \item Pairing \emph{lattice points} with \emph{shift invariant (SI) kernels} gives circulant Gram matrices diagonalizable by the fast Fourier transform (FFT). 
+          \item Pairing \emph{digital nets} with \emph{digitally shift invariant (DSI) kernels} gives Gram matrices diagonalizable by the fast Walsh Hadamard transform (FWHT). 
+        \end{enumerate}
+        \texttt{fastgps} supports a number of features which will be discussed. 
+        \begin{enumerate}
+          \item \textbf{Kernel hyperparameter optimization} of marginal log likelihood (MLL), cross validation (CV), or generalized cross validation (GCV) loss.
+          \item \textbf{Fast Bayesian cubature} for uncertainty quantification in Quasi-Monte Carlo. 
+          \item \textbf{Fast multi-task GPR} with support for different sample sizes for each task. This is useful for multi-fidelity simulations and Multilevel Monte Carlo (MLMC). 
+          \item \textbf{Efficient variance projections} for non-greedy Bayesian optimization in MLMC.
+          \item \textbf{Derivative informed GPR} for simulations coupled with automatic differentiation. 
+          \item \textbf{Batched GPR} for simultaneously modeling vector-output simulations.
+          \item \textbf{GPU support} enabled by the \texttt{PyTorch}\footnote{\url{https://pytorch.org/}} stack . 
+          \item \textbf{Flexible LD sequences and SI/DSI kernels} from \texttt{QMCPy}\footnote{\url{https://qmcsoftware.github.io/QMCSoftware/}}.
+        \end{enumerate}
+
+
+
+        %Many scientific problems require modeling the output of an expensive simulation for which low fidelity surrogates exist. One would like to exploit cheap evaluations of these low fidelity models in order to maximize information of the true (maximum fidelity) model with minimum cost. Multi-index Gaussian processes (MIGPs) provide a natural framework to model such multi-fidelity simulations. We show that, provided one controls the design of experiments, MIGP regression can be performed quickly by pairing certain low-discrepancy sequences with special GP kernels. In the simplified case of MIGP with $L$ fidelities and $N$ samples at each fidelity, the $\mathcal{O}(N^3L^3)$ cost of standard MIGP can be reduced to $\mathcal{O}(N \log N L^2 + N L^3)$ using the proposed fast MIGP methods. We apply fast MIGP methods in the context of multilevel Monte Carlo (MLMC) where we target the expectation of the maximum fidelity model. The resulting method employs only one randomization of a low discrepancy point set, and the proposed acquisition function permits look ahead schemes for non-greedy algorithms. This makes it an ideal drop-in replacement for standard MLMC methods based on IID points. Our Python software for this project is based on the \texttt{QMCPy} package \url{https://github.com/QMCSoftware/QMCSoftware}, our implementation of fast MIGPs at \url{https://github.com/alegresor/FastGaussianProcesses}, and the ML(Q)MC library \url{https://github.com/PieterjanRobbe/mlqmcpy}. 
+
+
+
+
+        %This talk will highlight recent improvements to the QMCPy Python package: a unified library for Quasi-Monte Carlo methods and computations related to low-discrepancy sequences. We will describe routines for low discrepancy point set generation, randomization, and application to fast kernel methods. Specifically, we will discuss generators for lattices, digital nets, and Halton point sets with randomizations including random permutations / shifts, linear matrix scrambling, and nested uniform scrambling. Routines for working with higher-order digital nets and scramblings will also be detailed. For kernel methods, we provide implementations of special shift-invariant and digitally-shift invariant kernels along with fast Gram matrix operations facilitated by the bit-reversed Fast Fourier Transform (FFT), the bit-reversed inverse FFT (IFFT), and the Fast Walsh Hadamard Transform (FWHT). We will also describe methods to quickly update the matrix-vector product or linear system solution after doubling the number of points in a lattice or digital net in natural order. Generalizations to fast Gaussian process regression with derivative information will be discussed if time permits. 
+%\medskip
+
+% \begin{enumerate}
+%  \item[{[1]}] Sorokin, A. (2025). A Unified Implementation of Quasi-Monte Carlo Generators, Randomization Routines, and Fast Kernel Methods. arXiv preprint arXiv:2502.14256.
+% \end{enumerate}
+
+\end{talk}
+
+\begin{talk}
+  {Hybrid Monte Carlo methods for kinetic transport}% [1] talk title
+  {Johannes Krotz}% [2] speaker name
+  {University of Notre Dame}% [3] affiliations
+  {jkrotz@nd.edu}% [4] email
+  {}% [5] coauthors
+  {Hardware or Software for (Quasi-)Monte Carlo Algorithm}% [6] special session. Leave this field empty for contributed talks. 
+    
+   
+
+We present a hybrid method for time-dependent particle transport problems that combines Monte Carlo (MC) estimation with deterministic solutions based on discrete ordinates. For spatial discretizations, the MC algorithm computes a piecewise constant solution and the discrete ordinates use bilinear discontinuous finite elements. From the hybridization of the problem, the resulting problem solved by Monte Carlo is scattering free, resulting in a simple, efficient solution procedure. Between time steps, we use a projection approach to “relabel” collided particles as uncollided particles. From a series of standard 2-D Cartesian test problems we observe that our hybrid method has improved accuracy and reduction in computational complexity of approximately an order of magnitude relative to standard discrete ordinates solutions.
+
+\end{talk}
+
+\begin{talk} 
+    {Flow-Based Monte Carlo Transport Simulation}% [1] talk title 
+    {Joseph Farmer}% [2] speaker name 
+    {University of Notre Dame}% [3] affiliations 
+    {jfarmer@nd.edu}% [4] email (placeholder) 
+    {Prof. Ryan McClarren, Aidan Murray, Johannes Krotz}% [5] coauthors 
+    {Hardware or Software for Quasi-Monte Carlo Methods}% [6] special session. Leave empty for contributed.
+
+Monte Carlo (MC) particle transport methods are the gold standard for high-fidelity simulations but can be computationally prohibitive, especially in optically thick media or problems requiring a large number of particle histories. The performance bottleneck often lies in the sequential, stochastic random walk, where each particle undergoes numerous collision events that are difficult to vectorize and lead to control flow divergence on parallel architectures like GPUs.
+
+Our approach replaces the intra-cell random walk with a surrogate model trained via statistical learning. This surrogate effectively learns the transport kernel, providing a direct map from a particle's input state to its output state. This is accomplished by training a neural network to model the velocity field of a continuous probability path that transforms a simple noise distribution into the complex, multi-modal distribution of particle output states observed in MC simulations. This hybrid approach retains the Monte Carlo foundation of stochastic particle sampling and history tracking within the transport computation, but replaces the collision-by-collision simulation with a single forward pass through the neural network that samples from the learned distributions.
+
+We demonstrate the efficacy of this approach by embedding our learned model into a multi-cell transport solver and validating it against canonical benchmarks, including the heterogeneous Reed's problem [2]. The results show that our method accurately reproduces the scalar flux profiles of both high-fidelity MC simulations and known analytic solutions, with comparable statistical error characteristics. This accuracy is achieved with  computational speed-ups, particularly in optically thick regions where the cost of traditional MC is highest. The performance gains stem from decoupling the simulation cost from the material cross-sections, offering a scalable path for accelerating transport in challenging regimes. 
+
+The presentation will cover the mathematical formulation of the transport kernel learning problem, the architecture which captures the output distributions, the once-and-for-all training strategy, and computational  results in both 1D and 2D geometries.
+
+
+\medskip
+\begin{enumerate} 
+\item[{[1]}] Y. Lipman, R. T. Q. Chen, et al. (2022). Flow Matching for Generative Modeling. {\it arXiv preprint arXiv:2210.02747}. 
+\item[{[2]}] W. H. Reed. (1971). New Difference Schemes for the Neutron Transport Equation. {\it Nuclear Science and Engineering}, 46(2):309-314. 
+\end{enumerate}
+
+\end{talk}
